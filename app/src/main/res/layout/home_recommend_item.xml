@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:elevation="10dp"
+    android:background="@drawable/shadow"
+    android:padding="10dp"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    tools:context="com.example.l.wanshaapp.HomeBannerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:id="@+id/recommendtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/bigtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="大标题"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/recommendpicture"
+        android:padding="10dp"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/h"/>
+</LinearLayout>

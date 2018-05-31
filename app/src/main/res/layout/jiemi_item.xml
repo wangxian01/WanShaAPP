@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    android:gravity="center">
+
+
+    <ImageView
+        android:id="@+id/wuyu"
+        android:layout_width="55dp"
+        android:layout_height="64dp"
+        android:src="@drawable/wuyu"
+        />
+
+    <TextView
+        android:id="@+id/youximing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:text="创世战记"
+        android:textSize="17dp"
+        android:textColor="@color/colorblack"/>
+
+
+    <TextView
+        android:id="@+id/jianjie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/youximing"
+        android:layout_alignLeft="@+id/youximing"
+        android:text="爆竹人的生活并不容易！"
+        android:textSize="12dp"
+        android:layout_marginTop="1dp"
+        android:textColor="@color/colorgrey"
+        />
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_below="@+id/jianjie"
+        android:layout_alignLeft="@+id/jianjie"
+        android:background="@drawable/pingfen"
+        android:id="@+id/pingfen"/>
+
+    <Button
+        android:id="@+id/xiazai"
+        android:layout_width="55dp"
+        android:layout_height="19dp"
+        android:textColor="@color/white"
+        android:text="下载"
+        android:textSize="10dp"
+        android:background="@drawable/image"
+        android:layout_alignTop="@+id/jianjie"
+        android:layout_toRightOf="@+id/jianjie"
+        android:layout_marginLeft="60dp"/>
+
+    <Button
+        android:id="@+id/fenlei1dongzuo"
+        android:layout_width="35dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/pingfen"
+        android:layout_alignLeft="@+id/youximing"
+        android:background="@drawable/dongzuo"
+        android:layout_marginTop="2dp"
+        />
+
+    <Button
+        android:id="@+id/fenlei1kongbu"
+        android:layout_width="35dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/pingfen"
+        android:layout_toRightOf="@id/fenlei1dongzuo"
+        android:layout_alignTop="@+id/fenlei1dongzuo"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/dongzuo"
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="270dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="9dp"
+        android:layout_height="1px"
+        android:layout_below="@+id/fenlei1dongzuo"
+        android:background="#868080" />
+
+
+
+</RelativeLayout>

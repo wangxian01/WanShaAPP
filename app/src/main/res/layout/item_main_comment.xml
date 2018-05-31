@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.example.l.wanshaapp.DynamicHome.CircleImageView
+            android:id="@+id/comment_item_logo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/touxiang"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="6dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="6dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/comment_item_userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#5B595A"
+                android:textSize="14sp"
+                android:text="游客甲" />
+
+            <TextView
+                android:id="@+id/comment_item_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1小时前"
+                android:textSize="12sp"
+                android:layout_marginTop="3dp"
+                android:textColor="#b4a5a5"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/comment_item_like"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@mipmap/dz"
+            android:layout_margin="10dp"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comment_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#484848"
+        android:textSize="14sp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="24dp"
+        android:text="这个游戏有bug，外挂还特别多"/>
+
+    <TextView
+        android:layout_marginTop="-5dp"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:background="@drawable/comment_shope"
+        android:id="@+id/comment_item_unfod"
+        android:gravity="center"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:text="回复"/>
+
+</LinearLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".fragment.zhuda_fragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+
+                <TextView
+                    android:id="@+id/grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="本周主打推荐"
+                    android:textColor="@color/colorgrey" />
+
+                <TextView
+                    android:id="@+id/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/grey"
+                    android:layout_alignLeft="@id/grey"
+                    android:layout_marginTop="10dp"
+                    android:text="动作史诗游戏"
+                    android:textColor="@color/colorblack"
+                    android:textSize="30dp" />
+
+                <RelativeLayout
+                    android:layout_width="550dp"
+                    android:layout_height="203dp"
+                    android:layout_below="@+id/black"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:background="@drawable/bordergg">
+
+                    <ImageView
+                        android:id="@+id/zhandou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="178dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignLeft="@+id/black"
+                        android:background="@drawable/bordergg"
+                        android:src="@mipmap/zhandou"
+                        tools:ignore="NotSibling" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="5dp"
+                android:background="#868080" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/zhandou"
+                    android:text="今日发现推荐"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/colorblack"
+                    android:textSize="25dp"
+                    tools:ignore="NotSibling" />
+
+
+            </RelativeLayout>
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Recyfind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:scrollbars="none"
+                android:layout_margin="15dp">
+            </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="15dp"
+                android:background="#868080" />
+
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="20dp"
+              android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textColor="@color/colorblack"
+                    android:text="新游预约推荐"
+                    android:layout_alignLeft="@+id/Recyfind"
+                    tools:ignore="NotSibling" />
+
+        </RelativeLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Recyorder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#fcfcfc"
+                android:scrollbars="none">
+            </android.support.v7.widget.RecyclerView>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="15dp"
+                android:background="#868080" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

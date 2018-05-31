@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".JCVideoPlayerStandard.player">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/fenlei2image"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignStart="@+id/tabhost"
+            android:layout_below="@+id/videoplayer"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bordergg"
+            android:src="@drawable/wuyu" />
+
+    <TextView
+        android:id="@+id/fenlei2youximing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorblack"
+        android:layout_toRightOf="@+id/fenlei2image"
+        android:layout_alignTop="@+id/fenlei2image"
+        android:layout_marginLeft="5dp"
+        android:text="创世战纪123456"/>
+
+    <TextView
+        android:id="@+id/fenlei2youxishang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13dp"
+        android:textColor="@color/deepgrey"
+        android:layout_below="@+id/fenlei2youximing"
+        android:layout_alignLeft="@+id/fenlei2youximing"
+        android:text="游戏商:Nination Corproration"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/fenlei2faxingshang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/deepgrey"
+        android:text="发行商:中国游戏公司"
+        android:textSize="13dp"
+        android:layout_below="@+id/fenlei2youxishang"
+        android:layout_alignLeft="@+id/fenlei2youxishang"/>
+
+    <Button
+        android:id="@+id/shoucang"
+        android:layout_width="65dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button"
+        android:layout_marginTop="25dp"
+        android:layout_toRightOf="@+id/fenlei2image"
+        android:layout_alignTop="@+id/fenlei2image"
+        android:text="收  藏"
+        android:textSize="13dp"
+        android:layout_marginHorizontal="230dp"
+        />
+
+    <ImageView
+        android:id="@+id/fenlei2pingfen"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:src="@drawable/pingfen"
+        android:layout_below="@id/fenlei2faxingshang"
+        android:layout_alignLeft="@+id/fenlei2faxingshang"/>
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:layout_below="@+id/fenlei2pingfen"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                   />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorblack"
+                        android:text="爱你呀1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorblack"
+                        android:text="爱你呀2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="爱你呀3"
+                        android:textColor="@color/colorblack"/>
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    </RelativeLayout>
+</ScrollView>
+
+

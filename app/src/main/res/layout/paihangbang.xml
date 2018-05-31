@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.l.wanshaapp.fragment.Paihangbang_Home" >
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:stretchColumns="0,1,2">
+
+        <TableRow
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_item_one"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_bg"
+                android:gravity="center"
+                android:text="热门榜"
+                android:textColor="@color/colorWhite"/>
+
+
+            <Button
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_item_two"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/btn_bg"
+                android:textColor="@color/colorWhite"
+                android:text="新品榜"/>
+
+            <Button
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_item_three"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_bg"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:text="预约榜"/>
+
+            <Button
+                android:layout_marginLeft="15dp"
+                android:id="@+id/tv_item_four"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_bg"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:text="好评榜" />
+            <!--<ImageView-->
+                <!--android:layout_width="11dp"-->
+                <!--android:layout_height="match_parent" />-->
+            <!--<Button-->
+                <!--android:id="@+id/tv_item_five"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:gravity="center"-->
+                <!--android:background="@drawable/btn_bg"-->
+                <!--android:textColor="@color/colorWhite"-->
+                <!--android:text="游戏商"/>-->
+        </TableRow>
+    </TableLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/myViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    </LinearLayout>
+
