@@ -27,7 +27,7 @@ import com.example.l.wanshaapp.fragment.zhuda_fragment;
 import java.util.ArrayList;
 
 public class HomeBannerActivity extends AppCompatActivity  {
-
+/*谭琳最帅*/
     private Toolbar toolbar;
     private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private RadioGroup group;
