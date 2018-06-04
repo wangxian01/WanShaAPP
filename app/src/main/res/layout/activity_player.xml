@@ -142,7 +142,6 @@
                            android:textColor="@color/black"
                            android:layout_below="@+id/youxijieshao"
                            android:text="游戏玩法:"/>
-d
                         <TextView
                             android:id="@+id/youxiwanfajieshao"
                             android:layout_width="wrap_content"
