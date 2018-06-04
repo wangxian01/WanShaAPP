@@ -147,7 +147,7 @@ d
                             android:id="@+id/youxiwanfajieshao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5p"
+                            android:layout_marginTop="5dp"
                             android:layout_below="@+id/youxiwanfa"
                             android:text="游戏中，玩家将操作爆竹人来进行跑步啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
 d
