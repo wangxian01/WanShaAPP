@@ -1,6 +1,8 @@
 package com.example.l.wanshaapp.fragment;
 
 
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,11 +17,18 @@ import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.HomeListAdapter;
 import com.oragee.banners.BannerView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.squareup.okhttp.Request;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +44,7 @@ public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
     }
-
+    HomeListAdapter mBaseAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,23 +67,58 @@ public class HomeFragment extends Fragment {
 
         //首页游戏推荐的list
         listView = (ListView) view.findViewById(R.id.homelist);
-        HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity());
-        listView.setAdapter(mBaseAdapter);
+/*        HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity());
+        listView.setAdapter(mBaseAdapter);*/
+
+        //刷新布局的使用
         RefreshLayout refreshLayout = (RefreshLayout)view.findViewById(R.id.refreshLayout);
+/*        //设置 Footer 为 经典样式
+        refreshLayout.setRefreshFooter(new ClassicsFooter(getContext()));*/
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
-                refreshlayout.finishRefresh(2000/*,false*/);//传入false表示刷新失败
+                refreshlayout.finishRefresh(3000);//传入false表示刷新失败
                 Log.e("提示", "刷新成功");
             }
         });
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onLoadMore(RefreshLayout refreshlayout) {
-                refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
+
+                //异步加载
+                new AsyncTask<String,Void,Void>(){
+                    @Override
+                    protected Void doInBackground(String... strings) {
+                        OkHttpUtils.get().url("http://192.168.1.187:8080/AndroidServers/servlet/HomeListViewData").build().execute(new StringCallback() {
+                            @Override
+                            public void onError(Request request, Exception e) {
+                                Log.e(TAG, "网络错误");
+                            }
+                            @Override
+                            public void onResponse(String response) {
+                                Log.e("提示", "刷新成功");
+                                Log.e(TAG, response.toString());
+                            }
+                        });
+                        return null;
+                    }
+                };
+
+                //模拟网络请求到的数据
+      /*          ArrayList<String> newList = new ArrayList<String>();
+                for (int i=0;i<6;i++){
+           newList.add("寻求宽恕再度来袭");
+           newList.add("让世界惊叹的唯美解密手游");
+           newList.add("R.drawable.h");
+                }*/
+              /*  HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity(), newList);
+                listView.setAdapter(mBaseAdapter);*/
+                refreshlayout.finishRefresh(3000);//传入false表示刷新失败
+
             }
         });
+
         return  view;
     }
-
 }

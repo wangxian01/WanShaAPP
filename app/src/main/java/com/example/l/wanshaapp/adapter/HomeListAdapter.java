@@ -11,20 +11,25 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 
+import java.util.ArrayList;
+
 
 /**
  *   适配器
  */
 public class HomeListAdapter  extends BaseAdapter {
     private Context mContext;
+    ArrayList<String> shuju;
 
-    public HomeListAdapter(Activity mContext) {
+
+    public HomeListAdapter(Activity mContext,ArrayList<String> newList) {
         this.mContext = mContext;
+        this.shuju=newList;
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return shuju.size();
     }
 
     @Override
@@ -42,9 +47,9 @@ public class HomeListAdapter  extends BaseAdapter {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View view = inflater.inflate(R.layout.home_recommend_item, parent,false);
         TextView texttitle=(TextView)view.findViewById(R.id.recommendtitle);
-        texttitle.setText("寻求宽恕再度来袭");
+        texttitle.setText(shuju.get(0));
         TextView texttitle2=(TextView)view.findViewById(R.id.bigtitle);
-        texttitle2.setText("让世界惊叹的唯美解密手游");
+        texttitle2.setText(shuju.get(1));
         ImageView imageView=(ImageView) view.findViewById(R.id.recommendpicture);
         imageView.setImageResource(R.drawable.h);
         return view;

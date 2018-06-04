@@ -96,7 +96,6 @@
             android:button="@null"
             android:gravity="center"
             android:drawableBottom="@drawable/logo1" />
-
     </RadioGroup>
 
 </LinearLayout>
