@@ -69,7 +69,7 @@
         android:layout_alignTop="@+id/fenlei2image"
         android:text="收  藏"
         android:textSize="13dp"
-        android:layout_marginHorizontal="230dp"
+        android:layout_marginHorizontal="200dp"
         />
 
     <ImageView
@@ -122,14 +122,14 @@
                             android:layout_height="wrap_content"
                             android:text="游戏简介:"
                             android:textColor="@color/black"
-                            android:textSize="25dp"/>
+                            android:textSize="20dp"/>
 
                         <TextView
                             android:id="@+id/youxijieshao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/youxijianjie"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5dp"
                             android:layout_alignLeft="@+id/youxijianjie"
                             android:text="创世战记是一个很好玩的游戏巴拉巴巴拉吧老夫就发你姐夫是你放开NSA开发你看三分可能是可能饭卡上撒发生。"/>
 
@@ -137,20 +137,20 @@
                            android:id="@+id/youxiwanfa"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:textSize="25dp"
+                           android:textSize="20dp"
                            android:layout_marginTop="10dp"
                            android:textColor="@color/black"
                            android:layout_below="@+id/youxijieshao"
                            android:text="游戏玩法:"/>
-
+d
                         <TextView
                             android:id="@+id/youxiwanfajieshao"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="5p"
                             android:layout_below="@+id/youxiwanfa"
                             android:text="游戏中，玩家将操作爆竹人来进行跑步啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
-
+d
                     </RelativeLayout>
 
                 </LinearLayout>
