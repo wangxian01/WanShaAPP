@@ -52,7 +52,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
         mDetailPageTime = (TextView) findViewById(R.id.detail_page_time);
         mDetailPageFocus = (ImageView) findViewById(R.id.detail_page_focus);
         mCommentTextMain = (TextView) findViewById(R.id.comment_text_main);
-        mCommentScroll = (ScrollView) findViewById(R.id.comment_scroll);
+       // mCommentScroll = (ScrollView) findViewById(R.id.comment_scroll);
         toolbar = findViewById(R.id.toolbar);
         mCommentsChoicenessMain = (ListView) findViewById(R.id.comments_choiceness_main);
 //        mCommentsRecyclerview = (RecyclerView) findViewById(R.id.comments_recyclerview);
@@ -71,7 +71,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
         mCommentViodeoview = (JCVideoPlayerStandard) findViewById(R.id.comment_viodeoview);
         //设置网络视频
         mCommentViodeoview.setUp(String.valueOf(serializableMap.getMap("map").get("ChoicenessViodeoview"))
-                , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "\t\t\t\t\t"+String.valueOf(serializableMap.getMap("map").get("UpIntroduce")));
+                , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, "\t\t\t\t\t\t"+String.valueOf(serializableMap.getMap("map").get("UpIntroduce")));
 
         //设置视频缩略图
         Picasso.with(this)
@@ -104,12 +104,12 @@ public class CommentDetailsActivity extends AppCompatActivity {
 
 
         //重新调整ScrollView的位置
-        mCommentScroll.post(new Runnable() {
-            @Override
-            public void run() {
-                mCommentScroll.scrollTo(0,0);
-            }
-        });
+//        mCommentScroll.post(new Runnable() {
+//            @Override
+//            public void run() {
+//                mCommentScroll.scrollTo(0,0);
+//            }
+//        });
     }
 
     public void setListViewHeightBasedOnChildren(ListView listView) {

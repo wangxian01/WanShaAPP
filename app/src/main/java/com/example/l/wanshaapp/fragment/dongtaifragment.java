@@ -34,9 +34,6 @@ public class dongtaifragment extends Fragment {
         vp = (ViewPager)view.findViewById(R.id.vp);
         tabLayout = (TabLayout)view.findViewById(R.id.tab);
 
-        /**
-         * 根本莫法
-         * */
         dynamicFragmentAdapter = new DynamicFragmentAdapter(getChildFragmentManager());
         fragments.add(new FragmentChoiceness());
         fragments.add(new FragmentFocus());

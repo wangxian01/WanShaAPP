@@ -6,15 +6,15 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:id="@+id/item_forum_img"
         android:src="@mipmap/forum01"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="5dp">
 
         <TextView
@@ -23,7 +23,7 @@
             android:id="@+id/item_forum_name"
             android:textColor="#303030"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="Wonterputt"/>
 
         <TextView
