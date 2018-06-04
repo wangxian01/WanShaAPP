@@ -109,13 +109,49 @@
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorblack"
-                        android:text="爱你呀1"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/youxijianjie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="游戏简介:"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"/>
+
+                        <TextView
+                            android:id="@+id/youxijieshao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/youxijianjie"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignLeft="@+id/youxijianjie"
+                            android:text="创世战记是一个很好玩的游戏巴拉巴巴拉吧老夫就发你姐夫是你放开NSA开发你看三分可能是可能饭卡上撒发生。"/>
+
+                       <TextView
+                           android:id="@+id/youxiwanfa"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textSize="25dp"
+                           android:layout_marginTop="10dp"
+                           android:textColor="@color/black"
+                           android:layout_below="@+id/youxijieshao"
+                           android:text="游戏玩法:"/>
+
+                        <TextView
+                            android:id="@+id/youxiwanfajieshao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/youxiwanfa"
+                            android:text="游戏中，玩家将操作爆竹人来进行跑步啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -125,11 +161,14 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorblack"
-                        android:text="爱你呀2"/>
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/pinglunlistview"
+                        android:layout_margin="15dp"/>
+
+
 
                 </LinearLayout>
 

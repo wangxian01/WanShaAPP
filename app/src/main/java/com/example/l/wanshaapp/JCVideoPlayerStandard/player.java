@@ -2,17 +2,28 @@ package com.example.l.wanshaapp.JCVideoPlayerStandard;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TabHost;
 
 import com.example.l.wanshaapp.R;
+import com.example.l.wanshaapp.adapter.pinglunAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 
 public class player extends AppCompatActivity {
-
+    private List<Map<String, Object>> dataList;
+    ImageView imageView;
     TabHost tabs;
+
 
 
     @Override
@@ -38,6 +49,17 @@ public class player extends AppCompatActivity {
                 .setContent(R.id.tab3));
 
 
+
+        ListView pinglun_item = (ListView)findViewById(R.id.pinglunlistview);
+        DataListtest();
+
+        pinglunAdapter pinglunAdapter = new pinglunAdapter(getBaseContext(),dataList,R.layout.pinglun_item);
+        pinglun_item.setAdapter(pinglunAdapter);
+
+        return;
+
+
+
     }
 
     @Override
@@ -53,6 +75,20 @@ public class player extends AppCompatActivity {
         super.onPause();
         JCVideoPlayer.releaseAllVideos();
 
+    }
+
+
+    private void DataListtest() {
+        dataList = new ArrayList<Map<String, Object>>();
+
+        for (int i = 0; i < 10; i++) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("youximing", "创世战纪"+i);
+            map.put("riqi", "创世战纪"+i);
+            map.put("wuyu", "创世战纪");
+            map.put("pingfen", "创世战纪");
+            dataList.add(map);
+        }
     }
 
 
