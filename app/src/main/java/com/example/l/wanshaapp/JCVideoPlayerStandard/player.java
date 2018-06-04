@@ -44,9 +44,6 @@ public class player extends AppCompatActivity {
         tabs.addTab(tabs.newTabSpec("tab2")
                 .setIndicator("评价")
                 .setContent(R.id.tab2));
-        tabs.addTab(tabs.newTabSpec("tab3")
-                .setIndicator("论坛")
-                .setContent(R.id.tab3));
 
 
 
