@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.List;
 import java.util.Map;
@@ -83,9 +85,16 @@ public class jiemiAdapter extends BaseAdapter{
         util.view=(View)convertView.findViewById(R.id.view);
         // 获取数据显示在各组件
         Map<String, Object> map = dataList.get(position);
+
+
+        //设置视频缩略图
+        Picasso.with(convertView.getContext())
+                .load(String.valueOf(map.get("ChoicenessViodeoview")))
+                .into(util.wuyu);
+
         util.youximing.setText((String) map.get("youximing"));
         //util.riqi.setText((String)map.get("riqi"));
-        util.wuyu.setImageResource(R.drawable.wuyu);
+        //util.wuyu.setImageResource(R.drawable.wuyu);
         return convertView;
 
     }

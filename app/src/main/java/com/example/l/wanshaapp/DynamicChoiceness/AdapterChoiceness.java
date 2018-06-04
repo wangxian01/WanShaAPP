@@ -115,11 +115,11 @@ public class AdapterChoiceness extends BaseAdapter {
         //设置网络视频
         util.mChoicenessViodeoview.setUp(String.valueOf(map.get("ChoicenessViodeoview"))
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, String.valueOf(map.get("UpIntroduce")));
-
         //设置视频缩略图
         Picasso.with(view.getContext())
                 .load(String.valueOf(map.get("VideoImg")))
                 .into(util.mChoicenessViodeoview.thumbImageView);
+
 
         final Util finalUtil = util;
         final BeanChoiceness beanChoiceness = new BeanChoiceness();

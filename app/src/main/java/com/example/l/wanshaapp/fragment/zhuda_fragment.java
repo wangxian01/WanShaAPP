@@ -68,6 +68,9 @@ public class zhuda_fragment extends Fragment {
 
 
     private void initFruits() {
+
+
+
         for (int i = 0; i < 2; i++) {
             Small apple = new Small("Apple", R.drawable.fenlei_1);
             fruitList.add(apple);
@@ -89,12 +92,16 @@ public class zhuda_fragment extends Fragment {
             fruitList.add(cherry);
             Small mango = new Small("Mango", R.drawable.fenlei_6);
             fruitList.add(mango);
+
         }
+
+
+       }
     }
 
 
 
-    }
+
 
 
 

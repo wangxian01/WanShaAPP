@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 import java.util.Map;
@@ -81,6 +82,8 @@ public class pinglunAdapter extends BaseAdapter{
         // 获取数据显示在各组件
         Map<String, Object> map = dataList.get(position);
         util.pinglunID.setText((String) map.get("youximing"));
+
+
         //util.riqi.setText((String)map.get("riqi"));
         return convertView;
 

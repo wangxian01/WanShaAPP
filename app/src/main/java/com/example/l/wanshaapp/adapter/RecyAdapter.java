@@ -1,7 +1,9 @@
 package com.example.l.wanshaapp.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.bean.Small;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,7 @@ public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
             mMImageView =  (ImageView) itemView.findViewById(R.id.imga);
             mTextView = (TextView) itemView.findViewById(R.id.text3);
         }
+
     }
 
     public RecyAdapter(List<Small> fruitList) {
@@ -44,10 +48,12 @@ public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
 
 
     @Override
-    public void onBindViewHolder(RecyAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         Small fruit = mFruitList.get(position);
         holder.mMImageView.setImageResource(fruit.getImageId());
         holder.mTextView.setText(fruit.getName());
+
+
     }
 
     @Override
