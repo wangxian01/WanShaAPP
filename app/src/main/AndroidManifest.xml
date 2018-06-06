@@ -23,6 +23,8 @@
                    android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".JCVideoPlayerStandard.player"></activity>
         <activity android:name=".WanShaLogin.RegisteredActivity"></activity>
+        <activity android:name=".XiangQingActivity">
+        </activity>
     </application>
 
 </manifest>

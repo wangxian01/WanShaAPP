@@ -20,8 +20,8 @@
 
         <ImageView
             android:id="@+id/item_img"
-            android:layout_width="60dp"
-            android:layout_height="86dp"
+            android:layout_width="75dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:src="@drawable/logo" />
 
@@ -39,7 +39,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:text="游戏名"
                 android:textColor="@android:color/background_dark"
                 android:textSize="15sp"
@@ -132,6 +132,7 @@
                     android:background="@drawable/textview_border"
                     android:gravity="center"
                     android:text="类型"
+                    android:layout_marginLeft="5dp"
                     android:textColor="@color/colorSkyblue"
                     android:textSize="12sp" />
 
