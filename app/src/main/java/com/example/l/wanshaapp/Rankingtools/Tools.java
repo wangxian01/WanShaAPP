@@ -9,7 +9,7 @@ import com.example.l.wanshaapp.R;
 
 public class Tools {
 
-
+//测试1
     //图片资源
     public  static  int img[] = {
             R.drawable.rankinghot_01, R.drawable.rankinghot_02, R.drawable.rankinghot_03, R.drawable.rankinghot_04, R.drawable.rankinghot_05,
