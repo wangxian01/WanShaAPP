@@ -12,7 +12,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:background="#30DEE5">
 
         <ImageView
@@ -33,15 +33,15 @@
     </LinearLayout>
 
     <com.example.l.wanshaapp.WanShaLogin.LoginCircularImageView
-        android:layout_marginTop="-65dp"
+        android:layout_marginTop="-60dp"
         android:layout_gravity="center"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:id="@+id/login_img"
         android:src="@mipmap/touxiang"/>
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
         android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
@@ -56,7 +56,7 @@
             android:maxLines="1" />
 
         <EditText
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:hint="密 码："
             android:id="@+id/user_password"
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             android:inputType="textPassword" />
 
         <LinearLayout
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -108,12 +108,12 @@
         <Button
             android:id="@+id/login_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/login_shope"
             android:text="登\t\t录"
             android:textColor="#fff"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout

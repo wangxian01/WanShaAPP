@@ -2,6 +2,7 @@ package com.example.l.wanshaapp.DynamicCommentDetails;
 
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChildHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.DynamicHome.CircleImageView;
 import com.example.l.wanshaapp.R;
+
+import org.w3c.dom.Comment;
 
 import java.util.List;
 import java.util.Map;
@@ -43,8 +46,23 @@ public class AdapterCommentMain extends BaseAdapter {
 
     }
 
+    /**
+     * by moos on 2018/04/20
+     * func:评论成功后插入一条数据
+     * @param index
+     * @param dataList 新的评论数据
+     */
+    public void addTheCommentData(int index, List<Map<String, Object>> dataList) {
+        Map<String, Object> map = dataList.get(index);
+        dataList.add(map);
+        notifyDataSetChanged();
+        Log.e("测试：", (String) map.get("CommentText"));
+    }
+
     @Override
     public int getCount() {
+        if (dataList == null)
+            return 0;
         return dataList.size();
     }
 
@@ -91,10 +109,12 @@ public class AdapterCommentMain extends BaseAdapter {
             final Map<String, Object> map = dataList.get(index);
 
             util.mCommentItemUserName.setText((String) map.get("UpId"));
-
+            util.mCommentItemContent.setText((String) map.get("CommentText"));
 
         return view;
     }
+
+
 
 }
 
