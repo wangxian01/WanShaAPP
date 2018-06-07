@@ -30,7 +30,7 @@ public class AdapterCommentMain extends BaseAdapter {
     private NestedScrollingChildHelper mScrollingChildHelper;
 
 
-    /**
+    /***
      * 有参构造
      *
      * @param context  界面
