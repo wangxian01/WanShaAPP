@@ -29,6 +29,7 @@
         <activity android:name=".DyFocusCommentDetails.FcousCommentActivity">
 
         </activity>
+        <activity android:name=".XiangQingActivity"></activity>
     </application>
 
 </manifest>
