@@ -1,5 +1,6 @@
 package com.example.l.wanshaapp.DynamicFocus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,9 +8,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
+import com.example.l.wanshaapp.DyFocusCommentDetails.FcousCommentActivity;
+import com.example.l.wanshaapp.DyFocusCommentDetails.FcousCommentAdapter;
+import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
+import com.example.l.wanshaapp.DynamicCommentDetails.CommentDetailsActivity;
 import com.example.l.wanshaapp.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -90,6 +96,22 @@ public class FragmentFocus extends Fragment {
         AdapterFocus adapterFocus = new AdapterFocus(getActivity(), dataList, R.layout.item_focus);
         mChoicenessListview.setAdapter(adapterFocus);
 
+        /**
+         * 点击listview传递参数（使用map）
+         * */
+        mChoicenessListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String, Object> map = (Map<String, Object>) mChoicenessListview.getItemAtPosition(position);
+                final SerializableMap myMap=new SerializableMap();
+                myMap.setMap(map);      //将map数据添加到封装的myMap<span></span>中
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("map", myMap);
+                Intent intent=new Intent(getActivity(),FcousCommentActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
