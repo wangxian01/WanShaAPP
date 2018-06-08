@@ -1,10 +1,18 @@
 package com.example.l.wanshaapp;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
+import com.example.l.wanshaapp.Rankingtools.FourFragmentTools;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * Created by 侯顺发 on 2018/5/31.
@@ -20,6 +28,38 @@ public class XiangQingActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
+
+        JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
+        jcVideoPlayerStandard.setUp("http://cs245-hc50.aipai.com/user/563/43419563/1006/card/48058984/card.mp4", JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
+        jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
+
+
+        /**
+         * 设置收起和展开状态
+         */
+        final TextView ranking_unfold=findViewById(R.id.ranking_unfold);
+        final BeanChoiceness beanChoiceness=new BeanChoiceness();
+        beanChoiceness.setunfold(false);
+
+        ranking_unfold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean flag = beanChoiceness.getunfold();
+                if (flag){
+                    xiangqingtext2.setMaxLines(5);
+                    ranking_unfold.setText("展开");
+                    ranking_unfold.setTextColor(Color.parseColor("#464646"));
+                    beanChoiceness.setunfold(false);
+                }else{
+                    xiangqingtext2.setMaxLines(1000);
+                    ranking_unfold.setText("收起");
+                    ranking_unfold.setTextColor(Color.parseColor("#1296DB"));
+                    beanChoiceness.setunfold(true);
+                }
+            }
+        });
+
+
         //实例化排行榜的对象
         title1 = findViewById(R.id.xiangqingyouximing);
         item_date=findViewById(R.id.XiangQingdate1);
