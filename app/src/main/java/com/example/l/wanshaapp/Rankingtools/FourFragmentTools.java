@@ -70,6 +70,16 @@ public class FourFragmentTools {
             "主线任务开放不断，成就无肝大师","多元结合，个性搭配","氪金大师，人非勿进","畅享末日游戏的快感"};
 
 
+    public static  String xiangqingvideo[]={
+            "http://sj.video.5054399.com/sjyx/jdqscjzcccaz/jdqscjzcccaz2.mp4",
+            "http://sj.video.5054399.com/sjyx/wangzherongyaoan/wangzherongyao.mp4",
+            "http://sj.video.5054399.com/sjyx/muyangrenzhixinaz/muyangrenzhixinaz.mp4",
+            "http://sj.video.5054399.com/sjyx/di5rgaz/di5rgaz5.mp4",
+            "http://sj.video.5054399.com/sjyx/yuanqiqishi/yuanqiqishi.mp4",
+            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+
+    };
+
 
     public  static  String xiangqingtext2[]={
             "大吉大利，今晚刺激！《绝地求生：刺激战场》作为绝地求生正版手游，完美还原端游的纯正游戏体验。\n",

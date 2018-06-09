@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
+import com.example.l.wanshaapp.Rankingtools.Tools;
 import com.example.l.wanshaapp.XiangQingActivity;
 
 
@@ -67,6 +68,7 @@ public class ThreeFragmentAdapter extends BaseAdapter{
                 bundle.putString("date4",item_date4.getText().toString());
                 bundle.putString("date",item_date.getText().toString());
                 bundle.putString("date2",item_date2.getText().toString());
+                bundle.putString("xiangqingvideo", ThreeFragmentTools.xiangqingvideo[position]);
                 bundle.putString("date3",item_date3.getText().toString());
                 bundle.putString("date5",item_date5.getText().toString());
                 bundle.putString("xiangqingtext1",item_date6.getText().toString());

@@ -30,7 +30,7 @@ public class XiangQingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
 
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
-        jcVideoPlayerStandard.setUp("http://cs245-hc50.aipai.com/user/563/43419563/1006/card/48058984/card.mp4", JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
+        jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
 
 
