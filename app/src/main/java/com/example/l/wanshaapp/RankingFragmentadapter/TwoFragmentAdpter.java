@@ -79,6 +79,7 @@ public class TwoFragmentAdpter extends BaseAdapter {
                 bundle.putInt("image5",TwoFragmentTools.img5[position]);
                 bundle.putString("xiangqingtext2",TwoFragmentTools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",TwoFragmentTools.xiangqingtext4[position]);
+                bundle.putString("download",TwoFragmentTools.download[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

@@ -77,6 +77,7 @@ public class FourFragmentAdpter extends BaseAdapter {
                 bundle.putInt("image5",FourFragmentTools.img5[position]);
                 bundle.putString("xiangqingtext2",FourFragmentTools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",FourFragmentTools.xiangqingtext4[position]);
+                bundle.putString("download",FourFragmentTools.download[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

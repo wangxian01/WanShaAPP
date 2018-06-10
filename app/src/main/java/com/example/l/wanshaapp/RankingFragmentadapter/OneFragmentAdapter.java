@@ -77,9 +77,9 @@ public class OneFragmentAdapter extends BaseAdapter{
                 bundle.putInt("image5",Tools.img5[position]);
                 bundle.putString("xiangqingtext2",Tools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",Tools.xiangqingtext4[position]);
+                bundle.putString("download",Tools.download[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
-
                 context.startActivity(intent);
 
             }

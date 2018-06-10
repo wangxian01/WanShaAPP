@@ -81,6 +81,19 @@ public class FourFragmentTools {
     };
 
 
+    public static  String download[]={
+            "http://app.p4p.sogou.com/1/20255593/3108377/6dc047670a3deb84baed7ae77c0b3fb0/10015013_com.tencent.tmgp.pubgmhd_h109_0.7.1_d66dff.apk",
+            "http://app.p4p.sogou.com/1/18719753/129821/4ad9659333ce488c01bf0850a5031217/10015008_com.tencent.tmgp.sgame_h169_1.34.1.23_8c860d.apk",
+            "https://a01.y8est.com/0/bao/czjysg06.apk",
+            "https://h55.gdl.netease.com/h55_netease_sogou_cpc_dev_1.5.5_com.netease.dwrg_18OVH2r.apk",
+            "http://dl.wan.sogoucdn.com/dl0/15329/app48763_default_0009001100000.apk?dn=%E5%85%83%E6%B0%94%E9%AA%91%E5%A3%AB.apk",
+            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+    };
+
     public  static  String xiangqingtext2[]={
             "大吉大利，今晚刺激！《绝地求生：刺激战场》作为绝地求生正版手游，完美还原端游的纯正游戏体验。\n",
             "《王者荣耀》是全球首款5V5英雄公平对战手游，腾讯MOBA手游大作！ 作为一款MOBA类游戏，《王者荣耀》特色多多，在同类的游戏中可谓是一枝独秀，艳压全场。",

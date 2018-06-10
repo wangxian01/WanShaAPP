@@ -151,7 +151,8 @@
 
 
         <Button
-            android:id="@+id/shoucang"
+            android:id="@+id/download"
+            android:layout_marginLeft="35dp"
             android:layout_width="65dp"
             android:layout_height="25dp"
             android:background="@drawable/btn_bg"

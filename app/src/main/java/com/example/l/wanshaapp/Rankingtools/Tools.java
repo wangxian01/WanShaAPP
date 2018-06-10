@@ -170,6 +170,19 @@ public class Tools {
             "","","", "","","", "","","", "","","", "","","", "","",""
     };
 
+    public static  String download[]={
+            "http://shouji.360tpcdn.com/180123/3e2ca8de45d69f9d0ef4bd01e0f96357/h.h.r.s.sparklife.other_1.apk",
+            "http://a.9game.cn/aetdads/",
+            "http://dl.wan.sogoucdn.com/dl0/1387/app12195_default_0009001100631.apk?dn=COC%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81.apk\n",
+            "https://www.taptap.com/app/88351",
+            "http://render-ant.9game.cn/p/q/27d8174f15/portal.html?ch=LK_102&ng_ch=KM_53449&lch=VK_443",
+            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+    };
+
 
     public  static  String xiangqingtext4[]={
             "《火花人生》是一款画面非常唯美的休闲手游。游戏中玩家将扮演一个被点燃引线的爆竹在指定时间内要跑到终点，当然路上会有各种障碍或者沟壑，玩家必须眼疾手快使出十八般武功才能取得最好的成绩！感兴趣的小伙伴不妨下载试玩一番！\n" +
