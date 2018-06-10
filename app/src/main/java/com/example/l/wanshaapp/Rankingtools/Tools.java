@@ -161,7 +161,27 @@ public class Tools {
     };
 
 
+    public static  String xiangqingvideo[]= {
+            "http://vod.cdn1.v.17173.com/295400917b3f772a001b6e10964c5b00cd10d5ab790055b4/cx2/FLVList/20180130/1/76942012_38859988_1.mp4",
+            "http://vod.cdn1.v.17173.com/295400f17b3f772a001b6e10964c5b00cd10d5ab790055b4/cx2/FLVList/20180319/1/117402412_38866083_1.mp4",
+            "http://vod.cdn1.v.17173.com/295400457b3f772a001b6e10964c5b00cd10d5ab7a0055b4/cx2/FLVList/20171114/1/117402412_38847398_1.mp4",
+            "http://vod.cdn1.v.17173.com/0ad4000b0912e38b001b67918f495b00e6797ad07b0031b2/cx2/FLVList/20170106/1/103869431_38256575_1.mp4",
+            "http://vod.cdn1.v.17173.com/295400d47b3f772a001b6e10964c5b00cd10d5ab7a0055b4/cx2/FLVList/20161125/1/90043072_37480316_1.mp4",
+            "","","", "","","", "","","", "","","", "","","", "","",""
+    };
 
+    public static  String download[]={
+            "http://shouji.360tpcdn.com/180123/3e2ca8de45d69f9d0ef4bd01e0f96357/h.h.r.s.sparklife.other_1.apk",
+            "http://a.9game.cn/aetdads/",
+            "http://dl.wan.sogoucdn.com/dl0/1387/app12195_default_0009001100631.apk?dn=COC%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81.apk\n",
+            "https://www.taptap.com/app/88351",
+            "http://render-ant.9game.cn/p/q/27d8174f15/portal.html?ch=LK_102&ng_ch=KM_53449&lch=VK_443",
+            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+    };
 
 
     public  static  String xiangqingtext4[]={

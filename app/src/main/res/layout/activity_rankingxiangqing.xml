@@ -6,221 +6,66 @@
     android:background="@color/colorWhite"
     tools:context=".XiangQingActivity">
 
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
             android:id="@+id/xiangqingvideo"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-        <ImageView
-            android:id="@+id/xiangqingpicture"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginTop="240dp"
-            android:src="@drawable/rankinghot_01" />
+        <include layout="@layout/rankingxiangqingtitle"/>
+
+        <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/xiangqingyouximing"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="235dp"
-            android:layout_marginLeft="100dp"
-            android:text="创世战纪0"
-            android:textColor="@color/colorblack"
-            android:textSize="20dp" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_marginTop="260dp"
-    android:layout_marginLeft="100dp">
-        <TextView
-    android:id="@+id/xiangqingyouxishang"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="2dp"
-    android:text="推荐商: "
-    android:textColor="@color/colorblack"
-    android:textSize="15dp" />
-    <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/xiangqingtext1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="成都天元开发工作室"
-        android:textColor="@color/colorSkyblue"
-        android:textSize="15dp" />
-</LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="280dp"
-            android:layout_marginLeft="100dp">
-            <TextView
-                android:id="@+id/XiangQingdate1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:background="@drawable/textview_border"
-                android:gravity="center"
-                android:text="类型"
-                android:textColor="@color/colorSkyblue"
-                android:textSize="20sp" />
+        android:text="爆竹的生活并不容易"
+        android:textSize="20dp"
+        android:textColor="@color/colorblack"/>
+        <TextView
+        android:id="@+id/xiangqingtext2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        android:text="一旦点燃了生命的火花，人生就开始倒计时。
+
+        《火花人生》是一款画面靓丽、讲述爆竹命运的平台游戏。踏上寻找长乐的旅程，传说那是一支导火线从未点燃过的神秘爆竹。不过，人生若无火花,岂不枉来一遭？"
+        />
 
             <TextView
-                android:id="@+id/XiangQingdate2"
+                android:id="@+id/ranking_unfold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/item_date"
-                android:background="@drawable/textview_border"
-                android:gravity="center"
-                android:text="类型"
-                android:textColor="@color/colorSkyblue"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/XiangQingdate3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/item_date2"
-                android:background="@drawable/textview_border"
-                android:gravity="center"
-                android:text="类型"
-                android:textColor="@color/colorSkyblue"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/XiangQingdate4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@+id/item_date3"
-                android:background="@drawable/textview_border"
-                android:gravity="center"
-                android:text="类型"
-                android:textColor="@color/colorSkyblue"
-                android:textSize="15dp" />
-
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:text="展开"
+                android:textSize="14dp" />
         </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="302dp"
-            android:layout_marginLeft="100dp">
-
-        <ImageView
-            android:id="@+id/xiangqingstar"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/star" />
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/star"
-            android:layout_marginTop="4dp"
-            android:id="@+id/imageView" />
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/star" />
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="4dp"
-            android:src="@drawable/star" />
-        <ImageView
-            android:id="@+id/xiangqingstarend"
-            android:layout_marginTop="4dp"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/star"
-            />
-
-            <TextView
-                android:id="@+id/xiangqingpingfen"
-                android:layout_width="20dp"
-                android:layout_height="15dp"
-                android:src="@drawable/star"
-                android:text="6.0" />
-
-
-            <Button
-                android:id="@+id/shoucang"
-                android:layout_width="65dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="90dp"
-                android:background="@drawable/btn_bg"
-                android:backgroundTint="@color/colorSkyblue"
-                android:text="下载"
-                android:textColor="@color/colorWhite"
-                android:textSize="13dp" />
-        </LinearLayout>
-        <View
-
-            android:layout_width="fill_parent"
-            android:layout_marginTop="340dp"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:background="#aa000000" />
-        <TextView
-            android:id="@+id/xiangqingtext1"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="350dp"
-            android:layout_marginLeft="20dp"
-            android:text="爆竹的生活并不容易"
-            android:textSize="20dp"
-            android:textColor="@color/colorblack"/>
-            <TextView
-                android:id="@+id/xiangqingtext2"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="380dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="一旦点燃了生命的火花，人生就开始倒计时。
-
-  《火花人生》是一款画面靓丽、讲述爆竹命运的平台游戏。踏上寻找长乐的旅程，传说那是一支导火线从未点燃过的神秘爆竹。不过，人生若无火花,岂不枉来一遭？"
-                />
 
         <TextView
-            android:id="@+id/xiangqingtext3"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="480dp"
-            android:layout_alignParentEnd="true"
-            android:text="玩啥推荐："
-            android:textColor="@color/colorblack"
-            android:textSize="20dp" />
+        android:id="@+id/xiangqingtext3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="玩啥推荐："
+        android:textColor="@color/colorblack"
+        android:textSize="20dp" />
         <TextView
-            android:id="@+id/xiangqingtext4"
-            android:layout_marginRight="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="510dp"
-            android:layout_marginLeft="20dp"
-            android:text="  《火花人生》是一款画面非常唯美的休闲手游。游戏中玩家将扮演一个被点燃引线的爆竹在指定时间内要跑到终点，当然路上会有各种障碍或者沟壑，玩家必须眼疾手快使出十八般武功才能取得最好的成绩！感兴趣的小伙伴不妨下载试玩一番！" />
-    </RelativeLayout>
+        android:id="@+id/xiangqingtext4"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="  《火花人生》是一款画面非常唯美的休闲手游。游戏中玩家将扮演一个被点燃引线的爆竹在指定时间内要跑到终点，当然路上会有各种障碍或者沟壑，玩家必须眼疾手快使出十八般武功才能取得最好的成绩！感兴趣的小伙伴不妨下载试玩一番！" />
+    </LinearLayout>
 </ScrollView>
 
 

@@ -1,10 +1,19 @@
 package com.example.l.wanshaapp;
 
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * Created by 侯顺发 on 2018/5/31.
@@ -20,6 +29,53 @@ public class XiangQingActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
+
+        JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
+        jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
+        jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
+
+        //下载游戏
+        Button download=(Button)findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
+                //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
+                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                ////启动
+            }
+        });
+
+
+
+        /**
+         * 设置收起和展开状态
+         */
+        final TextView ranking_unfold=findViewById(R.id.ranking_unfold);
+        final BeanChoiceness beanChoiceness=new BeanChoiceness();
+        beanChoiceness.setunfold(false);
+
+        ranking_unfold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean flag = beanChoiceness.getunfold();
+                if (flag){
+                    xiangqingtext2.setMaxLines(5);
+                    ranking_unfold.setText("展开");
+                    ranking_unfold.setTextColor(Color.parseColor("#464646"));
+                    beanChoiceness.setunfold(false);
+                }else{
+                    xiangqingtext2.setMaxLines(1000);
+                    ranking_unfold.setText("收起");
+                    ranking_unfold.setTextColor(Color.parseColor("#1296DB"));
+                    beanChoiceness.setunfold(true);
+                }
+            }
+        });
+
+
         //实例化排行榜的对象
         title1 = findViewById(R.id.xiangqingyouximing);
         item_date=findViewById(R.id.XiangQingdate1);

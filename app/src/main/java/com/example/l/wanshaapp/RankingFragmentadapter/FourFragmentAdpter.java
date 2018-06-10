@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.Rankingtools.FourFragmentTools;
+import com.example.l.wanshaapp.Rankingtools.Tools;
 import com.example.l.wanshaapp.XiangQingActivity;
 
 
@@ -69,12 +70,14 @@ public class FourFragmentAdpter extends BaseAdapter {
                 bundle.putString("date",item_date.getText().toString());
                 bundle.putString("date2",item_date2.getText().toString());
                 bundle.putString("date3",item_date3.getText().toString());
+                bundle.putString("xiangqingvideo", FourFragmentTools.xiangqingvideo[position]);
                 bundle.putString("date5",item_date5.getText().toString());
                 bundle.putString("xiangqingtext1",item_date6.getText().toString());
                 bundle.putInt("image",FourFragmentTools.img[position]);
                 bundle.putInt("image5",FourFragmentTools.img5[position]);
                 bundle.putString("xiangqingtext2",FourFragmentTools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",FourFragmentTools.xiangqingtext4[position]);
+                bundle.putString("download",FourFragmentTools.download[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

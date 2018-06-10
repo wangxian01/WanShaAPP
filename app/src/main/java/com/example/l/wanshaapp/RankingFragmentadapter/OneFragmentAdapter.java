@@ -72,13 +72,14 @@ public class OneFragmentAdapter extends BaseAdapter{
                 bundle.putString("date3",item_date3.getText().toString());
                 bundle.putString("date5",item_date5.getText().toString());
                 bundle.putString("xiangqingtext1",item_date6.getText().toString());
+                bundle.putString("xiangqingvideo",Tools.xiangqingvideo[position]);
                 bundle.putInt("image",Tools.img[position]);
                 bundle.putInt("image5",Tools.img5[position]);
                 bundle.putString("xiangqingtext2",Tools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",Tools.xiangqingtext4[position]);
+                bundle.putString("download",Tools.download[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
-
                 context.startActivity(intent);
 
             }

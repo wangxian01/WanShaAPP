@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,20 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DynamicHome.DynamicMainActivity"></activity>
-        <activity android:name=".HomeBannerActivity">
+        <activity android:name=".DynamicHome.DynamicMainActivity" />
+        <activity android:name=".HomeBannerActivity"></activity>
+        <activity
+            android:name=".DynamicCommentDetails.CommentDetailsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".JCVideoPlayerStandard.player" />
+        <activity android:name=".WanShaLogin.RegisteredActivity" />
+        <activity android:name=".WanShaLogin.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DynamicCommentDetails.CommentDetailsActivity"
-                   android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".JCVideoPlayerStandard.player"></activity>
-        <activity android:name=".WanShaLogin.RegisteredActivity"></activity>
-        <activity android:name=".XiangQingActivity">
+        <activity android:name=".DyFocusCommentDetails.FcousCommentActivity">
+
         </activity>
+        <activity android:name=".XiangQingActivity"></activity>
     </application>
 
 </manifest>
