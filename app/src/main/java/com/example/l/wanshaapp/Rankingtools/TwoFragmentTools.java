@@ -73,9 +73,9 @@ public class TwoFragmentTools {
     public static  String xiangqingvideo[]={
             "http://ghc48.aipai.com/user/668/33768668/6240107/card/48158248/card.mp4?l=a",
             "",
-            "http://vod.cdn1.v.17173.com/0ad4006e0912e38b001b67918f495b00e6797ad09f0031b2/cx2/FLVList/20180602/1/72453965_38876995_1.mp4",
-            "http://vod.cdn1.v.17173.com/0ad400980912e38b001b67918f495b00e6797ad09f0031b2/cx2/FLVList/20180425/1/137644358_38871724_1.mp4",
-            "",
+            "http://sj.video.5054399.com/sjyx/fifazuqiushijieaz/fifazuqiushijieaz.mp4",
+            "http://sj.video.5054399.com/sjyx/app_gonglue/xydbj/20180319xinyoudabaojian1244.mp4",
+            "http://sj.video.5054399.com/sjyx/luandoutang301az/luandoutang301az.mp4",
             "",
             "http://vod.cdn1.v.17173.com/2954003b7b3f772a001b6e10964c5b00cd10d5aba00055b4/cx2/FLVList/20180608/1/129967111_38877830_1.mp4",
             "http://vod.cdn1.v.17173.com/0ad4006d0912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180607/1/129967111_38877641_1.mp4",

@@ -76,6 +76,28 @@ public class XiangQingActivity extends AppCompatActivity {
         });
 
 
+        final TextView ranking_unfold2=findViewById(R.id.ranking_unfold2);
+        final BeanChoiceness beanChoiceness2=new BeanChoiceness();
+        beanChoiceness2.setunfold(false);
+
+        ranking_unfold2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean flag = beanChoiceness2.getunfold();
+                if (flag){
+                    xiangqingtext4.setMaxLines(8);
+                    ranking_unfold2.setText("展开");
+                    ranking_unfold2.setTextColor(Color.parseColor("#464646"));
+                    beanChoiceness2.setunfold(false);
+                }else{
+                    xiangqingtext4.setMaxLines(1000);
+                    ranking_unfold2.setText("收起");
+                    ranking_unfold2.setTextColor(Color.parseColor("#1296DB"));
+                    beanChoiceness2.setunfold(true);
+                }
+            }
+        });
+
         //实例化排行榜的对象
         title1 = findViewById(R.id.xiangqingyouximing);
         item_date=findViewById(R.id.XiangQingdate1);

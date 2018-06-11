@@ -157,7 +157,7 @@
             android:layout_height="25dp"
             android:background="@drawable/btn_bg"
             android:backgroundTint="@color/colorSkyblue"
-            android:text="下载"
+            android:text="下载/预约"
             android:textColor="@color/colorWhite"
             android:textSize="13dp" />
     </LinearLayout>

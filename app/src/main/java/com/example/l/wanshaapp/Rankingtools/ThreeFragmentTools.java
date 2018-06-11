@@ -71,12 +71,13 @@ public class ThreeFragmentTools {
             "母亲再也不用担心我的肝了，","带上你的美少女去征服大海吧","错的不是我，是这个世界","无序模式下的人类黑暗面"};
 
     public static  String xiangqingvideo[]={
-            "http://vod.cdn1.v.17173.com/0ad400a80912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180526/1/34315258_38875801_1.mp4",
-            "http://vod.cdn1.v.17173.com/0ad400ce0912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180608/1/138079821_38877895_1.mp4",
+            "http://sj.video.5054399.com/sjyx/app_gonglue/shouyou/xcsp/20171129TYMYDXCP.mp4",
+            "http://sj.video.5054399.com/sjyx/baoleizhiyeaz/baoleizhiye.mp4",
             "http://sj.video.5054399.com/sjyx/huoyingrenzheOLaz02/huoyingrenzheOLaz02.mp4",
             "http://hc49.aipai.com/user/880/38107880/1004/card/48186572/card.mp4?l=b",
-            "http://vod.cdn1.v.17173.com/295400e57b3f772a001b6e10964c5b00cd10d5aba10055b4/cx2/FLVList/20170508/1/133364836_38810068_1.mp4",
-            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+            "http://sj.video.5054399.com/sjyx/app_gonglue/fzscjh/201803261.mp4",
+            "http://sj.video.5054399.com/sjyx/benghuai3az/benghuai3az.mp4",
+            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
 
     };
 

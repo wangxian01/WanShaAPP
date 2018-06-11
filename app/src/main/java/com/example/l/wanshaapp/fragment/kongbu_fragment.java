@@ -9,6 +9,8 @@ import android.widget.ListView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
+import com.example.l.wanshaapp.fenleiresource.jiemiresource;
+import com.example.l.wanshaapp.fenleiresource.kongburesource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,10 +36,9 @@ public class kongbu_fragment extends android.support.v4.app.Fragment {
 
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("youximing", "创世战纪"+i);
-            map.put("riqi", "创世战纪"+i);
-            map.put("wuyu", "创世战纪");
-            map.put("pingfen", "创世战纪");
+            map.put("youximing", kongburesource.kongbu_youximing[i]);
+            map.put("jiemi_image",kongburesource.kongbu_string[i]);
+            map.put("jianjie",kongburesource.kongbu_jianjie[i]);
             dataList.add(map);
         }
     }
