@@ -51,7 +51,7 @@
 
                     <ImageView
                         android:id="@+id/zhandou"
-                        android:layout_width="340dp"
+                        android:layout_width="300dp"
                         android:layout_height="200dp"
                         android:layout_alignLeft="@+id/black"
                         android:src="@mipmap/zhandou"
