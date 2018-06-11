@@ -51,11 +51,9 @@
 
                     <ImageView
                         android:id="@+id/zhandou"
-                        android:layout_width="wrap_content"
-                        android:layout_height="178dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_width="340dp"
+                        android:layout_height="200dp"
                         android:layout_alignLeft="@+id/black"
-                        android:background="@drawable/bordergg"
                         android:src="@mipmap/zhandou"
                         tools:ignore="NotSibling" />
                 </RelativeLayout>

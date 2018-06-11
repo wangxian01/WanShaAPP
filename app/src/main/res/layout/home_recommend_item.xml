@@ -18,15 +18,17 @@
         >
 
         <TextView
-            android:id="@+id/recommendtitle"
+            android:id="@+id/diyihang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="标题"
+            android:text="介绍"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textSize="20sp"
             />
 
         <TextView
-            android:id="@+id/bigtitle"
+            android:id="@+id/dierhang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -39,8 +41,6 @@
     <ImageView
         android:id="@+id/recommendpicture"
         android:padding="10dp"
-        android:layout_width="390dp"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/h"/>
+        android:layout_width="340dp"
+        android:layout_height="270dp" />
 </LinearLayout>

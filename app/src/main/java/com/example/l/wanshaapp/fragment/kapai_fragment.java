@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
+import com.example.l.wanshaapp.fenleiresource.kapairesource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,10 +38,9 @@ public class kapai_fragment extends Fragment {
 
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("youximing", "创世战纪"+i);
-            map.put("riqi", "创世战纪"+i);
-            map.put("wuyu", "创世战纪");
-            map.put("pingfen", "创世战纪");
+            map.put("youximing", kapairesource.kapai_youximing[i]);
+            map.put("jiemi_image",kapairesource.kapai_string[i]);
+            map.put("jianjie",kapairesource.kapai_jianjie[i]);
             dataList.add(map);
         }
     }

@@ -53,58 +53,60 @@ public class FcousCommentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fcous_comment);
+
+
         mFcousCommentImg = (ImageView) findViewById(R.id.fcous_comment_img);
         mFocusCommentsUserLogo = (CircleImageView) findViewById(R.id.focus_comments_userLogo);
         mFocusCommentsUserName = (TextView) findViewById(R.id.focus_comments_userName);
         mFocusCommentsTime = (TextView) findViewById(R.id.focus_comments_time);
         mFocusCommentsLike = (ImageView) findViewById(R.id.focus_comments_like);
         mFocusCommentTextMain = (TextView) findViewById(R.id.focus_comment_text_main);
-        mFocusCommentsMainlist = (ListView) findViewById(R.id.focus_comments_mainlist);
-        mFocusCommentsPl = (TextView) findViewById(R.id.focus_comments_pl);
+          mFocusCommentsMainlist = (ListView) findViewById(R.id.focus_comments_mainlist);
+          mFocusCommentsPl = (TextView) findViewById(R.id.focus_comments_pl);
         mFocusCommentsTextUnfold = (TextView) findViewById(R.id.focus_comments_text_unfold);
 
         //传递参数
         Bundle bundle = getIntent().getExtras();
         SerializableMap serializableMap = (SerializableMap) bundle.get("map");
 
-        //设置图片
-        Picasso.with(this)
-                .load(String.valueOf(serializableMap.getMap("map").get("ImgAddress")))
-                .into(mFcousCommentImg);
+//        //设置图片
+//        Picasso.with(this)
+//                .load(String.valueOf(serializableMap.getMap("map").get("ImgAddress")))
+//                .into(mFcousCommentImg);
 
-        //获取头像
-        Picasso.with(this)
-                .load(String.valueOf(serializableMap.getMap("map").get("Portrait")))
-                .into(mFocusCommentsUserLogo);
-        //获取up主名称
-        mFocusCommentsUserName.setText(String.valueOf(serializableMap.getMap("map").get("FocusName")));
-        //获取发布时间
-        mFocusCommentsTime.setText(String.valueOf(serializableMap.getMap("map").get("FocusTime")));
-        //获取游戏介绍文字
-        mFocusCommentTextMain.setText(String.valueOf(serializableMap.getMap("map").get("FocusText")));
-        /**
-         * 设置收起和展开状态
-         */
-        final BeanChoiceness beanChoiceness = new BeanChoiceness();
-        beanChoiceness.setunfold(false);
-
-        mFocusCommentsTextUnfold.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean flag = beanChoiceness.getunfold();
-                if (flag){
-                    mFocusCommentTextMain.setMaxLines(2);
-                    mFocusCommentsTextUnfold.setText("展开");
-                    mFocusCommentsTextUnfold.setTextColor(Color.parseColor("#464646"));
-                    beanChoiceness.setunfold(false);
-                }else{
-                    mFocusCommentTextMain.setMaxLines(1000);
-                    mFocusCommentsTextUnfold.setText("收起");
-                    mFocusCommentsTextUnfold.setTextColor(Color.parseColor("#1296DB"));
-                    beanChoiceness.setunfold(true);
-                }
-            }
-        });
+//        //获取头像
+//        Picasso.with(this)
+//                .load(String.valueOf(serializableMap.getMap("map").get("Portrait")))
+//                .into(mFocusCommentsUserLogo);
+//        //获取up主名称
+//        mFocusCommentsUserName.setText(String.valueOf(serializableMap.getMap("map").get("FocusName")));
+//        //获取发布时间
+//        mFocusCommentsTime.setText(String.valueOf(serializableMap.getMap("map").get("FocusTime")));
+//        //获取游戏介绍文字
+//        mFocusCommentTextMain.setText(String.valueOf(serializableMap.getMap("map").get("FocusText")));
+//        /**
+//         * 设置收起和展开状态
+//         */
+//        final BeanChoiceness beanChoiceness = new BeanChoiceness();
+//        beanChoiceness.setunfold(false);
+//
+//        mFocusCommentsTextUnfold.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                boolean flag = beanChoiceness.getunfold();
+//                if (flag){
+//                    mFocusCommentTextMain.setMaxLines(2);
+//                    mFocusCommentsTextUnfold.setText("展开");
+//                    mFocusCommentsTextUnfold.setTextColor(Color.parseColor("#464646"));
+//                    beanChoiceness.setunfold(false);
+//                }else{
+//                    mFocusCommentTextMain.setMaxLines(1000);
+//                    mFocusCommentsTextUnfold.setText("收起");
+//                    mFocusCommentsTextUnfold.setTextColor(Color.parseColor("#1296DB"));
+//                    beanChoiceness.setunfold(true);
+//                }
+//            }
+//        });
 
         mFocusCommentsPl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +117,8 @@ public class FcousCommentActivity extends AppCompatActivity {
 
 
         initDataList();
+        View headView = getLayoutInflater().inflate(R.layout.headview_fcou_comment, null);
+        mFocusCommentsMainlist.addHeaderView(headView);
         //添加适配器
         adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
         mFocusCommentsMainlist.setAdapter(adapterCommentMain);
@@ -168,6 +172,7 @@ public class FcousCommentActivity extends AppCompatActivity {
                     dataList.add(map);
                     adapterCommentMain.addTheCommentData(0,dataList);
                     //mFocusCommentsMainlist.smoothScrollToPosition(0);
+                    mFocusCommentsMainlist.deferNotifyDataSetChanged();
                     adapterCommentMain.notifyDataSetChanged();
                     Toast.makeText(FcousCommentActivity.this,"评论成功",Toast.LENGTH_SHORT).show();
 
