@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@color/white"
@@ -18,7 +18,7 @@
         android:id="@+id/youximing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="70dp"
         android:text="创世战记"
         android:textSize="17dp"
         android:textColor="@color/colorblack"/>
@@ -53,20 +53,20 @@
         android:textSize="10dp"
         android:background="@drawable/image"
         android:layout_alignTop="@+id/jianjie"
-        android:layout_toRightOf="@+id/jianjie"
-        android:layout_marginLeft="60dp"/>
+        android:layout_toRightOf="@+id/wuyu"
+        android:layout_marginLeft="210dp"/>
 
-    <Button
+    <ImageView
         android:id="@+id/fenlei1dongzuo"
         android:layout_width="35dp"
         android:layout_height="12dp"
         android:layout_below="@+id/pingfen"
         android:layout_alignLeft="@+id/youximing"
-        android:background="@drawable/dongzuo"
+        android:background="@drawable/fenlei_dongzuo"
         android:layout_marginTop="2dp"
         />
 
-    <Button
+    <ImageView
         android:id="@+id/fenlei1kongbu"
         android:layout_width="35dp"
         android:layout_height="12dp"

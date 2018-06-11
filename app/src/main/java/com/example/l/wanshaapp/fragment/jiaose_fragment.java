@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
+import com.example.l.wanshaapp.fenleiresource.jiaoseresource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,10 +40,9 @@ public class jiaose_fragment extends Fragment {
 
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("youximing", "创世战纪"+i);
-            map.put("riqi", "创世战纪"+i);
-            map.put("wuyu", "创世战纪");
-            map.put("pingfen", "创世战纪");
+            map.put("youximing", jiaoseresource.jiaose_youximing[i]);
+            map.put("jiemi_image",jiaoseresource.jiaose_string[i]);
+            map.put("jianjie",jiaoseresource.jiaose_jianjie[i]);
             dataList.add(map);
         }
     }

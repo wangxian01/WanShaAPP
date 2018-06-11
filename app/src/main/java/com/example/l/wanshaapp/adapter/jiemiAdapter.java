@@ -1,6 +1,7 @@
 package com.example.l.wanshaapp.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,7 @@ public class jiemiAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // 声明内部类
-        UtilList util = null;
+        UtilList util=null ;
         // 中间变量
         final int flag = position;
         /**
@@ -78,8 +79,8 @@ public class jiemiAdapter extends BaseAdapter{
         }
         util.youximing = (TextView)convertView. findViewById(R.id.youximing);
         util.jianjie=(TextView)convertView.findViewById(R.id.jianjie) ;
-        util.fenlei1dongzuo= (Button) convertView.findViewById(R.id.fenlei1dongzuo);
-        util.wuyu=(ImageView) convertView.findViewById(R.id.wuyu);
+        util.jiemi_image=(ImageView) convertView.findViewById(R.id.wuyu);
+        util.fenlei1dongzuo= (ImageView) convertView.findViewById(R.id.fenlei1dongzuo);
         util.pingfen=(ImageView) convertView.findViewById(R.id.pingfen);
         util.xiazai=(Button) convertView.findViewById(R.id.xiazai);
         util.view=(View)convertView.findViewById(R.id.view);
@@ -88,11 +89,18 @@ public class jiemiAdapter extends BaseAdapter{
 
 
         //设置视频缩略图
-        Picasso.with(convertView.getContext())
+      Picasso.with(convertView.getContext())
                 .load(String.valueOf(map.get("ChoicenessViodeoview")))
-                .into(util.wuyu);
+                .into(util.jiemi_image);
 
+        try {
+
+            util.jiemi_image.setImageResource(Integer.parseInt(String.valueOf(map.get("jiemi_image"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
         util.youximing.setText((String) map.get("youximing"));
+        util.jianjie.setText((String) map.get("jianjie"));
         //util.riqi.setText((String)map.get("riqi"));
         //util.wuyu.setImageResource(R.drawable.wuyu);
         return convertView;
@@ -108,13 +116,12 @@ public class jiemiAdapter extends BaseAdapter{
  *
  */
 class UtilList{
-    ImageView mListtestimg;
     TextView jianjie;
-     ImageView wuyu;
+     ImageView jiemi_image;
     TextView youximing;
    ImageView pingfen;
      Button xiazai;
-    Button fenlei1dongzuo;
+    ImageView fenlei1dongzuo;
      View view;
 
 
