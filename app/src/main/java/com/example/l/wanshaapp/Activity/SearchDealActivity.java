@@ -38,7 +38,7 @@ public class SearchDealActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
     }
-
+//适配器
     public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
         /*       private List<String> list;
 
