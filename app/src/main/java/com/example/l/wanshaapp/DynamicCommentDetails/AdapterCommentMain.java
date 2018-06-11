@@ -57,6 +57,7 @@ public class AdapterCommentMain extends BaseAdapter {
         dataList.add(map);
         notifyDataSetChanged();
         Log.e("测试：", (String) map.get("CommentText"));
+        Log.e("测试：", (String) map.get("UpId"));
     }
 
     @Override
