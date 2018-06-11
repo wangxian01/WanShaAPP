@@ -1,16 +1,17 @@
 package com.example.l.wanshaapp;
 
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
-import com.example.l.wanshaapp.Rankingtools.FourFragmentTools;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
@@ -30,8 +31,23 @@ public class XiangQingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
 
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
-        jcVideoPlayerStandard.setUp("http://cs245-hc50.aipai.com/user/563/43419563/1006/card/48058984/card.mp4", JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
+        jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
+
+        //下载游戏
+        Button download=(Button)findViewById(R.id.download);
+        download.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
+                //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
+                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                ////启动
+            }
+        });
+
 
 
         /**

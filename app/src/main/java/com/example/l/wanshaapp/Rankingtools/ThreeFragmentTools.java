@@ -69,6 +69,31 @@ public class ThreeFragmentTools {
             "经典重现，策略对战", "穿越火线，寻找曙光", "富含文字的Galgame游戏","在史前巨兽和丧尸潮流中生存下去",
             "为回归地球献上你的生命","战场全随机，横竖都能玩", "端游改手游，高画质的保障", "无限循环，多种结局",
             "母亲再也不用担心我的肝了，","带上你的美少女去征服大海吧","错的不是我，是这个世界","无序模式下的人类黑暗面"};
+
+    public static  String xiangqingvideo[]={
+            "http://vod.cdn1.v.17173.com/0ad400a80912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180526/1/34315258_38875801_1.mp4",
+            "http://vod.cdn1.v.17173.com/0ad400ce0912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180608/1/138079821_38877895_1.mp4",
+            "http://sj.video.5054399.com/sjyx/huoyingrenzheOLaz02/huoyingrenzheOLaz02.mp4",
+            "http://hc49.aipai.com/user/880/38107880/1004/card/48186572/card.mp4?l=b",
+            "http://vod.cdn1.v.17173.com/295400e57b3f772a001b6e10964c5b00cd10d5aba10055b4/cx2/FLVList/20170508/1/133364836_38810068_1.mp4",
+            "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
+
+    };
+
+
+    public static  String download[]={
+            "http://wuxia.qq.com/",
+            "http://render-ant.9game.cn/p/q/29fb90efce/portal.html?ch=LN_307&ng_ch=KM_69176&lch=VN_752&a=48245_1524643143579",
+            "https://www.1gamer.cn/prom/tg/game?appid=12695&et=3&cid=3236&k=e781abe5bdb1e5bf8de880854f4c",
+            "http://01.android2-phone.ujint.cn:8090/dilaozhizaozhe_yxdown.com.apk?ch=myx&sid=722750&name=%e5%9c%b0%e5%9f%8e%e5%88%b6%e4%bd%9c%e8%80%85&rec=False&stype=%e8%a7%92%e8%89%b2%e6%89%ae%e6%bc%94&tags=RPG%2c%e5%83%8f%e7%b4%a0%2c2D%2c%e5%a1%94%e9%98%b2%2c%e5%9c%b0%e7%89%a2",
+            "http://playark.com/",
+            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+    };
+
     public  static  String xiangqingtext2[]={
             "《天涯明月刀》手游改编自为腾讯同名端游，是一款3D MMORPG游戏，目前手游仍在研发阶段。",
 

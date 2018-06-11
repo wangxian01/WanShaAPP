@@ -70,7 +70,31 @@ public class TwoFragmentTools {
             "生存或者死亡，你对恐惧一无所知","快速提升你的象棋技巧", "四大种族六大职业供你选择，去成为王吧", "公会战场全天候激情战斗",
             "FIFPro官方正版授权","率领一众武将与敌人征战沙场","一入豪门深似海，步步危机","不需要动脑子的好游戏"};
 
+    public static  String xiangqingvideo[]={
+            "http://ghc48.aipai.com/user/668/33768668/6240107/card/48158248/card.mp4?l=a",
+            "",
+            "http://vod.cdn1.v.17173.com/0ad4006e0912e38b001b67918f495b00e6797ad09f0031b2/cx2/FLVList/20180602/1/72453965_38876995_1.mp4",
+            "http://vod.cdn1.v.17173.com/0ad400980912e38b001b67918f495b00e6797ad09f0031b2/cx2/FLVList/20180425/1/137644358_38871724_1.mp4",
+            "",
+            "",
+            "http://vod.cdn1.v.17173.com/2954003b7b3f772a001b6e10964c5b00cd10d5aba00055b4/cx2/FLVList/20180608/1/129967111_38877830_1.mp4",
+            "http://vod.cdn1.v.17173.com/0ad4006d0912e38b001b67918f495b00e6797ad0a00031b2/cx2/FLVList/20180607/1/129967111_38877641_1.mp4",
+            "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
 
+    };
+
+    public static  String download[]={
+            "http://down.muzhiwan.com//channelfile/openfile/2018/05/21/com.ubisoft.rabbidsrunner.mzw_5b024840daf74_1527175501sg7000002.apk",
+            "http://m.news.4399.com/mstthzx/xinde/m/820150.html",
+            "http://app.p4p.sogou.com/1/20501984/3406316/3425fed304384d3e40085e40f6b82063/10015005_com.tencent.fifamobile_h111_1.0.0.05_833aa3.apk",
+            "http://app.p4p.sogou.com/1/19998813/3403318/f9e9163be85bbf469c163be9a5b2d006/yzssg0504.apk",
+            "http://gdl.25pp.com/s/4/12/20180531100155_ldth5_full_uc_V1726_so20M_0_v30103.apk?x-oss-process=udf/uc-apk,ZBHDgD50Kl4qPQ==5ed25fcf53ff81a1&did=aa4ad4744cef4597af014f1dbd05ef78&cc=2683093745&vh=441699c14df302ac0732449025ad7701&sf=67888271",
+            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
+            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+    };
 
     public  static  String xiangqingtext2[]={
             "这款游戏采用了竖版3D模式呈现，游戏的色彩分明。我们的主角是一只非常搞怪的兔子，它拥有愚笨的身材，与传统可爱兔子还是有一定差距，最吸引玩家的的是它那一副傻呵呵的表情，看见了就想笑。",
