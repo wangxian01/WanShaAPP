@@ -38,34 +38,35 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/guanzhutubiao"
             android:textSize="20sp"
             android:text="关注" />
         <TextView
             android:layout_marginTop="-30dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="90dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"/>
         <TextView
             android:layout_marginTop="-26dp"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="120dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="粉丝" />
         <TextView
-            android:layout_marginLeft="220dp"
+            android:layout_marginLeft="180dp"
             android:layout_marginTop="-30dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"/>
         <TextView
-            android:layout_marginStart="250dp"
+            android:layout_marginStart="200dp"
             android:layout_marginTop="-26dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
@@ -77,6 +78,7 @@
           android:layout_width="40dp"
           android:layout_height="40dp" />
         <TextView
+            android:id="@+id/yuyuexiazaiid"
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
             android:layout_width="wrap_content"

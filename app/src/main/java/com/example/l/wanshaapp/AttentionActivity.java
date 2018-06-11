@@ -13,6 +13,8 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.example.l.wanshaapp.Activity.GuanzhuGameActivity;
+
 
 public class AttentionActivity extends AppCompatActivity {
     //用于添加每一个选项卡的id
@@ -58,9 +60,9 @@ public class AttentionActivity extends AppCompatActivity {
     }
     //每个页面放置的Activitye
     public void init_intent() {
-        intents[0] = new Intent(this, HomeBannerActivity.class);
-        intents[1] = new Intent(this, HomeBannerActivity.class);
-        intents[2] = new Intent(this, HomeBannerActivity.class);
+        intents[0] = new Intent(this, GuanzhuGameActivity.class);
+        intents[1] = new Intent(this, GuanzhuGameActivity.class);
+        intents[2] = new Intent(this, GuanzhuGameActivity.class);
     }
     }
 
