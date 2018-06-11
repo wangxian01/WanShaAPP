@@ -18,6 +18,7 @@ import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
 import com.example.l.wanshaapp.fragment.HomeFragment;
@@ -103,11 +104,8 @@ public class HomeBannerActivity extends AppCompatActivity {
         searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View contentView = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.searchframe, null);
-                mPopWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-                mPopWindow.setContentView(contentView);
-                View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
-                mPopWindow.showAtLocation(rootview, Gravity.TOP, 0, 150);
+                Intent intent = new Intent(getApplicationContext(), SearchApp.class);
+                startActivity(intent);
             }
         });
         group = (RadioGroup) findViewById(R.id.rg);

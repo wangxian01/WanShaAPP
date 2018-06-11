@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/guanzhu_dibulan">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/guanzhu_fanhui_icon"/>
+
+        <EditText
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyEditText"
+            android:hint="游戏，厂商，帖子等"/>
+
+        <ImageView
+            android:id="@+id/searchimageview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo2"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2">
+
+        <LinearLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门搜索"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+        </LinearLayout>
+
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:columnCount="3"
+            app:rowCount="3">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    app:layout_rowWeight="1"
+    app:layout_columnWeight="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:layout_marginStart="40dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:text="明日之后"
+        android:background="@color/gray"/>
+
+</LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="堡垒之夜"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="香肠派对"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="影之诗"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text=" 5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="牧羊人之心"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="6"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="炉石传说"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="7"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="40dp"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:text="天涯明月刀"
+                    android:background="@color/gray"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.GridLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3">
+    </LinearLayout>
+
+</LinearLayout>

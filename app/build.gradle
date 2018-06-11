@@ -42,4 +42,5 @@ dependencies {
     api 'fm.jiecao:jiecaovideoplayer:5.5.2'
     implementation 'com.android.support:recyclerview-v7:27.0.2'
     implementation 'com.zhy:okhttputils:2.0.0'
+    implementation 'com.android.support:gridlayout-v7:27.1.1'
 }
