@@ -165,12 +165,13 @@ public class FcousCommentActivity extends AppCompatActivity {
                 String commentContent = commentText.getText().toString().trim();
                 if(!TextUtils.isEmpty(commentContent)){
                     dialog.dismiss();
-                    dataList = new ArrayList<Map<String, Object>>();
+                    //dataList = new ArrayList<Map<String, Object>>();
                     Map<String, Object> map = new HashMap<String, Object>();
+
                     map.put("UpId", "谭林");
                     map.put("CommentText",commentContent);
-                    dataList.add(map);
-                    adapterCommentMain.addTheCommentData(0,dataList);
+                   // dataList.add(map);
+                    adapterCommentMain.addTheCommentData(map);
                     //mFocusCommentsMainlist.smoothScrollToPosition(0);
                     mFocusCommentsMainlist.deferNotifyDataSetChanged();
                     adapterCommentMain.notifyDataSetChanged();

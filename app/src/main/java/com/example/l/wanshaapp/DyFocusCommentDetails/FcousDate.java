@@ -6,7 +6,5 @@ package com.example.l.wanshaapp.DyFocusCommentDetails;
 
 public class FcousDate {
 
-    public static String[] headportrait = {
-            "",""
-    };
+
 }

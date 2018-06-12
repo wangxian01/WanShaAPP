@@ -49,11 +49,11 @@ public class AdapterCommentMain extends BaseAdapter {
     /**
      * by moos on 2018/04/20
      * func:评论成功后插入一条数据
-     * @param index
-     * @param dataList 新的评论数据
+     *
+     * @param
      */
-    public void addTheCommentData(int index, List<Map<String, Object>> dataList) {
-        Map<String, Object> map = dataList.get(index);
+    public void addTheCommentData(Map<String, Object> map) {
+
         dataList.add(map);
         notifyDataSetChanged();
         Log.e("测试：", (String) map.get("CommentText"));
@@ -64,6 +64,7 @@ public class AdapterCommentMain extends BaseAdapter {
     public int getCount() {
         if (dataList == null)
             return 0;
+        Log.e("测试：", String.valueOf(dataList.size()));
         return dataList.size();
     }
 
@@ -111,7 +112,8 @@ public class AdapterCommentMain extends BaseAdapter {
 
             util.mCommentItemUserName.setText((String) map.get("UpId"));
             util.mCommentItemContent.setText((String) map.get("CommentText"));
-
+            Log.e("测试：", (String) map.get("CommentText"));
+            Log.e("测试：", (String) map.get("UpId"));
         return view;
     }
 
