@@ -66,7 +66,7 @@
         android:textColor="#484848"
         android:textSize="14sp"
         android:maxLines="2"
-
+        android:ellipsize="end"
         android:layout_marginLeft="56dp"
         android:layout_marginRight="24dp"
         android:text="这个游戏有bug，外挂还特别多"/>
