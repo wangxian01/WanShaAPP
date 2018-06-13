@@ -56,15 +56,12 @@ public class AdapterCommentMain extends BaseAdapter {
 
         dataList.add(map);
         notifyDataSetChanged();
-        Log.e("测试：", (String) map.get("CommentText"));
-        Log.e("测试：", (String) map.get("UpId"));
     }
 
     @Override
     public int getCount() {
         if (dataList == null)
             return 0;
-        Log.e("测试：", String.valueOf(dataList.size()));
         return dataList.size();
     }
 
@@ -112,8 +109,7 @@ public class AdapterCommentMain extends BaseAdapter {
 
             util.mCommentItemUserName.setText((String) map.get("UpId"));
             util.mCommentItemContent.setText((String) map.get("CommentText"));
-            Log.e("测试：", (String) map.get("CommentText"));
-            Log.e("测试：", (String) map.get("UpId"));
+
         return view;
     }
 
