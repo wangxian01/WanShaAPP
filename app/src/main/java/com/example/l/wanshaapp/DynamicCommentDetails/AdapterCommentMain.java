@@ -78,6 +78,7 @@ public class AdapterCommentMain extends BaseAdapter {
     @Override
     public View getView(int index, View view, ViewGroup arg2) {
 
+
             // 声明内部类
             UtilComment util = null;
             // 中间变量
