@@ -30,7 +30,7 @@
             android:id="@+id/searchimageview"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/logo2"/>
+            android:src="@drawable/dynamic_icon_ture"/>
 
     </android.support.v7.widget.Toolbar>
 

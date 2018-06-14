@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.l.wanshaapp.HomeBannerActivity;
 import com.example.l.wanshaapp.R;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
