@@ -2,6 +2,7 @@ package com.example.l.wanshaapp.adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,28 +82,44 @@ public class jiemiAdapter extends BaseAdapter{
         util.jianjie=(TextView)convertView.findViewById(R.id.jianjie) ;
         util.jiemi_image=(ImageView) convertView.findViewById(R.id.wuyu);
         util.fenlei1dongzuo= (ImageView) convertView.findViewById(R.id.fenlei1dongzuo);
+        util.fenlei1dongzuo2= (ImageView) convertView.findViewById(R.id.fenlei1dongzuo2);
+        util.fenlei1dongzuo3= (ImageView) convertView.findViewById(R.id.fenlei1dongzuo3);
         util.pingfen=(ImageView) convertView.findViewById(R.id.pingfen);
         util.xiazai=(Button) convertView.findViewById(R.id.xiazai);
         util.view=(View)convertView.findViewById(R.id.view);
         // 获取数据显示在各组件
         Map<String, Object> map = dataList.get(position);
 
-
-        //设置视频缩略图
       Picasso.with(convertView.getContext())
                 .load(String.valueOf(map.get("ChoicenessViodeoview")))
                 .into(util.jiemi_image);
 
         try {
-
-            util.jiemi_image.setImageResource(Integer.parseInt(String.valueOf(map.get("jiemi_image"))));
+            util.jiemi_image.setImageResource(Integer.parseInt(String.valueOf(map.get("image"))));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         util.youximing.setText((String) map.get("youximing"));
         util.jianjie.setText((String) map.get("jianjie"));
-        //util.riqi.setText((String)map.get("riqi"));
-        //util.wuyu.setImageResource(R.drawable.wuyu);
+        try {
+            util.fenlei1dongzuo.setImageResource(Integer.parseInt(String.valueOf(map.get("fenlei1dongzuo"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            util.fenlei1dongzuo2.setImageResource(Integer.parseInt(String.valueOf(map.get("fenlei1dongzuo2"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            util.fenlei1dongzuo3.setImageResource(Integer.parseInt(String.valueOf(map.get("fenlei1dongzuo3"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+
         return convertView;
 
     }
@@ -122,6 +139,8 @@ class UtilList{
    ImageView pingfen;
      Button xiazai;
     ImageView fenlei1dongzuo;
+    ImageView fenlei1dongzuo2;
+    ImageView fenlei1dongzuo3;
      View view;
 
 
