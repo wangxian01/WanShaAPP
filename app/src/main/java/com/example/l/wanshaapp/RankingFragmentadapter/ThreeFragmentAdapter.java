@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
 import com.example.l.wanshaapp.Rankingtools.Tools;
+import com.example.l.wanshaapp.Rankingtools.TwoFragmentTools;
 import com.example.l.wanshaapp.XiangQingActivity;
 
 
@@ -77,6 +78,7 @@ public class ThreeFragmentAdapter extends BaseAdapter{
                 bundle.putString("xiangqingtext2",ThreeFragmentTools.xiangqingtext2[position]);
                 bundle.putString("xiangqingtext4",ThreeFragmentTools.xiangqingtext4[position]);
                 bundle.putString("download",ThreeFragmentTools.download[position]);
+                bundle.putString("publisher", ThreeFragmentTools.publisher[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 
 import com.example.l.wanshaapp.R;
-import com.example.l.wanshaapp.Rankingbean.HomeBean;
+import com.example.l.wanshaapp.Rankingbean.RankingFragemntBean;
 import com.example.l.wanshaapp.Rankingtools.Tools;
 
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.Map;
 public class RankingAdapter extends BaseAdapter {
     private List<Map<String, Object>> dataList;
 
-    HomeBean homeBean = new HomeBean();
+    RankingFragemntBean homeBean = new RankingFragemntBean();
     private Context context;
 //    private int resource;
 

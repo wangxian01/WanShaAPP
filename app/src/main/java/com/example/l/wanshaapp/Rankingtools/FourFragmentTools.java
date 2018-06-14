@@ -70,6 +70,14 @@ public class FourFragmentTools {
             "主线任务开放不断，成就无肝大师","多元结合，个性搭配","氪金大师，人非勿进","畅享末日游戏的快感"};
 
 
+    public static String publisher[]={
+            "成都天元开发工作室","谭儿子游戏集团","贤儿子游戏集团","刘儿子游戏集团","发爸爸游戏集团",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
+    };
+
+
     public static  String xiangqingvideo[]={
             "http://sj.video.5054399.com/sjyx/jdqscjzcccaz/jdqscjzcccaz2.mp4",
             "http://sj.video.5054399.com/sjyx/wangzherongyaoan/wangzherongyao.mp4",
