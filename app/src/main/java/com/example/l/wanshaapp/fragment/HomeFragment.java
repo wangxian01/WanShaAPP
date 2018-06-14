@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.HomeListAdapter;
@@ -30,19 +34,15 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment  {
 
-    private int[] imgs = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d};
+    private int[] imgs = {R.drawable.banner2, R.drawable.banner1, R.drawable.banner3, R.drawable.banner4};
     private List<View> viewList;
     private BannerView bannerView;
     private ListView listView;
 
-    public HomeFragment(){
-        super();
 
-    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -91,9 +91,7 @@ public class HomeFragment extends Fragment {
                     public void run() {
                         OkHttpUtils
                                 .get()
-                                .url("http://192.168.43.55:8080/AndroidServers/servlet/HomeListViewData")
-                                /*            .addParams("username",username)
-                                             .addParams("password",password)*/
+                                .url("http://"+getContext().getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
                                 .build()
                                 .execute(new StringCallback() {
                                     @Override
@@ -127,4 +125,5 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
 }

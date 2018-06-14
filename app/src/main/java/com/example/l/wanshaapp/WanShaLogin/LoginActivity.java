@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         OkHttpUtils
                                 .get()
-                                .url("http://192.168.1.187:8080/AndroidServers/WanShaLoginServlet")
+                                .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/WanShaLoginServlet")
                                 .addParams("username", username)
                                 .addParams("password", password)
                                 .build()

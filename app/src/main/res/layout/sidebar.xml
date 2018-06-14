@@ -5,23 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="150dp"
-        android:background="@color/gray">
+        android:background="@drawable/sidebartopbackground">
 
         <ImageButton
             android:layout_gravity="right"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:background="@drawable/ewm_icon"/>
 
         <ImageButton
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/logoicon"/>
         <TextView
             android:id="@+id/login"
             android:layout_width="wrap_content"
@@ -33,12 +35,12 @@
 
     <LinearLayout
         android:background="#ffffff"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/guanzhutubiao"
@@ -46,37 +48,47 @@
             android:text="关注" />
         <TextView
             android:layout_marginTop="-30dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="70dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"/>
         <TextView
             android:layout_marginTop="-26dp"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="100dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="粉丝" />
         <TextView
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="160dp"
             android:layout_marginTop="-30dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="|"/>
         <TextView
-            android:layout_marginStart="200dp"
+            android:layout_marginStart="180dp"
             android:layout_marginTop="-26dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="访问" />
 
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="250dp"
+            android:layout_height="10dp"
+            android:orientation="vertical"
+            android:background="@color/gray"></LinearLayout>
+
       <ImageButton
           android:layout_marginTop="20dp"
           android:layout_width="40dp"
-          android:layout_height="40dp" />
+          android:layout_height="40dp"
+          android:layout_marginStart="10dp"
+          android:background="@drawable/sidebar_icon1"/>
+
         <TextView
             android:id="@+id/yuyuexiazaiid"
             android:layout_marginTop="-35dp"
@@ -88,9 +100,11 @@
 
 
         <ImageButton
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/sidebar_icon2"/>
         <TextView
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
@@ -100,9 +114,11 @@
             android:text="已装游戏"/>
 
         <ImageButton
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/sidebar_icon3"/>
         <TextView
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
@@ -112,9 +128,11 @@
             android:text="已下载"/>
 
         <ImageButton
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/sidebar_icon4"/>
         <TextView
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
@@ -124,9 +142,11 @@
             android:text="我的收藏"/>
 
         <ImageButton
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/sidebar_icon5"/>
         <TextView
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
@@ -136,9 +156,11 @@
             android:text="主题换肤"/>
 
         <ImageButton
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:background="@drawable/sidebar_icon6"/>
         <TextView
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"

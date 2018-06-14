@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +17,7 @@ import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -28,7 +28,7 @@ import com.example.l.wanshaapp.fragment.dongtaifragment;
 
 import java.util.ArrayList;
 
-public class HomeBannerActivity extends AppCompatActivity {
+public class HomeBannerActivity extends AppCompatActivity   {
 
     private Toolbar toolbar;
     private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
@@ -37,6 +37,7 @@ public class HomeBannerActivity extends AppCompatActivity {
     private TextView logintv, yuyuegame,guanzhutubiao;
     private ImageButton loginbutton;
     private String username;
+    private ImageView homesidebaricon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +52,10 @@ public class HomeBannerActivity extends AppCompatActivity {
         }
         setSupportActionBar(toolbar);
         username=getIntent().getStringExtra("username");//获取登陆页传来的用户信息
-
-        //navigationicon的监听
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        homesidebaricon=(ImageView)findViewById(R.id.homesidebaricon);
+        homesidebaricon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //设置contentView
                 View contentView = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.sidebar, null);
 
@@ -117,6 +116,7 @@ public class HomeBannerActivity extends AppCompatActivity {
         // 选中首页，否则开始启动的时候画面展示白板
         group.check(R.id.rb1);
     }
+
 
     //添加fragment布局
     private class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {

@@ -64,7 +64,6 @@ public class HomeListAdapter  extends BaseAdapter {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("ceshi", "onClick: " );
                 Bundle bundle = new Bundle();
                 Intent intent=new Intent(mContext,XiangQingActivity.class);
                 bundle.putString("title1",Tools.data4[1]);
@@ -86,7 +85,7 @@ public class HomeListAdapter  extends BaseAdapter {
 
         diyihang.setText( shuju.get(position).getTitle());
         dierhang.setText(shuju.get(position).getSubtitle());
-        Picasso.with(view.getContext()).load("http://192.168.43.55:8080/AndroidServers/images/image"+position+".jpg").into(imageView);
+        Picasso.with(view.getContext()).load("http://"+mContext.getString(R.string.netip)+":8080/AndroidServers/images/image"+position+".jpg").into(imageView);
        /* imageView.setImageResource(R.drawable.h);*/
     /*    imageView.setImageURI(Uri.fromFile(new File("/sdcard/wansha/image/h.jpg")));*/
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);

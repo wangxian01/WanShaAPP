@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:id="@+id/homelayout"
     tools:context="com.example.l.wanshaapp.HomeBannerActivity">
 
 
@@ -12,16 +12,26 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
-        android:background="@drawable/toolbar1"
-        app:navigationIcon="@drawable/logo1"
+        android:background="@drawable/toolbar_background"
         >
         <!--自定义控件-->
+
+        <ImageView
+            android:id="@+id/homesidebaricon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/logoicon"/>
+        <ImageView
+            android:layout_marginStart="120dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/home_top_icon"/>
         <ImageView
             android:id="@+id/searchbtu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_marginLeft="250dp"
-            android:src="@drawable/logo2" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+           android:layout_marginLeft="120dp"
+            android:src="@drawable/searchlogo" />
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout
@@ -56,46 +66,83 @@
     <RadioGroup
         android:id="@+id/rg"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:background="@color/white">
+
 
         <RadioButton
-            android:drawableBottom="@drawable/logo1"
+
+            android:layout_marginTop="-10dp"
             android:id="@+id/rb1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/home_bottom_icon1_style"
             android:button="@null"
             android:gravity="center" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="-35dp" />
+
+
+
         <RadioButton
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="50dp"
             android:id="@+id/rb2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:button="@null"
             android:gravity="center"
-            android:drawableBottom="@drawable/logo1"
+           android:background="@drawable/home_bottom_icon3_style"
            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分类"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="-35dp"/>
 
         <RadioButton
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="50dp"
             android:id="@+id/rb3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:button="@null"
             android:gravity="center"
-           android:drawableBottom="@drawable/logo1" />
+           android:background="@drawable/home_bottom_icon2_style"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排行榜"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="-45dp"/>
+
 
         <RadioButton
+            android:layout_marginTop="-10dp"
+            android:layout_marginStart="55dp"
             android:id="@+id/rb4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:button="@null"
             android:gravity="center"
-            android:drawableBottom="@drawable/logo1" />
+            android:background="@drawable/home_bottom_icon4_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动态"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="-35dp"/>
+
     </RadioGroup>
 
 </LinearLayout>

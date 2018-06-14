@@ -16,11 +16,6 @@ public class Tools {
             R.drawable.rankinghot_06, R.drawable.rankinghot_07, R.drawable.rankinghot_08, R.drawable.rankinghot_09, R.drawable.rankinghot_10,
             R.drawable.rankinghot_11 , R.drawable.rankinghot_12 , R.drawable.rankinghot_13, R.drawable.rankinghot_14 , R.drawable.rankinghot_15,
             R.drawable.rankinghot_16 , R.drawable.rankinghot_17, R.drawable.rankinghot_18 , R.drawable.rankinghot_19, R.drawable.rankinghot_20 };
-    public  static  int img1[]={
-            R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star,
-            R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star,
-            R.drawable.star , R.drawable.star , R.drawable.star, R.drawable.star , R.drawable.star,
-            R.drawable.star , R.drawable.star , R.drawable.star , R.drawable.star , R.drawable.star };
     public  static  int img5[]={
             R.drawable.errostar, R.drawable.halfstar, R.drawable.errostar, R.drawable.errostar, R.drawable.halfstar,
             R.drawable.halfstar, R.drawable.halfstar, R.drawable.star, R.drawable.star, R.drawable.errostar,

@@ -86,7 +86,6 @@ public class OneFragmentAdapter extends BaseAdapter{
         });
 
 
-        imageView1.setImageResource(Tools.img1[position]);
         imageView.setImageResource(Tools.img[position]);
         imageView5.setImageResource(Tools.img5[position]);
         item_date.setText(Tools.date[position]);

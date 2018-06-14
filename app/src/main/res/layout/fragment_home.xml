@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.HomeFragment">
+    android:id="@+id/mainfragment"
+    tools:context=".fragment.HomeFragment"
+    tools:ignore="InvalidId">
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
@@ -28,6 +30,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/homelisttouch"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.example.l.wanshaapp.ListViewForScrollView
@@ -37,7 +40,9 @@
             android:minHeight="?android:attr/listPreferredItemHeight">
         </com.example.l.wanshaapp.ListViewForScrollView>
     </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </FrameLayout>
