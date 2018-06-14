@@ -122,6 +122,7 @@ public class FragmentFocus extends Fragment {
         Gson gson = new Gson();
         BeanFocus beanFocus = gson.fromJson(jsonfocus,new TypeToken<BeanFocus>() {
         }.getType());
+
         dataList = new ArrayList<Map<String, Object>>();
         for (int i = 0; i <beanFocus.getRows().size(); i++) {
             Map<String, Object> map = new HashMap<String, Object>();

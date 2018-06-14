@@ -36,12 +36,11 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorblack"
             android:textSize="15sp"
-            android:text="推荐商:"/>
+            android:text="开发商:"/>
         <TextView
-            android:id="@+id/xiangqingyouxishang"
+            android:id="@+id/publisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             android:text="成都天元开发工作室"
             android:textColor="@color/colorSkyblue"
             android:textSize="15dp" />

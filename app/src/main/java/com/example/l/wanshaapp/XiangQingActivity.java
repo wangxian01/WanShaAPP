@@ -22,7 +22,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 public class XiangQingActivity extends AppCompatActivity {
     TextView title1;
     ImageView imageView,imageView5;
-    TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4;
+    TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher;
 
     @Override
 
@@ -110,6 +110,7 @@ public class XiangQingActivity extends AppCompatActivity {
         item_date6=findViewById(R.id.xiangqingtext1);
         imageView = findViewById(R.id.xiangqingpicture);
         imageView5 = findViewById(R.id.xiangqingstarend);
+        publisher=findViewById(R.id.publisher);
 
         title1.setText(getIntent().getStringExtra("title1"));//传递详情项目名
         item_date.setText(getIntent().getStringExtra("date"));
@@ -119,6 +120,7 @@ public class XiangQingActivity extends AppCompatActivity {
         item_date5.setText(getIntent().getStringExtra("date5"));
         xiangqingtext2.setText(getIntent().getStringExtra("xiangqingtext2"));
         xiangqingtext4.setText(getIntent().getStringExtra("xiangqingtext4"));
+        publisher.setText(getIntent().getStringExtra("publisher"));
 //        Log.e("打印",getIntent().getStringExtra("xiangqingtext2"));
         item_date6.setText(getIntent().getStringExtra("xiangqingtext1"));
         int image  = getIntent().getExtras().getInt("image");

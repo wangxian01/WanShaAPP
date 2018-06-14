@@ -26,6 +26,7 @@ public class Tools {
             R.drawable.halfstar, R.drawable.halfstar, R.drawable.star, R.drawable.star, R.drawable.errostar,
             R.drawable.errostar , R.drawable.errostar , R.drawable.errostar, R.drawable.errostar, R.drawable.star,
             R.drawable.halfstar, R.drawable.errostar, R.drawable.errostar , R.drawable.star , R.drawable.halfstar   };
+
     //文字资源（游戏名）
     public  static   String title[]={
             "火花人生","阿尔托的奥德赛","部落冲突","Hyperscape","放置江湖：隐世门派",
@@ -62,6 +63,12 @@ public class Tools {
             "8.7","8.5","8.8","9.5","9.7",
             "8.2","8.3","7.5","8.4","9.5",
             "9.1","8.6","8.5","9.7","8.6"};
+    public static String publisher[]={
+            "成都天元开发工作室","谭儿子游戏集团","贤儿子游戏集团","刘儿子游戏集团","发爸爸游戏集团",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
+            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
+    };
 
     public  static  String  data6[]={"" +
             "爆竹的生活并不容易!","探索无尽的沙漠","为了王室而战","一款星光闪闪的速度游戏",
