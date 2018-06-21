@@ -1,5 +1,6 @@
 package com.example.l.wanshaapp.DynamicCommentDetails;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v4.view.NestedScrollingChildHelper;
 import android.util.Log;
@@ -11,8 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.DynamicHome.CircleImageView;
 import com.example.l.wanshaapp.R;
+import com.squareup.picasso.Picasso;
+import com.wx.goodview.GoodView;
 
 import org.w3c.dom.Comment;
 
@@ -100,6 +104,8 @@ public class AdapterCommentMain extends BaseAdapter {
                 util.mCommentItemLike = (ImageView)view. findViewById(R.id.comment_item_like);
                 util.mCommentItemContent = (TextView) view.findViewById(R.id.comment_item_content);
                 util.mCommentItemUnfod = (TextView) view.findViewById(R.id.comment_item_unfod);
+                util.mLikeNumber = (TextView) view.findViewById(R.id.like_number);
+
                 // 增加额外变量
 
                 view.setTag(util);
@@ -108,8 +114,79 @@ public class AdapterCommentMain extends BaseAdapter {
             }
             final Map<String, Object> map = dataList.get(index);
 
-            util.mCommentItemUserName.setText((String) map.get("UpId"));
-            util.mCommentItemContent.setText((String) map.get("CommentText"));
+            util.mCommentItemUserName.setText((String) map.get("Comments_name"));
+            util.mCommentItemContent.setText((String) map.get("Comments_text"));
+            //设置图片
+            Picasso.with(context)
+                .load(String.valueOf(map.get("Comments_portrait")))
+                .into(util.mCommentItemLogo);
+            util.mCommentItemTime.setText((String) map.get("Comments_time"));
+
+            //设置点赞人数的情况
+            int number = 0;
+            if(map.get("Comments_number")==null){
+                util.mLikeNumber.setText("0");
+                number = 0;
+            }else {
+                util.mLikeNumber.setText((String) map.get("Comments_number"));
+                number = Integer.parseInt(String.valueOf(map.get("Comments_number")));
+            }
+
+        final UtilComment finalUtil = util;
+        final BeanChoiceness beanChoiceness = new BeanChoiceness();
+        beanChoiceness.setmumber(number);//点赞人数
+        String likeString = "0";
+        if(likeString.equals(map.get("Comments_like"))){
+            beanChoiceness.setlike(false);//点赞状态true为已点赞
+        }else{
+            if(number == 0){
+                beanChoiceness.setlike(false);
+            }else{
+                beanChoiceness.setlike(true);//点赞状态true为已点赞
+            }
+        }
+        final GoodView goodView = new GoodView(view.getContext());//实例化+或-1动画
+        // 取出bean中当记录状态是否为true，是的话则给img设置focus点赞图片
+        if (beanChoiceness.getlike()) {
+            if(map.get("Comments_number")==null){
+                finalUtil.mCommentItemLike.setImageResource(R.mipmap.dz);
+            }else{
+                finalUtil.mCommentItemLike.setImageResource(R.mipmap.rdz);
+            }
+        } else {
+            finalUtil.mCommentItemLike.setImageResource(R.mipmap.dz);
+        }
+
+        //点击点赞图标
+        util.mCommentItemLike.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View v) {
+                boolean flag = beanChoiceness.getlike();
+                if(flag){
+                    // Log.e("判断","判断失败");
+                    goodView.setText("-1");
+                    goodView.setDistance(20);
+                    goodView.show(v);
+                    finalUtil.mLikeNumber.setText(beanChoiceness.getmumber()-1+"");
+                    beanChoiceness.setmumber(beanChoiceness.getmumber()-1);
+                    beanChoiceness.setlike(false);
+                    finalUtil.mCommentItemLike.setImageResource(R.mipmap.dz);
+                }else {
+                    //设置动画文本
+                    goodView.setText("+1");
+                    //设置动画距离
+                    goodView.setDistance(20);
+                    //显示
+                    goodView.show(v);
+                    finalUtil.mLikeNumber.setText(beanChoiceness.getmumber()+1+"");
+                    beanChoiceness.setmumber(beanChoiceness.getmumber()+1);
+                    beanChoiceness.setlike(true);
+                    finalUtil.mCommentItemLike.setImageResource(R.mipmap.rdz);
+                }
+
+            }
+        });
 
         return view;
     }
@@ -131,5 +208,6 @@ class UtilComment {
     ImageView mCommentItemLike;
      TextView mCommentItemContent;
     TextView mCommentItemUnfod;
+    TextView mLikeNumber;
 
 }

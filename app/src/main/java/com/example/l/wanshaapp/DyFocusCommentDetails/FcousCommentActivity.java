@@ -1,7 +1,9 @@
 package com.example.l.wanshaapp.DyFocusCommentDetails;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Message;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,16 +27,29 @@ import android.widget.Toast;
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.DynamicCommentDetails.AdapterCommentMain;
+import com.example.l.wanshaapp.DynamicCommentDetails.CommentBean;
+import com.example.l.wanshaapp.DynamicCommentDetails.CommentDetailsActivity;
 import com.example.l.wanshaapp.DynamicHome.CircleImageView;
 import com.example.l.wanshaapp.R;
+import com.example.l.wanshaapp.Rankingbean.RankingFragemntBean;
+import com.example.l.wanshaapp.WanShaLogin.RegisteredActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Comment;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class FcousCommentActivity extends AppCompatActivity {
 
@@ -49,6 +65,9 @@ public class FcousCommentActivity extends AppCompatActivity {
     private List<Map<String,Object>> dataList;
     private BottomSheetDialog dialog;
     private AdapterCommentMain adapterCommentMain;
+    private OkHttpClient client = new OkHttpClient();
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +130,7 @@ public class FcousCommentActivity extends AppCompatActivity {
         /*
         * 点击评论
         * */
+
         mFocusCommentsPl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,8 +141,37 @@ public class FcousCommentActivity extends AppCompatActivity {
         mFocusCommentsMainlist.addHeaderView(headView);
         //添加适配器
         adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
+        Log.e("测试：", String.valueOf(dataList));
         mFocusCommentsMainlist.setAdapter(adapterCommentMain);
 
+        /**
+         * 点击listview传递参数（使用map）
+         * */
+        mFocusCommentsMainlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String, Object> map = (Map<String, Object>) mFocusCommentsMainlist.getItemAtPosition(position);
+                final SerializableMap myMap=new SerializableMap();
+                myMap.setMap(map);//将map数据添加到封装的myMap<span></span>中
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("map", myMap);
+                Intent intent=new Intent(FcousCommentActivity.this,ReplayActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+    }
+
+    /**
+     * post请求*/
+    private String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
     }
 
     /**
@@ -130,13 +179,33 @@ public class FcousCommentActivity extends AppCompatActivity {
      */
     private void initDataList() {
         dataList = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i <9; i++) {
-            Map<String, Object> map = new HashMap<String, Object>();
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    String restult = post("http://172.16.59.11:8080/AndroidServers/CommentServlet","");
+                    Gson gson = new Gson();
+                    ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
+                    }.getType());
+                    //Log.e("测试：", String.valueOf(commentBean.get(0).getComments_text()));
 
-            map.put("UpId", "游客甲"+i);
-            map.put("CommentText","评论内容"+i);
-            dataList.add(map);
-        }
+                    for (int i = 0; i < commentBean.size(); i++) {
+                        Map<String, Object> map = new HashMap<String, Object>();
+                        map.put("Comments_name", commentBean.get(i).getComments_name());
+                        map.put("Comments_like", commentBean.get(i).getComments_like());
+                        map.put("Comments_portrait", commentBean.get(i).getComments_portrait());
+                        map.put("Comments_text", commentBean.get(i).getComments_text());
+                        map.put("Comments_time", commentBean.get(i).getComments_time());
+                        map.put("Comments_id", commentBean.get(i).getComments_id());
+                        map.put("Comments_number", commentBean.get(i).getComments_number());
+                        dataList.add(map);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
 
     }
 

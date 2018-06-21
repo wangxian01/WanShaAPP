@@ -101,7 +101,7 @@ public class FragmentFocus extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Map<String, Object> map = (Map<String, Object>) mChoicenessListview.getItemAtPosition(position);
                 final SerializableMap myMap=new SerializableMap();
-                myMap.setMap(map);      //将map数据添加到封装的myMap<span></span>中
+                myMap.setMap(map);      //将map数据添加到封装的myMap中
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("map", myMap);
                 Intent intent=new Intent(getActivity(),FcousCommentActivity.class);

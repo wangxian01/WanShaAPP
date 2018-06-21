@@ -52,8 +52,17 @@
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:src="@mipmap/dz"
-            android:layout_margin="10dp"
             android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/like_number"
+            android:maxLines="1"
+            android:layout_width="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:text="163" />
 
     </LinearLayout>
 
