@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:background="@color/white"
-    android:gravity="center">
+    android:gravity="center"
+    android:descendantFocusability="blocksDescendants">
 
 
     <ImageView
@@ -65,19 +66,30 @@
         android:layout_height="12dp"
         android:layout_below="@+id/pingfen"
         android:layout_alignLeft="@+id/youximing"
-        android:background="@drawable/fenlei_dongzuo"
+        android:src="@drawable/fenlei_dongzuo"
         android:layout_marginTop="2dp"
         />
 
     <ImageView
-        android:id="@+id/fenlei1kongbu"
+        android:id="@+id/fenlei1dongzuo2"
         android:layout_width="35dp"
         android:layout_height="12dp"
         android:layout_below="@+id/pingfen"
         android:layout_toRightOf="@id/fenlei1dongzuo"
         android:layout_alignTop="@+id/fenlei1dongzuo"
-        android:layout_marginLeft="5dp"
-        android:background="@drawable/dongzuo"
+
+        android:src="@drawable/dongzuo"
+        />
+
+    <ImageView
+        android:id="@+id/fenlei1dongzuo3"
+        android:layout_width="35dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/pingfen"
+        android:layout_toRightOf="@id/fenlei1dongzuo2"
+        android:layout_alignTop="@+id/fenlei1dongzuo"
+
+        android:src="@drawable/dongzuo"
         />
 
     <View

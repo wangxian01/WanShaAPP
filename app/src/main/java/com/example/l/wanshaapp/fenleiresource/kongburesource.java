@@ -13,4 +13,21 @@ public class kongburesource {
     public  static  String kongbu_jianjie[]={"杀！杀！杀！阻我者死！","陷落的国王该如何抉择！","在古老神秘的金字塔大战一场！",
             "有黏黏的球来获得胜利吧！","镜子里到底有什么？等你来发现！","丛林小西瓜，本领真是大！","龙王复生后会有多强？","用微笑来净化时间邪恶！",
             "岛上到底有什么！我要去一探究竟！","风花雪月后，大战一触即发！"};
+    public   static int[] kongbu_dongzuo = {R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
+            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+
+
+    public   static int[] kongbu_dongzuo2 = {R.drawable.whitebackg,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
+            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+
+
+    public   static int[] kongbu_dongzuo3 = {R.drawable.whitebackg,R.drawable.whitebackg,R.drawable.dongzuo,R.drawable.dongzuo,
+            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+
+    public static String kongbu_youxishang[]={"Rosen Enterprises","Blizzard Entertainment","AppleInc Corporation","GoogleInc Corporation","Yandex Corporation",
+            "Nintendo Corporation","Twitter Corporation","Amazon Corporation","Landor Corporation","SONIX Corporation"};
+
+    public static String kongbu_faxinggongsi[]={"第九城市","第七大道","谷得游戏","htc","莉莉丝游戏","蓝港互动","墨麟集团","tap4fun","游戏蜗牛","顽石游戏"};
 }
+
+
