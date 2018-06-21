@@ -18,6 +18,8 @@ import java.util.List;
 
 public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
 
+    private OnItemClickListener mItemClickListener;
+
 
     private List<Small> mFruitList = new ArrayList<Small>();
 
@@ -25,6 +27,9 @@ public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
 
         ImageView mMImageView;
         TextView mTextView;
+
+
+
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -43,6 +48,7 @@ public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.zhuda_item, null);
         ViewHolder holder = new ViewHolder(view);
+        view.setOnClickListener((View.OnClickListener) this);
         return holder;
     }
 
@@ -59,5 +65,13 @@ public class RecyAdapter extends RecyclerView.Adapter<RecyAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mFruitList.size();
+    }
+
+
+
+
+     public interface OnItemClickListener{
+        void onItemClick(int position);
+
     }
 }
