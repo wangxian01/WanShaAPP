@@ -1,6 +1,8 @@
 package com.example.l.wanshaapp.bean;
 
-public class GamesInfo {
+import java.io.Serializable;
+
+public class GamesInfo implements Serializable {
 
 
     /**

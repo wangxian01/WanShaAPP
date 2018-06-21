@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:text="分类"
             android:layout_marginTop="20sp"
-            android:layout_marginStart="-35dp"/>
+            android:layout_marginStart="-32dp"/>
 
         <RadioButton
             android:layout_marginTop="-10dp"

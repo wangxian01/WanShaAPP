@@ -1,7 +1,9 @@
 package com.example.l.wanshaapp.WanShaLogin;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.l.wanshaapp.HomeBannerActivity;
 import com.example.l.wanshaapp.R;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -53,6 +56,11 @@ public class LoginActivity extends AppCompatActivity {
                     break;
 
                 case 1:
+                    //获取sharedPreferences对象
+                    SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                    //获取editor对象
+                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                    editor.putBoolean("islogin",true);
                     new AlertDialog.Builder(LoginActivity.this).setMessage( "欢迎  "+ msg.obj.toString() ).create().show();
                     Intent intent = new Intent(LoginActivity.this, HomeBannerActivity.class);
                     intent.putExtra("username",msg.obj.toString());
