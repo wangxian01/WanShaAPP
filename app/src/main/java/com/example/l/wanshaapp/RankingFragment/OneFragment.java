@@ -53,7 +53,7 @@ public class OneFragment extends Fragment {
                         .execute(new StringCallback() {
                             @Override//未响应加载网络信息，弹出对话框
                             public void onError(Request request, Exception e) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                                 builder.setTitle("小问题");
                                 builder.setMessage("连接网络异常");
                                         /*     builder.setPositiveButton("是" ,  null );*/

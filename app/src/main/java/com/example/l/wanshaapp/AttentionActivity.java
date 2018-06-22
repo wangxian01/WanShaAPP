@@ -21,9 +21,7 @@ public class AttentionActivity extends AppCompatActivity {
     private String[] tags = {"A_tag", "B_tag", "C_tag"};
     //所添加选项卡的文本信息
     private String[] titles = {"游戏", "玩家", "论坛"};
-    //所添加选项卡的图片信息
-    private int[] images = {R.drawable.a, R.drawable.b,
-            R.drawable.c};
+
     //用于跳转至不同的Activity
     private Intent[] intents = new Intent[3];
 

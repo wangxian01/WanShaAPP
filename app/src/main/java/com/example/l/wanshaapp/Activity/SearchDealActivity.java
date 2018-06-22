@@ -1,9 +1,11 @@
 package com.example.l.wanshaapp.Activity;
 
 
+        import android.content.Intent;
         import android.os.Bundle;
         import android.support.annotation.NonNull;
         import android.support.annotation.Nullable;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.DefaultItemAnimator;
         import android.support.v7.widget.LinearLayoutManager;
@@ -38,6 +40,7 @@ public class SearchDealActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private MyRecyclerViewAdapter mAdapter;
+    private GamesInfo list;
 
 
     @Override
@@ -50,47 +53,20 @@ public class SearchDealActivity extends AppCompatActivity {
 //设置RecyclerView管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        Thread thread = new Thread(new Runnable() {
-            String searchkeyword = getIntent().getStringExtra("searchkeyword");
+        Intent intent = getIntent();
+        if ("action".equals(intent.getAction())) {
+            ArrayList<GamesInfo> list = (ArrayList<GamesInfo>) intent.getSerializableExtra("data");
 
-            @Override
-            public void run() {
-                OkHttpUtils
-                        .get()
-                        .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/SearchDealServlet")
-                        .addParams("gamename", searchkeyword)
-                        .build()
-                        .execute(new StringCallback() {
-                            @Override
-                            public void onError(Request request, Exception e) {
-                                Log.e(TAG, "网络错误");
-                            }
-
-                            @Override
-                            public void onResponse(String response) {
-
-                                if (response.toString() != null) {
-
-                                    ArrayList<GamesInfo> list;
-                                    list = new ArrayList<GamesInfo>();
-                                    Gson gson = new Gson();
-                                    list = gson.fromJson(response.toString(), new TypeToken<ArrayList<GamesInfo>>() {
-                                    }.getType());
-
-//初始化适配器
-                                    mAdapter = new MyRecyclerViewAdapter(list);
-//设置添加或删除item时的动画，这里使用默认动画
-                                    mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-//设置适配器
-                                    mRecyclerView.setAdapter(mAdapter);
-                                } else {
-                                    Log.e(TAG, "没有接受到json信息");
-                                }
-                            }
-                        });
+            if (list.isEmpty()){
+                new AlertDialog.Builder(SearchDealActivity.this).setMessage("没有相关的游戏信息！！").create().show();
             }
-        });
-        thread.start();
+            mAdapter = new SearchDealActivity.MyRecyclerViewAdapter(list);
+//设置添加或删除item时的动画，这里使用默认动画
+            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+//设置适配器
+            mRecyclerView.setAdapter(mAdapter);
+        }
+
 
 
     }
@@ -135,7 +111,7 @@ public class SearchDealActivity extends AppCompatActivity {
 
                 textView3 = (TextView) itemView.findViewById(R.id.newdynamic);
                 textView4 = (TextView) itemView.findViewById(R.id.numberofcomments);
-                Picasso.with(itemView.getContext()).load("").into(imageView);
+                Picasso.with(itemView.getContext()).load(haha.get(0).getGame_pictureurl()).into(imageView);
                 textView1.setText(haha.get(0).getGame_name());
                 textView2.setText(haha.get(0).getPublisher());
                 imageView1.setImageResource(0);

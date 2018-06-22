@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Activity.SearchApp"></activity>
         <activity android:name=".Activity.SearchDealActivity"/>
         <activity android:name=".WanShaLogin.LoginActivity"></activity>
