@@ -64,7 +64,12 @@ public class Tools {
             "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
             "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
     };
-
+    public static  String shouchang[]={
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏"
+    };
     public  static  String  data6[]={"" +
             "爆竹的生活并不容易!","探索无尽的沙漠","为了王室而战","一款星光闪闪的速度游戏",
             "嫉恶如仇的侠客世界","掌握炫酷的动作","我是要成为海贼王的男人","绞尽脑汁去寻找出口吧",
@@ -165,8 +170,8 @@ public class Tools {
 
     public static  String xiangqingvideo[]= {
             "http://sj.video.5054399.com/sjyx/huohrsrsios/huohrsrsios.mp4",
+            "http://sj.video.5054399.com/sjyx/jjjnnnbgaz/jjjnnnbgaz2.mp4",
             "http://sj.video.5054399.com/sjyx/buluochongtuaz/buluochongtuaz.mp4",
-            "http://vod.cdn1.v.17173.com/295400457b3f772a001b6e10964c5b00cd10d5ab7a0055b4/cx2/FLVList/20171114/1/117402412_38847398_1.mp4",
             "http://vod.cdn1.v.17173.com/0ad4000b0912e38b001b67918f495b00e6797ad07b0031b2/cx2/FLVList/20170106/1/103869431_38256575_1.mp4",
             "http://sj.video.5054399.com/sjyx/fangzjhazz/fangzjhazz.mp4",
             "",

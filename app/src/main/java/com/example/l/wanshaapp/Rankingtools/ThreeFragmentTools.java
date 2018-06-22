@@ -88,7 +88,12 @@ public class ThreeFragmentTools {
             "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
 
     };
-
+    public static  String shouchang[]={
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏"
+    };
 
     public static  String download[]={
             "http://wuxia.qq.com/",

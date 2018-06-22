@@ -79,6 +79,7 @@ public class ThreeFragmentAdapter extends BaseAdapter{
                 bundle.putString("xiangqingtext4",ThreeFragmentTools.xiangqingtext4[position]);
                 bundle.putString("download",ThreeFragmentTools.download[position]);
                 bundle.putString("publisher", ThreeFragmentTools.publisher[position]);
+                bundle.putString("shouchang", ThreeFragmentTools.shouchang[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

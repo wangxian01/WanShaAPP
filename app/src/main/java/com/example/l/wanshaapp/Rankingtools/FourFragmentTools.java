@@ -76,7 +76,12 @@ public class FourFragmentTools {
             "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
             "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
     };
-
+    public static  String shouchang[]={
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏",
+            "收藏","收藏","收藏","收藏","收藏"
+    };
 
     public static  String xiangqingvideo[]={
             "http://sj.video.5054399.com/sjyx/jdqscjzcccaz/jdqscjzcccaz2.mp4",
