@@ -24,7 +24,6 @@ import java.util.Map;
 
 public class AdapterFocus extends BaseAdapter {
     private List<Map<String, Object>> dataList;
-    private BeanFocus.RowsBean bean;
     private Context context;
     private int resource;
 
@@ -168,8 +167,14 @@ public class AdapterFocus extends BaseAdapter {
         //获取点赞和踩的人数
         util.mFocusTextLike.setText(map.get("LikeNumber")+"");
         //设置默认点赞状态和人数
-        beanChoiceness.setlike((Boolean) map.get("UpLike"));//点赞状态true为已点赞
-        beanChoiceness.setmumber((Integer) map.get("LikeNumber"));//点赞人数
+        String likeString = "0";
+        if(likeString.equals(map.get("UpLike"))){
+            beanChoiceness.setlike(false);//点赞状态true为已点赞
+        }else{
+                beanChoiceness.setlike(true);//点赞状态true为已点赞
+        }
+
+        beanChoiceness.setmumber(Integer.parseInt((String) map.get("LikeNumber")));//点赞人数
         final GoodView goodView = new GoodView(view.getContext());//实例化+或-1动画
         // 取出bean中当记录状态是否为true，是的话则给img设置focus点赞图片
         if (beanChoiceness.getlike()) {

@@ -1,5 +1,6 @@
 package com.example.l.wanshaapp.DynamicCommentDetails;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,18 +30,29 @@ import android.widget.Toast;
 
 
 import com.example.l.wanshaapp.DyFocusCommentDetails.FcousCommentActivity;
+import com.example.l.wanshaapp.DyFocusCommentDetails.ReplayActivity;
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.DynamicHome.CircleImageView;
 import com.example.l.wanshaapp.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class CommentDetailsActivity extends AppCompatActivity {
     private JCVideoPlayerStandard mCommentViodeoview;
@@ -54,6 +67,9 @@ public class CommentDetailsActivity extends AppCompatActivity {
     private BottomSheetDialog dialog;
     private TextView mChoicenessCommentsTextUnfold;
     private AdapterCommentMain adapterCommentMain;
+    private OkHttpClient client = new OkHttpClient();
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,25 +149,78 @@ public class CommentDetailsActivity extends AppCompatActivity {
         initDataList();
         //头布局添加适配器
         mCommentsChoicenessMain.addHeaderView(headView);
-       adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
+        adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
         mCommentsChoicenessMain.setAdapter(adapterCommentMain);
+
+        /**
+         * 点击listview传递参数（使用map）
+         * */
+        mCommentsChoicenessMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Map<String, Object> map = (Map<String, Object>) mCommentsChoicenessMain.getItemAtPosition(position);
+                final SerializableMap myMap=new SerializableMap();
+                myMap.setMap(map);//将map数据添加到封装的myMap<span></span>中
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("map", myMap);
+                Intent intent=new Intent(CommentDetailsActivity.this,ReplayActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
     }
 
+    /**
+     * post请求*/
+    private String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
 
     /**
      * 初始化适配器需要的数据格式
      */
     private void initDataList() {
         dataList = new ArrayList<Map<String, Object>>();
-        for (int i = 0; i <9; i++) {
-            Map<String, Object> map = new HashMap<String, Object>();
+        Thread thread = new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    String restult = post("http://172.16.22.46:8080/AndroidServers/CommentServlet","");
+                    Gson gson = new Gson();
+                    ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
+                    }.getType());
+                    //Log.e("测试：", String.valueOf(commentBean.get(0).getComments_text()));
 
-            map.put("UpId", "游客甲"+i);
-            map.put("CommentText","评论内容"+i);
-            dataList.add(map);
+                    for (int i = 0; i < commentBean.size(); i++) {
+                        Map<String, Object> map = new HashMap<String, Object>();
+                        map.put("Comments_name", commentBean.get(i).getComments_name());
+                        map.put("Comments_like", commentBean.get(i).getComments_like());
+                        map.put("Comments_portrait", commentBean.get(i).getComments_portrait());
+                        map.put("Comments_text", commentBean.get(i).getComments_text());
+                        map.put("Comments_time", commentBean.get(i).getComments_time());
+                        map.put("Comments_id", commentBean.get(i).getComments_id());
+                        map.put("Comments_number", commentBean.get(i).getComments_number());
+                        dataList.add(map);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
     }
 
     /**
@@ -171,7 +240,9 @@ public class CommentDetailsActivity extends AppCompatActivity {
         BottomSheetBehavior behavior = BottomSheetBehavior.from(parent);
         commentView.measure(0,0);
         behavior.setPeekHeight(commentView.getMeasuredHeight());
-
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd");
+        //获取当前时间
+        final Date date = new Date(System.currentTimeMillis());
         bt_comment.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -181,9 +252,13 @@ public class CommentDetailsActivity extends AppCompatActivity {
                     dialog.dismiss();
                     //dataList = new ArrayList<Map<String, Object>>();
                     Map<String, Object> map = new HashMap<String, Object>();
-
-                    map.put("UpId", "谭林");
-                    map.put("CommentText",commentContent);
+                    map.put("Comments_name", "张三");
+                    map.put("Comments_like","0");
+                    map.put("Comments_portrait", "http://uploads.sundxs.com/allimg/1705/1R3054M5-9.jpg");
+                    map.put("Comments_text", commentContent);
+                    map.put("Comments_time",simpleDateFormat.format(date));
+                    map.put("Comments_id", "");
+                    map.put("Comments_number","0");
                     // dataList.add(map);
                     adapterCommentMain.addTheCommentData(map);
                     //mFocusCommentsMainlist.smoothScrollToPosition(0);

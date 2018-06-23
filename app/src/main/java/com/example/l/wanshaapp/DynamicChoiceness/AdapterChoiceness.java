@@ -111,7 +111,7 @@ public class AdapterChoiceness extends BaseAdapter {
         util.mChoicenessUpTime.setText((String) map.get("ChoicenessUpTime"));
         //获取游戏介绍文字
         util.mChoicenessUpText.setText((String) map.get("ChoicenessUpText"));
-
+        Log.e("测试：", (String) map.get("ChoicenessUpName"));
         //设置网络视频
         util.mChoicenessViodeoview.setUp(String.valueOf(map.get("ChoicenessViodeoview"))
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, String.valueOf(map.get("UpIntroduce")));
@@ -156,10 +156,21 @@ public class AdapterChoiceness extends BaseAdapter {
         util.mTextStep.setText(map.get("StepNumber")+"");
 
         //设置默认点赞状态和人数
-        beanChoiceness.setlike((Boolean) map.get("UpLike"));//点赞状态true为已点赞
-        beanChoiceness.setstep((Boolean) map.get("UpStep"));//踩状态
-        beanChoiceness.setmumber((Integer) map.get("LikeNumber"));//点赞人数
-        beanChoiceness.setstepnumber((Integer) map.get("StepNumber"));//踩人数
+        String likeString = "0";
+        if(likeString.equals(map.get("UpLike"))){
+            beanChoiceness.setlike(false);//点赞状态true为已点赞
+        }else{
+            beanChoiceness.setlike(true);//点赞状态true为已点赞
+        }
+
+        if(likeString.equals(map.get("UpLike"))){
+            beanChoiceness.setstep(false);//踩状态true为已点赞
+        }else{
+            beanChoiceness.setstep(true);//踩状态true为已点赞
+        }
+
+        beanChoiceness.setmumber(Integer.parseInt((String) map.get("LikeNumber")));//点赞人数
+        beanChoiceness.setstepnumber(Integer.parseInt((String) map.get("StepNumber")));//踩人数
         final GoodView goodView = new GoodView(view.getContext());//实例化+或-1动画
 
         // 取出bean中当记录状态是否为true，是的话则给img设置focus点赞图片

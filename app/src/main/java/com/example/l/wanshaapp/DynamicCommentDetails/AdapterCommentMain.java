@@ -57,7 +57,6 @@ public class AdapterCommentMain extends BaseAdapter {
      * @param
      */
     public void addTheCommentData(Map<String, Object> map) {
-
         dataList.add(map);
         notifyDataSetChanged();
     }

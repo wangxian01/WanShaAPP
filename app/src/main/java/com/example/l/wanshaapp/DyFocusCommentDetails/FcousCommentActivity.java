@@ -40,7 +40,9 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Comment;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -141,7 +143,7 @@ public class FcousCommentActivity extends AppCompatActivity {
         mFocusCommentsMainlist.addHeaderView(headView);
         //添加适配器
         adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
-        Log.e("测试：", String.valueOf(dataList));
+
         mFocusCommentsMainlist.setAdapter(adapterCommentMain);
 
         /**
@@ -179,12 +181,12 @@ public class FcousCommentActivity extends AppCompatActivity {
      */
     private void initDataList() {
         dataList = new ArrayList<Map<String, Object>>();
-        new Thread(){
+        Thread thread = new Thread(){
             @Override
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.59.11:8080/AndroidServers/CommentServlet","");
+                    String restult = post("http://172.16.22.46:8080/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
@@ -205,8 +207,13 @@ public class FcousCommentActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }.start();
-
+        };
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -226,7 +233,9 @@ public class FcousCommentActivity extends AppCompatActivity {
         BottomSheetBehavior behavior = BottomSheetBehavior.from(parent);
         commentView.measure(0,0);
         behavior.setPeekHeight(commentView.getMeasuredHeight());
-
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd");
+        //获取当前时间
+        final Date date = new Date(System.currentTimeMillis());
         bt_comment.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -237,8 +246,13 @@ public class FcousCommentActivity extends AppCompatActivity {
                     //dataList = new ArrayList<Map<String, Object>>();
                     Map<String, Object> map = new HashMap<String, Object>();
 
-                    map.put("UpId", "谭林");
-                    map.put("CommentText",commentContent);
+                    map.put("Comments_name", "张三");
+                    map.put("Comments_like","0");
+                    map.put("Comments_portrait", "http://uploads.sundxs.com/allimg/1705/1R3054M5-9.jpg");
+                    map.put("Comments_text", commentContent);
+                    map.put("Comments_time",simpleDateFormat.format(date));
+                    map.put("Comments_id", "");
+                    map.put("Comments_number","0");
                    // dataList.add(map);
                     adapterCommentMain.addTheCommentData(map);
                     //mFocusCommentsMainlist.smoothScrollToPosition(0);
