@@ -41,7 +41,7 @@ public class RankingFragemntBean {
     private String game_details;
     private String game_videourl;
     private String game_recommend;
-    private String games_downloadurl;
+    private String game_downloadurl;
 
     public String getGame_name() {
         return game_name;
@@ -147,11 +147,11 @@ public class RankingFragemntBean {
         this.game_recommend = game_recommend;
     }
 
-    public String getGames_downloadurl() {
-        return games_downloadurl;
+    public String getGame_downloadurl() {
+        return game_downloadurl;
     }
 
-    public void setGames_downloadurl(String games_downloadurl) {
-        this.games_downloadurl = games_downloadurl;
+    public void setGame_downloadurl(String games_downloadurl) {
+        this.game_downloadurl = games_downloadurl;
     }
 }

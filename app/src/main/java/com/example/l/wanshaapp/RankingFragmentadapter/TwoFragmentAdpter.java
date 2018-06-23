@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
+import com.example.l.wanshaapp.RankingFragment.TwoFragment;
 import com.example.l.wanshaapp.Rankingtools.Tools;
 import com.example.l.wanshaapp.Rankingtools.TwoFragmentTools;
 import com.example.l.wanshaapp.XiangQingActivity;
@@ -81,6 +82,7 @@ public class TwoFragmentAdpter extends BaseAdapter {
                 bundle.putString("xiangqingtext4",TwoFragmentTools.xiangqingtext4[position]);
                 bundle.putString("download",TwoFragmentTools.download[position]);
                 bundle.putString("publisher",TwoFragmentTools.publisher[position]);
+                bundle.putString("shouchang", TwoFragmentTools.shouchang[position]);
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 

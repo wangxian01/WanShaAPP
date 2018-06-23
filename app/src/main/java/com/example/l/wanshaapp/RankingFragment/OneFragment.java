@@ -46,7 +46,7 @@ public class OneFragment extends Fragment {
             public void run() {
                 OkHttpUtils
                         .get()
-                        .url("http://172.17.172.84:8080/AndroidServers/RankingDataServlet")
+                        .url("http://192.168.1.155:8080/AndroidServers/RankingDataServlet")
                                 /*            .addParams("username",username)
                                              .addParams("password",password)*/
                         .build()
@@ -63,12 +63,13 @@ public class OneFragment extends Fragment {
                             @Override//响应
                             public void onResponse(String response) {
 
-                                Log.e(TAG, "onResponse: "+response.toString() );
+//                                Log.e(TAG, "onResponse: "+response.toString() );
 
                                 ArrayList<RankingFragemntBean> homelist = new ArrayList<RankingFragemntBean>();
                                 Gson gson = new Gson();
                                 homelist = gson.fromJson(response.toString(), new TypeToken<List<RankingFragemntBean>>() {
                                 }.getType());
+//                                Log.e("网络数据",homelist.get(0).getGame_downloadurl());
                                 OneFragmentAdapter mBaseAdapter = new OneFragmentAdapter(getContext(), homelist);
                                 listView.setAdapter(mBaseAdapter);
                             }

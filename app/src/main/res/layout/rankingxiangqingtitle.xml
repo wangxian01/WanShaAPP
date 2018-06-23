@@ -151,12 +151,22 @@
 
         <Button
             android:id="@+id/download"
-            android:layout_marginLeft="35dp"
-            android:layout_width="65dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="55dp"
             android:layout_height="25dp"
             android:background="@drawable/btn_bg"
             android:backgroundTint="@color/colorSkyblue"
-            android:text="下载/预约"
+            android:text="下载"
+            android:textColor="@color/colorWhite"
+            android:textSize="13dp" />
+        <Button
+            android:id="@+id/shouchang"
+            android:layout_marginLeft="5dp"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_bg"
+            android:backgroundTint="@color/colorSkyblue"
+            android:text="收藏"
             android:textColor="@color/colorWhite"
             android:textSize="13dp" />
     </LinearLayout>
