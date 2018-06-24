@@ -46,6 +46,7 @@ public class kapai_fragment extends Fragment {
                 myMap.setMap(map);      //将map数据添加到封装的myMap<span></span>中
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("map", myMap);
+                bundle.putString("type","jiemi");
                 Intent intent=new Intent(getActivity(),player.class);
                 intent.putExtras(bundle);
                 startActivity(intent);

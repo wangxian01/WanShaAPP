@@ -37,6 +37,7 @@
         android:layout_toRightOf="@+id/fenlei2image"
         android:layout_alignTop="@+id/fenlei2image"
         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:text="创世战纪123456"/>
 
         <TextView
@@ -80,7 +81,7 @@
         android:textSize="13dp"
         android:layout_below="@+id/fenlei2youxishang"
         android:layout_toRightOf="@+id/fenlei2faxingshang0"/>
-
+<!--
         <Button
             android:id="@+id/shoucang"
             android:layout_width="55dp"
@@ -89,11 +90,25 @@
             android:layout_below="@+id/fenlei2youximing"
             android:layout_marginEnd="26dp"
             android:layout_marginHorizontal="45dp"
+            android:focusable="true"
             android:background="@drawable/button"
             android:text="收  藏"
-            android:textSize="13dp" />
+            android:textSize="13dp" />-->
+        <Switch
+            android:id="@+id/sch"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:showText="true"
+            android:textOff="收藏"
+            android:textOn="已收藏"
+            android:textSize="2dp"
+            android:layout_below="@+id/fenlei2youximing"
+            android:layout_marginEnd="10dp"
+            android:layout_marginHorizontal="70dp" />
 
-    <ImageView
+
+        <ImageView
         android:id="@+id/fenlei2pingfen"
         android:layout_width="80dp"
         android:layout_height="25dp"
