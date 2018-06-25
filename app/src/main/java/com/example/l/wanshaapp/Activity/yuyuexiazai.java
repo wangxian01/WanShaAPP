@@ -19,7 +19,6 @@ import com.example.l.wanshaapp.R;
 //预约下载
 public class yuyuexiazai extends AppCompatActivity {
 
-
     private RecyclerView mRecyclerView;
     private YuYueAdapter mAdapter;
 

@@ -53,7 +53,6 @@ public class OneFragmentAdapter extends BaseAdapter{
     public View getView(final int position, View convertView, ViewGroup parent) {
         convertView =  LayoutInflater.from(context).inflate(R.layout.list_view, parent,false);
         ImageView imageView=(ImageView) convertView.findViewById(R.id.item_img) ;
-        ImageView imageView1 = (ImageView) convertView.findViewById(R.id.item_img1);
         ImageView imageView5 = (ImageView) convertView.findViewById(R.id.item_img5);
         TextView item_num = (TextView) convertView.findViewById(R.id.item_num);
         final TextView item_title=(TextView) convertView.findViewById(R.id.item_title);
@@ -63,6 +62,8 @@ public class OneFragmentAdapter extends BaseAdapter{
         final TextView item_date4=(TextView) convertView.findViewById(R.id.item_date4);
         final TextView item_date5=(TextView) convertView.findViewById(R.id.item_date5);
         final TextView item_date6=(TextView) convertView.findViewById(R.id.item_date6);
+
+
 
         //点击按钮跳转页面并实现传参
         Button button = (Button) convertView.findViewById(R.id.button_info);

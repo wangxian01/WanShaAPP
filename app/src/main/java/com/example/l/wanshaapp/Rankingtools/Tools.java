@@ -59,10 +59,10 @@ public class Tools {
             "8.2","8.3","7.5","8.4","9.5",
             "9.1","8.6","8.5","9.7","8.6"};
     public static String publisher[]={
-            "成都天元开发工作室","谭儿子游戏集团","贤儿子游戏集团","刘儿子游戏集团","发爸爸游戏集团",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团"
     };
     public static  String shouchang[]={
             "收藏","收藏","收藏","收藏","收藏",
@@ -180,16 +180,10 @@ public class Tools {
     };
 
     public static  String download[]={
-            "http://shouji.360tpcdn.com/180123/3e2ca8de45d69f9d0ef4bd01e0f96357/h.h.r.s.sparklife.other_1.apk",
-            "http://a.9game.cn/aetdads/",
-            "http://dl.wan.sogoucdn.com/dl0/1387/app12195_default_0009001100631.apk?dn=COC%E9%83%A8%E8%90%BD%E5%86%B2%E7%AA%81.apk\n",
-            "https://www.taptap.com/app/88351",
-            "http://render-ant.9game.cn/p/q/27d8174f15/portal.html?ch=LK_102&ng_ch=KM_53449&lch=VK_443",
-            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载"
     };
 
 

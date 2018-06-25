@@ -71,10 +71,10 @@ public class FourFragmentTools {
 
 
     public static String publisher[]={
-            "成都天元开发工作室","谭儿子游戏集团","贤儿子游戏集团","刘儿子游戏集团","发爸爸游戏集团",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团"
     };
     public static  String shouchang[]={
             "收藏","收藏","收藏","收藏","收藏",
@@ -95,16 +95,10 @@ public class FourFragmentTools {
 
 
     public static  String download[]={
-            "http://app.p4p.sogou.com/1/20255593/3108377/6dc047670a3deb84baed7ae77c0b3fb0/10015013_com.tencent.tmgp.pubgmhd_h109_0.7.1_d66dff.apk",
-            "http://app.p4p.sogou.com/1/18719753/129821/4ad9659333ce488c01bf0850a5031217/10015008_com.tencent.tmgp.sgame_h169_1.34.1.23_8c860d.apk",
-            "https://a01.y8est.com/0/bao/czjysg06.apk",
-            "https://h55.gdl.netease.com/h55_netease_sogou_cpc_dev_1.5.5_com.netease.dwrg_18OVH2r.apk",
-            "http://dl.wan.sogoucdn.com/dl0/15329/app48763_default_0009001100000.apk?dn=%E5%85%83%E6%B0%94%E9%AA%91%E5%A3%AB.apk",
-            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载",
+            "下载","下载","下载","下载","下载"
     };
 
     public  static  String xiangqingtext2[]={
