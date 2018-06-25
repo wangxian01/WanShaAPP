@@ -20,16 +20,16 @@ public class MyShouCangActivity  extends AppCompatActivity{
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_myshoucang);
 
-        title1 = findViewById(R.id.xiangqingyouximing);
-        imageView = findViewById(R.id.xiangqingpicture);
-        publisher=findViewById(R.id.publisher);
-
-
-
-        title1.setText(getIntent().getStringExtra("title1"));
-        publisher.setText(getIntent().getStringExtra("publisher"));
-        int image  = getIntent().getExtras().getInt("image");
-        imageView.setImageResource(image);
+//        title1 = findViewById(R.id.xiangqingyouximing);
+//        imageView = findViewById(R.id.xiangqingpicture);
+//        publisher=findViewById(R.id.publisher);
+//
+//
+//
+//        title1.setText(getIntent().getStringExtra("title1"));
+//        publisher.setText(getIntent().getStringExtra("publisher"));
+//        int image  = getIntent().getExtras().getInt("image");
+//        imageView.setImageResource(image);
 
 
     }
