@@ -1,12 +1,15 @@
 package com.example.l.wanshaapp;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +64,6 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
                 //显示PopupWindow
                 @SuppressLint("InflateParams") View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
-
                 mPopWindow.showAtLocation(rootview, Gravity.LEFT, 0, 0);
 
 
@@ -87,8 +89,17 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 yuyuegame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
-                        startActivity(intent);
+                        //获取sharedPreferences对象
+                        SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                        Boolean islogin=sharedPreferences.getBoolean("islogin",false);
+                        Log.e("天使", "onClick: "+islogin );
+                        if(islogin){
+                            Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
+                            startActivity(intent);
+                        }else {
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
             }
