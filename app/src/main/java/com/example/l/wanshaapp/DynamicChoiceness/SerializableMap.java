@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class SerializableMap implements Serializable {
 
-    private Map<String,Object> map;
+    private Map<String, Object> map;
 
     public Map<String, Object> getMap(String s) {
         return map;

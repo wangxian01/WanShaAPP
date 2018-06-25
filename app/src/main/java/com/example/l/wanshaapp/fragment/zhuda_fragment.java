@@ -6,11 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
@@ -18,13 +21,17 @@ import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.RecyAdapter;
 import com.example.l.wanshaapp.bean.Small;
+import com.example.l.wanshaapp.fenleiresource.jiemiresource;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class zhuda_fragment extends Fragment {
 
+
+    private List<Map<String, Object>> dataList;
     private List<Small> fruitList = new ArrayList<Small>();
     private List<Small> fruitList2 = new ArrayList<Small>();
 
@@ -47,8 +54,8 @@ public class zhuda_fragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView2.setLayoutManager(layoutManager2);
 
-        RecyAdapter adapter = new RecyAdapter(fruitList);
-        RecyAdapter adapter2 = new RecyAdapter(fruitList2);
+        RecyAdapter adapter = new RecyAdapter(getActivity(),fruitList);
+        RecyAdapter adapter2 = new RecyAdapter(getActivity(),fruitList2);
 
 
         recyclerView.setAdapter(adapter);
@@ -121,6 +128,10 @@ public class zhuda_fragment extends Fragment {
 
 
     }
+
+
+
+
     }
 
 

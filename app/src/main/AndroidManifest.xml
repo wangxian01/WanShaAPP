@@ -24,7 +24,7 @@
         <activity android:name=".WanShaLogin.LoginActivity"></activity>
         <activity android:name=".DynamicHome.DynamicMainActivity"></activity>
         <activity android:name=".DynamicCommentDetails.CommentDetailsActivity"
-                   android:theme="@style/AppTheme.NoActionBar"></activity>
+           android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".JCVideoPlayerStandard.player"></activity>
         <activity android:name=".WanShaLogin.RegisteredActivity"></activity>
         <activity android:name=".XiangQingActivity"></activity>

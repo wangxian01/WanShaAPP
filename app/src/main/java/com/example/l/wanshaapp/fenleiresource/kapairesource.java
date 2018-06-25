@@ -15,19 +15,19 @@ public class kapairesource {
             "杀扁天！KO你没商量！","和队友一起逃脱！","人小！但是魔力大！","紫色城堡里的秘密是什么？",
             "等不到流星雨滑落天际！","套中套里藏着什么？","嗯哼，你知道杀扁天吗？"};
 
-    public   static int[] kapai_dongzuo = {R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
-            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+    public   static int[] kapai_dongzuo = {R.drawable.celue_1,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
+            R.drawable.wuxia_1,R.drawable.dongzuo,R.drawable.celue_1,R.drawable.dongzuo,R.drawable.wenzi_1,};
 
 
-    public   static int[] kapai_dongzuo2 = {R.drawable.whitebackg,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
-            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+    public   static int[] kapai_dongzuo2 = {R.drawable.maoxian_1,R.drawable.zhanzheng_1,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,
+            R.drawable.maoxian_1,R.drawable.wuxia_1,R.drawable.dongzuo,R.drawable.wenzi_1,R.drawable.dongzuo,};
 
 
     public   static int[] kapai_dongzuo3 = {R.drawable.whitebackg,R.drawable.whitebackg,R.drawable.dongzuo,R.drawable.dongzuo,
-            R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.dongzuo,};
+            R.drawable.dongzuo,R.drawable.yizhijiemi_1,R.drawable.dongzuo,R.drawable.maoxian_1,R.drawable.dongzuo,R.drawable.wenzi_1,};
 
-    public static String kapai_youxishang[]={"Rosen Enterprises","Blizzard Entertainment","AppleInc Corporation","GoogleInc Corporation","Yandex Corporation",
-            "Nintendo Corporation","Twitter Corporation","Amazon Corporation","Landor Corporation","SONIX Corporation"};
+    public static String kapai_youxishang[]={"Rosen Enterprises","Bliard Entertainment","AppleInc Corporation","Google Corporation","Yandex Corporation",
+            "Nint Corporation","Twit Corporation","Amazon Corporation","Landor Corporation","SONIX Corporation"};
 
     public static String kapai_faxinggongsi[]={"第九城市","第七大道","谷得游戏","htc","莉莉丝游戏","蓝港互动","墨麟集团","tap4fun","游戏蜗牛","顽石游戏"};
 }
