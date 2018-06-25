@@ -1,6 +1,7 @@
 package com.example.l.wanshaapp;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,6 +20,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
+import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
+import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
+import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
@@ -28,9 +32,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 public class XiangQingActivity extends AppCompatActivity {
     TextView title1;
-    WebView webView;
-    Context context;
-    View v;
+    Button download;
     ImageView imageView,imageView5;
     TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher,shouchang;
 
@@ -45,20 +47,20 @@ public class XiangQingActivity extends AppCompatActivity {
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
 
         //下载游戏
-        Button download=(Button)findViewById(R.id.download);
-        download.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
-                //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
-                Log.e("网络数据",getIntent().getStringExtra("download"));
-                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-                ////启动
-            }
-        });
+//        Button download=(Button)findViewById(R.id.download);
+//        download.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
+//                //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
+//                Log.e("网络数据",getIntent().getStringExtra("download"));
+//                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
+//
+//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(intent);
+//                ////启动
+//            }
+//        });
 
 
 
@@ -123,8 +125,11 @@ public class XiangQingActivity extends AppCompatActivity {
         item_date6=findViewById(R.id.xiangqingtext1);
         imageView = findViewById(R.id.xiangqingpicture);
         imageView5 = findViewById(R.id.xiangqingstarend);
+        download=findViewById(R.id.download);
         publisher=findViewById(R.id.publisher);
         shouchang=findViewById(R.id.shouchang);
+
+
 //        webView= findViewById(R.id.webView1);
 
 
@@ -145,6 +150,7 @@ public class XiangQingActivity extends AppCompatActivity {
                     beanChoiceness2.setunfold(true);
                     Toast.makeText(getApplicationContext(), "您已经收藏成功＼（＠￣∇￣＠）／",   Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
@@ -161,6 +167,7 @@ public class XiangQingActivity extends AppCompatActivity {
         xiangqingtext2.setText(getIntent().getStringExtra("xiangqingtext2"));
         xiangqingtext4.setText(getIntent().getStringExtra("xiangqingtext4"));
         publisher.setText(getIntent().getStringExtra("publisher"));
+        download.setText(getIntent().getStringExtra("download"));
 //        Log.e("打印",getIntent().getStringExtra("xiangqingtext2"));
         item_date6.setText(getIntent().getStringExtra("xiangqingtext1"));
         int image  = getIntent().getExtras().getInt("image");

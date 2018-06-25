@@ -1,6 +1,5 @@
 package com.example.l.wanshaapp;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,12 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -30,10 +32,14 @@ import java.util.ArrayList;
 
 public class HomeBannerActivity extends AppCompatActivity   {
 
-    private ArrayList<Fragment> fragmentsList = new ArrayList<>();
+    private Toolbar toolbar;
+    private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
+    private RadioGroup group;
     private  PopupWindow mPopWindow;
-    private TextView logintv, yuyuegame,guanzhutubiao;
+    private TextView logintv, yuyuegame,guanzhutubiao,Shoucang;
+    private ImageButton loginbutton;
     private String username;
+    private ImageView homesidebaricon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,37 +48,46 @@ public class HomeBannerActivity extends AppCompatActivity   {
         setContentView(R.layout.homebannerlayout);
 
         //设置顶部栏
-        Toolbar toolbar =findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {//mActionBarToolbar就是android.support.v7.widget.Toolbar
             toolbar.setTitle("");//设置为空，可以自己定义一个居中的控件，当做标题控件使用
         }
         setSupportActionBar(toolbar);
         username=getIntent().getStringExtra("username");//获取登陆页传来的用户信息
-        ImageView homesidebaricon =findViewById(R.id.homesidebaricon);
+        homesidebaricon=(ImageView)findViewById(R.id.homesidebaricon);
         homesidebaricon.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("RtlHardcoded")
             @Override
             public void onClick(View v) {
                 //设置contentView
-                @SuppressLint("InflateParams") View contentView = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.sidebar, null);
+                View contentView = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.sidebar, null);
 
                 mPopWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
                 mPopWindow.setContentView(contentView);
 
                 //显示PopupWindow
-                @SuppressLint("InflateParams") View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
+                View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
 
                 mPopWindow.showAtLocation(rootview, Gravity.LEFT, 0, 0);
 
 
-                logintv =contentView.findViewById(R.id.login);
+                logintv = (TextView) contentView.findViewById(R.id.login);
                 if (username==null){ logintv.setText("登陆");}else {logintv.setText(username);}
-                yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
-                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
+                yuyuegame = (TextView) contentView.findViewById(R.id.yuyuexiazaiid);
+                Shoucang=(TextView)contentView.findViewById(R.id.Shoucang);
+                guanzhutubiao=(TextView)contentView.findViewById(R.id.guanzhutubiao) ;
                 logintv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+                Shoucang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getApplicationContext(),MyShouCangActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -84,6 +99,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                         startActivity(intent);
                     }
                 });
+
                 yuyuegame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -96,7 +112,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
 
         //搜索监听
-        ImageView searchbutton =findViewById(R.id.searchbtu);
+        ImageView searchbutton = (ImageView) findViewById(R.id.searchbtu);
         searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +120,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 startActivity(intent);
             }
         });
-        RadioGroup group =findViewById(R.id.rg);
+        group = (RadioGroup) findViewById(R.id.rg);
 
         // 给group设置监听事件，在监听事件实现fragment之间的切换
         RadioGroup.OnCheckedChangeListener listener = new MyOnCheckedChangeListener();
@@ -118,7 +134,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
     //添加fragment布局
     private class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
         // 在构造方法中创造fragment
-        MyOnCheckedChangeListener() {
+        public MyOnCheckedChangeListener() {
             // 将new出来的fragment放置在集合中，以便后续取用
             fragmentsList.add(new HomeFragment());
             fragmentsList.add(new SecondFragment());
@@ -138,6 +154,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                     ft.replace(R.id.fl, fragmentsList.get(1));
                     break;
                 case R.id.rb3:
+                    ;
                     ft.replace(R.id.fl, fragmentsList.get(2));
                     break;
                 case R.id.rb4:

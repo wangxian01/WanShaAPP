@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
-import com.example.l.wanshaapp.Rankingtools.Tools;
-import com.example.l.wanshaapp.Rankingtools.TwoFragmentTools;
 import com.example.l.wanshaapp.XiangQingActivity;
 
 
@@ -57,8 +55,11 @@ public class ThreeFragmentAdapter extends BaseAdapter{
         final TextView item_date6=(TextView) convertView.findViewById(R.id.item_date6);
 
 
+
+
         //点击按钮跳转页面并实现传参
-        Button button = (Button) convertView.findViewById(R.id.button_info);
+        final Button button = (Button) convertView.findViewById(R.id.button_info);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +81,7 @@ public class ThreeFragmentAdapter extends BaseAdapter{
                 bundle.putString("download",ThreeFragmentTools.download[position]);
                 bundle.putString("publisher", ThreeFragmentTools.publisher[position]);
                 bundle.putString("shouchang", ThreeFragmentTools.shouchang[position]);
+
 //                Log.e("dayin",Tools.xiangqingtext2[position]);
                 intent.putExtras(bundle);
 
@@ -100,6 +102,7 @@ public class ThreeFragmentAdapter extends BaseAdapter{
         item_date6.setText(ThreeFragmentTools.data6[position]);
         item_num.setText((position+1)+"");
         item_title.setText(ThreeFragmentTools.title[position]);
+
         return convertView;
     }
 }
