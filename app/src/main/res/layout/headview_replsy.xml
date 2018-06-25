@@ -49,23 +49,6 @@
                     android:textSize="12sp" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/replay_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="12dp"
-                android:padding="6dp"
-                android:src="@mipmap/dz" />
-
-            <TextView
-                android:id="@+id/replay_number"
-                android:maxLines="1"
-                android:layout_width="30dp"
-                android:gravity="left"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:ellipsize="end"
-                android:text="163" />
         </LinearLayout>
 
         <TextView

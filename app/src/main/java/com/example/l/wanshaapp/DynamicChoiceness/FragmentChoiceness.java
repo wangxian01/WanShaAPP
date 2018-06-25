@@ -96,7 +96,7 @@ public class FragmentChoiceness extends Fragment {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.22.46:8080/AndroidServers/ChoicenesServlet","");
+                    String restult = post("http://172.16.59.11:8080/AndroidServers/ChoicenesServlet","");
                     Gson gson = new Gson();
                     ArrayList<BeanChoiceness> beanChoicenesses = gson.fromJson(restult,new TypeToken<ArrayList<BeanChoiceness>>() {
                     }.getType());

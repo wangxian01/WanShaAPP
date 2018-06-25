@@ -49,7 +49,6 @@ public class ReplayActivity extends AppCompatActivity {
     private CircleImageView mReplayUserLogo;
     private TextView mReplayName;
     private TextView mReplayTime;
-    private ImageView mReplayImg;
     private TextView mReplayTextMain;
     private TextView mReplayUnfold;
     private List<Map<String,Object>> dataList;
@@ -68,7 +67,6 @@ public class ReplayActivity extends AppCompatActivity {
         mReplayUserLogo = (CircleImageView) headView.findViewById(R.id.replay_userLogo);
         mReplayName = (TextView)  headView.findViewById(R.id.replay__name);
         mReplayTime = (TextView)  headView.findViewById(R.id.replay__time);
-        mReplayImg = (ImageView)  headView.findViewById(R.id.replay_img);
         mReplayTextMain = (TextView)  headView.findViewById(R.id.replay__text_main);
         mReplayUnfold = (TextView)  headView.findViewById(R.id.replay_unfold);
 
@@ -146,7 +144,7 @@ public class ReplayActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.22.46:8080/AndroidServers/ReplysServlet","");
+                    String restult = post("http://172.16.59.11:8080/AndroidServers/ReplysServlet","");
                     Gson gson = new Gson();
                     ArrayList<ReplayBean> replayBeans = gson.fromJson(restult,new TypeToken<ArrayList<ReplayBean>>() {
                     }.getType());

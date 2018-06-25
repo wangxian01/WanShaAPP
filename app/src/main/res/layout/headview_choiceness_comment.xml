@@ -62,13 +62,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/detail_page_focus"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="12dp"
-                    android:padding="6dp"
-                    android:src="@mipmap/dz" />
             </LinearLayout>
 
             <TextView

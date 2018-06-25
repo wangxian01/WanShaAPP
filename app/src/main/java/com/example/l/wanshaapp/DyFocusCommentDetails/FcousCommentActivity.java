@@ -82,7 +82,6 @@ public class FcousCommentActivity extends AppCompatActivity {
         mFocusCommentsUserLogo = (CircleImageView)headView. findViewById(R.id.focus_comments_userLogo);
         mFocusCommentsUserName = (TextView) headView.findViewById(R.id.focus_comments_userName);
         mFocusCommentsTime = (TextView) headView.findViewById(R.id.focus_comments_time);
-        mFocusCommentsLike = (ImageView) headView.findViewById(R.id.focus_comments_like);
         mFocusCommentTextMain = (TextView) headView.findViewById(R.id.focus_comment_text_main);
         mFocusCommentsMainlist = (ListView) findViewById(R.id.focus_comments_mainlist);
         mFocusCommentsPl = (TextView)findViewById(R.id.focus_comments_pl);
@@ -139,8 +138,7 @@ public class FcousCommentActivity extends AppCompatActivity {
                 showCommentDialog();
             }
         });
-
-        mFocusCommentsMainlist.addHeaderView(headView);
+        mFocusCommentsMainlist.addHeaderView(headView,null,false);
         //添加适配器
         adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
 
@@ -186,7 +184,7 @@ public class FcousCommentActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.22.46:8080/AndroidServers/CommentServlet","");
+                    String restult = post("http://172.16.59.11:8080/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());

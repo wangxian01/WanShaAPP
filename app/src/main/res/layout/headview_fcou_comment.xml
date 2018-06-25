@@ -13,7 +13,8 @@
         <ImageView
             android:id="@+id/fcous_comment_img"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:scaleType="fitXY"
+            android:layout_height="180dp"
             android:src="@mipmap/wzyy"/>
 
         <LinearLayout
@@ -60,13 +61,6 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/focus_comments_like"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_margin="12dp"
-                    android:padding="6dp"
-                    android:src="@mipmap/dz" />
             </LinearLayout>
 
             <TextView

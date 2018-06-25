@@ -83,7 +83,6 @@ public class CommentDetailsActivity extends AppCompatActivity {
         mDetailPageUserLogo = (CircleImageView) headView.findViewById(R.id.detail_page_userLogo);
         mDetailPageUserName = (TextView)headView. findViewById(R.id.detail_page_userName);
         mDetailPageTime = (TextView) headView.findViewById(R.id.detail_page_time);
-        mDetailPageFocus = (ImageView) headView.findViewById(R.id.detail_page_focus);
         mCommentTextMain = (TextView)headView. findViewById(R.id.comment_text_main);
         mCommentsChoicenessMain = (ListView)findViewById(R.id.comments_choiceness_main);
         mChoicenessCommentsPl = (TextView) findViewById(R.id.choiceness_comments_pl);
@@ -148,7 +147,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
 
         initDataList();
         //头布局添加适配器
-        mCommentsChoicenessMain.addHeaderView(headView);
+        mCommentsChoicenessMain.addHeaderView(headView,null,false);
         adapterCommentMain = new AdapterCommentMain(this, dataList, R.layout.item_main_comment);
         mCommentsChoicenessMain.setAdapter(adapterCommentMain);
 
@@ -193,7 +192,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.22.46:8080/AndroidServers/CommentServlet","");
+                    String restult = post("http://172.16.59.11:8080/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
