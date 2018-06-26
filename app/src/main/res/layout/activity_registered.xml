@@ -48,17 +48,17 @@
             android:id="@+id/registered_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="昵        称："
+            android:hint="用  户  名："
             android:maxLines="1" />
 
-        <EditText
-            android:layout_marginTop="10dp"
-            android:id="@+id/registered_phone"
-            android:inputType="phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="手  机  号："
-            android:maxLines="1" />
+        <!--<EditText-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/registered_phone"-->
+            <!--android:inputType="phone"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="账        号："-->
+            <!--android:maxLines="1" />-->
 
         <EditText
             android:layout_marginTop="10dp"

@@ -120,7 +120,6 @@ public class AdapterChoiceness extends BaseAdapter {
                 .load(String.valueOf(map.get("VideoImg")))
                 .into(util.mChoicenessViodeoview.thumbImageView);
 
-
         final Util finalUtil = util;
         final BeanChoiceness beanChoiceness = new BeanChoiceness();
 

@@ -13,17 +13,17 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".HomeBannerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".Activity.SearchApp"></activity>
         <activity android:name=".Activity.SearchDealActivity"/>
         <activity android:name=".WanShaLogin.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".DynamicHome.DynamicMainActivity"></activity>
         <activity android:name=".DynamicCommentDetails.CommentDetailsActivity"
