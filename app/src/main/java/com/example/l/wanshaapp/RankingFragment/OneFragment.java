@@ -67,7 +67,7 @@ public class OneFragment extends Fragment {
 
                                 ArrayList<RankingFragemntBean> homelist = new ArrayList<RankingFragemntBean>();
                                 Gson gson = new Gson();
-                                homelist = gson.fromJson(response.toString(), new TypeToken<List<RankingFragemntBean>>() {
+                                homelist = gson.fromJson(response, new TypeToken<List<RankingFragemntBean>>() {
                                 }.getType());
 //                                Log.e("网络数据",homelist.get(0).getGame_downloadurl());
                                 OneFragmentAdapter mBaseAdapter = new OneFragmentAdapter(getContext(), homelist);
