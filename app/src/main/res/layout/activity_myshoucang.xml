@@ -33,11 +33,11 @@
         <TextView
             android:id="@+id/ShoucangGamename"
             android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_height="20dp"
             android:layout_marginTop="10dp"
             android:text="游戏名称"
             android:textColor="@color/colorblack"
-            android:textSize="20sp" />
+            android:textSize="13dp" />
 
 
         <TextView

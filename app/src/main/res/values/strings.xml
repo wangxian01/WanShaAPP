@@ -9,5 +9,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="netip">172.17.186.9</string>
+    <string name="netip">172.17.172.84</string>
 </resources>

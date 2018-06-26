@@ -89,7 +89,6 @@ public class yuyuexiazai extends AppCompatActivity {
 
     }
 
-
     public class YuYueAdapter extends RecyclerView.Adapter<YuYueAdapter.ViewHolder> {
         ArrayList<GamesInfo> hehe;
 
@@ -155,11 +154,11 @@ public class yuyuexiazai extends AppCompatActivity {
         }
 
 
-        class ViewHolder extends RecyclerView.ViewHolder {
+        public class ViewHolder extends RecyclerView.ViewHolder {
             TextView yujifabu, yuyueshu, game_name, publisher;
             ImageView yiyuyuetubiao;
 
-            ViewHolder(View itemView) {
+            public ViewHolder(View itemView) {
                 super(itemView);
                 game_name = itemView.findViewById(R.id.gamename);
                 publisher = itemView.findViewById(R.id.gamecompanies);

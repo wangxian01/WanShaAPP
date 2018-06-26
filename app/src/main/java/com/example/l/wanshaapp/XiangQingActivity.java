@@ -3,6 +3,7 @@ package com.example.l.wanshaapp;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -11,15 +12,18 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
 import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
@@ -36,7 +40,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 public class XiangQingActivity extends AppCompatActivity {
     TextView title1;
-    Button download;
+    Button download,addshoucang;
     ImageView imageView,imageView5;
     TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher,shouchang;
 
@@ -50,7 +54,7 @@ public class XiangQingActivity extends AppCompatActivity {
         jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
 
-        //下载游戏
+//        //下载游戏
 //        Button download=(Button)findViewById(R.id.download);
 //        download.setOnClickListener(new View.OnClickListener(){
 //            @Override
@@ -172,24 +176,21 @@ public class XiangQingActivity extends AppCompatActivity {
 //        webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
 //        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
 
-        shouchang.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                boolean flag = beanChoiceness2.getunfold();
-                if (flag){
-                    shouchang.setText("收藏");
-                    beanChoiceness2.setunfold(false);
-                    Toast.makeText(getApplicationContext(), "求求你，别离开我இдஇ",   Toast.LENGTH_SHORT).show();
-                }else{
-                    shouchang.setText("已收藏");
-                    beanChoiceness2.setunfold(true);
-                    Toast.makeText(getApplicationContext(), "您已经收藏成功＼（＠￣∇￣＠）／",   Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
-
-
+//        shouchang.setOnClickListener(new View.OnClickListener(){
+//            public void onClick(View view){
+//                boolean flag = beanChoiceness2.getunfold();
+//                if (flag){
+//                    shouchang.setText("收藏");
+//                    beanChoiceness2.setunfold(false);
+//                    Toast.makeText(getApplicationContext(), "求求你，别离开我இдஇ",   Toast.LENGTH_SHORT).show();
+//                }else{
+//                    shouchang.setText("已收藏");
+//                    beanChoiceness2.setunfold(true);
+//                    Toast.makeText(getApplicationContext(), "您已经收藏成功＼（＠￣∇￣＠）／",   Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        });
 
         title1.setText(getIntent().getStringExtra("title1"));//传递详情项目名
         shouchang.setText(getIntent().getStringExtra("shouchang"));

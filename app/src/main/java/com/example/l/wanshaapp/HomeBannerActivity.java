@@ -21,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -35,7 +36,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
     private ArrayList<Fragment> fragmentsList = new ArrayList<>();
     private  PopupWindow mPopWindow;
-    private TextView logintv, yuyuegame,guanzhutubiao;
+    private TextView logintv, yuyuegame,guanzhutubiao,Shoucang;
     private String username;
 
     @Override
@@ -71,6 +72,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 if (username==null){ logintv.setText("登陆");}else {logintv.setText(username);}
                 yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
                 guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
+                Shoucang=contentView.findViewById(R.id.Shoucang);
                 logintv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -79,6 +81,14 @@ public class HomeBannerActivity extends AppCompatActivity   {
                     }
                 });
 
+                Shoucang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), MyShouCangActivity.class);
+                        startActivity(intent);
+
+                    }
+                });
                 guanzhutubiao.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
