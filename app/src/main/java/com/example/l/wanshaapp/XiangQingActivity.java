@@ -1,13 +1,16 @@
 package com.example.l.wanshaapp;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -28,6 +31,7 @@ import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
 import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
+import com.example.l.wanshaapp.SpecialEffects.DownloadAsyncTask;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -49,6 +53,9 @@ public class XiangQingActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
+
+
+
 
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
         jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
@@ -137,37 +144,89 @@ public class XiangQingActivity extends AppCompatActivity {
         publisher=findViewById(R.id.publisher);
         shouchang=findViewById(R.id.shouchang);
 
-        Log.e("参数", "run: "+getIntent().getStringExtra("title1"));
+
         //预约按钮的监听事件
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Thread thread = new Thread(new Runnable() {
+        if (getIntent().getStringExtra("download").equals("预约"))
+        {
+            Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
+            download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Thread thread = new Thread(new Runnable() {
 
-                    @Override
-                    public void run() {
+                        @Override
+                        public void run() {
 
-                        OkHttpUtils
-                                .get()
-                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
-                                .addParams("yuyuename","部落冲突")
-                                .build()
-                                .execute(new StringCallback() {
-                                    @Override
-                                    public void onError(Request request, Exception e) {
-                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
-                                    }
-                                    @Override
-                                    public void onResponse(String response) {
-                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+                            OkHttpUtils
+                                    .get()
+                                    .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddOrderGame")
+                                    .addParams("yuyuename","部落冲突")
+                                    .build()
+                                    .execute(new StringCallback() {
+                                        @Override
+                                        public void onError(Request request, Exception e) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                        }
+                                        @Override
+                                        public void onResponse(String response) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+                                        }
+                                    });
+                        }
+                    });
+                    thread.start();
+                }
+            });
+        }
 
-                                    }
-                                });
-                    }
-                });
-                thread.start();
-            }
-        });
+        if(getIntent().getStringExtra("download").equals("下载"))
+        {
+            Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
+            download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Thread thread = new Thread(new Runnable() {
+
+                        @Override
+                        public void run() {
+
+                            OkHttpUtils
+                                    .get()
+                                    .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddDownloadGamesInfoServlet")
+                                    .addParams("gamename","荒岛求生")
+                                    .build()
+                                    .execute(new StringCallback() {
+                                        @Override
+                                        public void onError(Request request, Exception e) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                        }
+                                        @Override
+                                        public void onResponse(String response) {
+                                            int REQUEST_EXTERNAL_STORAGE = 1;
+                                            String[] PERMISSIONS_STORAGE = {
+                                                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                                                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                                            };
+                                            int permission = ActivityCompat.checkSelfPermission(XiangQingActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+                                            if (permission != PackageManager.PERMISSION_GRANTED) {
+                                                // We don't have permission so prompt the user
+                                                ActivityCompat.requestPermissions(
+                                                        XiangQingActivity.this,
+                                                        PERMISSIONS_STORAGE,
+                                                        REQUEST_EXTERNAL_STORAGE
+                                                );
+                                            }
+                                            new DownloadAsyncTask(getApplicationContext()).execute("http://shouji.360tpcdn.com/180123/3e2ca8de45d69f9d0ef4bd01e0f96357/h.h.r.s.sparklife.other_1.apk");
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+                                        }
+                                    });
+                        }
+                    });
+                    thread.start();
+                }
+            });
+        }
 //        webView= findViewById(R.id.webView1);
 
 

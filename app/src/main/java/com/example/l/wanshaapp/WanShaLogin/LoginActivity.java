@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                     //获取sharedPreferences对象
                     SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
                     //获取editor对象
-                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+                    @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
                     editor.putBoolean("islogin",true);
                     new AlertDialog.Builder(LoginActivity.this).setMessage( "欢迎  "+ msg.obj.toString() ).create().show();
                     Intent intent = new Intent(LoginActivity.this, HomeBannerActivity.class);
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void run() {
                         OkHttpUtils
                                 .get()
-                                .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/WanShaLoginServlet")
+                                .url("http://"+getString(R.string.netip)+":8080/AndroidServers/WanShaLoginServlet")
                                 .addParams("username", username)
                                 .addParams("password", password)
                                 .build()
@@ -111,8 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                                     @Override
                                     public void onResponse(String response) {
 
-                                        if (response.toString() != null) {
-
+                                        if (response!= null) {
                                             try {
                                                 JSONObject jsonObject = new JSONObject(response.toString());
                                                 String name = jsonObject.getString("username");
