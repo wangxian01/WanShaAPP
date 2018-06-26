@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,6 +24,9 @@ import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
 import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
+import com.squareup.okhttp.Request;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
@@ -64,7 +68,7 @@ public class XiangQingActivity extends AppCompatActivity {
 
 
 
-        /**
+        /*
          * 设置收起和展开状态
          */
         final TextView ranking_unfold=findViewById(R.id.ranking_unfold);
@@ -129,7 +133,37 @@ public class XiangQingActivity extends AppCompatActivity {
         publisher=findViewById(R.id.publisher);
         shouchang=findViewById(R.id.shouchang);
 
+        Log.e("参数", "run: "+getIntent().getStringExtra("title1"));
+        //预约按钮的监听事件
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
 
+                    @Override
+                    public void run() {
+
+                        OkHttpUtils
+                                .get()
+                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
+                                .addParams("yuyuename","部落冲突")
+                                .build()
+                                .execute(new StringCallback() {
+                                    @Override
+                                    public void onError(Request request, Exception e) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                    }
+                                    @Override
+                                    public void onResponse(String response) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+
+                                    }
+                                });
+                    }
+                });
+                thread.start();
+            }
+        });
 //        webView= findViewById(R.id.webView1);
 
 

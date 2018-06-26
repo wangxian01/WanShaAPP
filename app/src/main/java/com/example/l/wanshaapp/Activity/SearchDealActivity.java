@@ -111,7 +111,7 @@ public class SearchDealActivity extends AppCompatActivity {
 
                 textView3 = (TextView) itemView.findViewById(R.id.newdynamic);
                 textView4 = (TextView) itemView.findViewById(R.id.numberofcomments);
-                Picasso.with(itemView.getContext()).load(haha.get(0).getGame_pictureurl()).into(imageView);
+                //Picasso.with(itemView.getContext()).load(haha.get(0).getGame_name()).into(imageView);
                 textView1.setText(haha.get(0).getGame_name());
                 textView2.setText(haha.get(0).getPublisher());
                 imageView1.setImageResource(0);

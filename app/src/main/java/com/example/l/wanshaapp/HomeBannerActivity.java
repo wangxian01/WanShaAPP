@@ -97,7 +97,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                             Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
                             startActivity(intent);
                         }else {
-                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
                             startActivity(intent);
                         }
                     }
