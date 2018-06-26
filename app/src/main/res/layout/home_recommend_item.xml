@@ -21,7 +21,7 @@
             android:id="@+id/diyihang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="介绍"
+            android:text="让世界惊叹的唯美世界解密手游"
             android:maxLines="1"
             android:ellipsize="end"
             android:textSize="20sp"
@@ -32,13 +32,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="大标题"
+            android:text="寻求宽恕再度来袭"
             android:textColor="@color/black"
             android:textSize="26sp" />
     </LinearLayout>
 
 
     <ImageView
+        android:src="@drawable/h"
         android:id="@+id/recommendpicture"
         android:padding="10dp"
         android:layout_width="340dp"

@@ -159,6 +159,7 @@
             android:text="下载"
             android:textColor="@color/colorWhite"
             android:textSize="13dp" />
+
         <Button
             android:id="@+id/shouchang"
             android:layout_marginLeft="5dp"

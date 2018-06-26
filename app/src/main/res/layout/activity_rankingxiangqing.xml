@@ -11,57 +11,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
             android:id="@+id/xiangqingvideo"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
         <!--<WebView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/webView1">-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/webView1">-->
 
-            <include layout="@layout/rankingxiangqingtitle" />
+        <include layout="@layout/rankingxiangqingtitle" />
 
-            <LinearLayout
-                android:padding="10dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/xiangqingtext1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:text="爆竹的生活并不容易"
+                android:textColor="@color/colorblack"
+                android:textSize="20dp" />
 
-                <TextView
-                    android:id="@+id/xiangqingtext1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="爆竹的生活并不容易"
-                    android:textColor="@color/colorblack"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/xiangqingtext2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:maxLines="5"
-                    android:text="一旦点燃了生命的火花，人生就开始倒计时。
+            <TextView
+                android:id="@+id/xiangqingtext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="5"
+                android:text="一旦点燃了生命的火花，人生就开始倒计时。
 
         《火花人生》是一款画面靓丽、讲述爆竹命运的平台游戏。踏上寻找长乐的旅程，传说那是一支导火线从未点燃过的神秘爆竹。不过，人生若无火花,岂不枉来一遭？" />
 
-                <TextView
-                    android:id="@+id/ranking_unfold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginBottom="5dp"
-                    android:text="展开"
-                    android:textSize="14dp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/ranking_unfold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:text="展开"
+                android:textSize="14dp" />
+        </LinearLayout>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
                 android:id="@+id/xiangqingtext3"
                 android:layout_width="match_parent"
@@ -87,7 +89,7 @@
                 android:layout_marginBottom="5dp"
                 android:text="展开"
                 android:textSize="14dp" />
-</LinearLayout>
+        </LinearLayout>
         <!--</WebView>-->
     </LinearLayout>
 </ScrollView>
