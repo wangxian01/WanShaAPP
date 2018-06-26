@@ -71,10 +71,10 @@ public class ThreeFragmentTools {
             "母亲再也不用担心我的肝了，","带上你的美少女去征服大海吧","错的不是我，是这个世界","无序模式下的人类黑暗面"};
 
     public static String publisher[]={
-            "成都天元开发工作室","谭儿子游戏集团","贤儿子游戏集团","刘儿子游戏集团","发爸爸游戏集团",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室",
-            "成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室","成都天元开发工作室"
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团",
+            "成都天元开发工作室","谭氏游戏开发集团","咸鱼游戏研发工作室","牛气满满游戏工作室","顺发企业集团"
     };
 
 
@@ -96,16 +96,10 @@ public class ThreeFragmentTools {
     };
 
     public static  String download[]={
-            "http://wuxia.qq.com/",
-            "http://render-ant.9game.cn/p/q/29fb90efce/portal.html?ch=LN_307&ng_ch=KM_69176&lch=VN_752&a=48245_1524643143579",
-            "https://www.1gamer.cn/prom/tg/game?appid=12695&et=3&cid=3236&k=e781abe5bdb1e5bf8de880854f4c",
-            "http://01.android2-phone.ujint.cn:8090/dilaozhizaozhe_yxdown.com.apk?ch=myx&sid=722750&name=%e5%9c%b0%e5%9f%8e%e5%88%b6%e4%bd%9c%e8%80%85&rec=False&stype=%e8%a7%92%e8%89%b2%e6%89%ae%e6%bc%94&tags=RPG%2c%e5%83%8f%e7%b4%a0%2c2D%2c%e5%a1%94%e9%98%b2%2c%e5%9c%b0%e7%89%a2",
-            "http://playark.com/",
-            "http://ssa.yundun.com/cc", "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc",
-            "http://ssa.yundun.com/cc","http://ssa.yundun.com/cc","http://ssa.yundun.com/cc"
+            "预约","预约","预约","预约","预约",
+            "预约","预约","预约","预约","预约",
+            "预约","预约","预约","预约","预约",
+            "预约","预约","预约","预约","预约"
     };
 
     public  static  String xiangqingtext2[]={

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -18,6 +19,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -34,7 +36,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
     private ArrayList<Fragment> fragmentsList = new ArrayList<Fragment>();
     private RadioGroup group;
     private  PopupWindow mPopWindow;
-    private TextView logintv, yuyuegame,guanzhutubiao;
+    private TextView logintv, yuyuegame,guanzhutubiao,Shoucang;
     private ImageButton loginbutton;
     private String username;
     private ImageView homesidebaricon;
@@ -71,11 +73,21 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 logintv = (TextView) contentView.findViewById(R.id.login);
                 if (username==null){ logintv.setText("登陆");}else {logintv.setText(username);}
                 yuyuegame = (TextView) contentView.findViewById(R.id.yuyuexiazaiid);
+                Shoucang=(TextView)contentView.findViewById(R.id.Shoucang);
                 guanzhutubiao=(TextView)contentView.findViewById(R.id.guanzhutubiao) ;
                 logintv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+                Shoucang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getApplicationContext(),MyShouCangActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -87,6 +99,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
                         startActivity(intent);
                     }
                 });
+
                 yuyuegame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
