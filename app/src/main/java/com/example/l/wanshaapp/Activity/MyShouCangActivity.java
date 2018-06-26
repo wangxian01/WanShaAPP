@@ -31,7 +31,7 @@ import java.util.ArrayList;
 /**
  * Created by 侯顺发 on 2018/6/24.
  */
-
+//123
 public class MyShouCangActivity  extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private MyShouCangActivity.ShoucangAdapter mAdapter;
