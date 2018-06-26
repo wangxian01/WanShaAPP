@@ -92,7 +92,7 @@ public class FragmentFocus extends Fragment {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.59.11:8080/AndroidServers/FocuServlet","");
+                    String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/FocuServlet","");
                     Gson gson = new Gson();
                     ArrayList<BeanFocus> beanFocus = gson.fromJson(restult,new TypeToken< ArrayList<BeanFocus>>() {
                     }.getType());

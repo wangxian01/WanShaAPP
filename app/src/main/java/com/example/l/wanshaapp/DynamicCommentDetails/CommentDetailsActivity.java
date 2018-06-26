@@ -192,7 +192,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://172.16.59.11:8080/AndroidServers/CommentServlet","");
+                    String restult = post("http://"+getString(R.string.netip)+"/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
