@@ -115,7 +115,7 @@ public class DownloadAsyncTask extends AsyncTask<String,Integer,Integer> {
 
     @Override
     protected Integer doInBackground(String... params) {
-        Log.e(TAG, "doInBackground: "+params[0] );
+       // Log.e(TAG, "doInBackground: "+params[0] );
         InputStream is = null;
         OutputStream os = null;
         HttpURLConnection connection = null;
