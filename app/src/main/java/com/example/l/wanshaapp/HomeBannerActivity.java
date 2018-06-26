@@ -21,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.Activity.DownloadActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -31,6 +32,10 @@ import com.example.l.wanshaapp.fragment.dongtaifragment;
 
 import java.util.ArrayList;
 
+
+/*created by 谭林
+* 2018.6.26
+* */
 public class HomeBannerActivity extends AppCompatActivity   {
 
     private ArrayList<Fragment> fragmentsList = new ArrayList<>();
@@ -50,7 +55,9 @@ public class HomeBannerActivity extends AppCompatActivity   {
             toolbar.setTitle("");//设置为空，可以自己定义一个居中的控件，当做标题控件使用
         }
         setSupportActionBar(toolbar);
+
         username=getIntent().getStringExtra("username");//获取登陆页传来的用户信息
+        //左上角个人设置图标监听
         ImageView homesidebaricon =findViewById(R.id.homesidebaricon);
         homesidebaricon.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("RtlHardcoded")
@@ -58,19 +65,15 @@ public class HomeBannerActivity extends AppCompatActivity   {
             public void onClick(View v) {
                 //设置contentView
                 @SuppressLint("InflateParams") View contentView = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.sidebar, null);
-
                 mPopWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
                 mPopWindow.setContentView(contentView);
-
                 //显示PopupWindow
                 @SuppressLint("InflateParams") View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
                 mPopWindow.showAtLocation(rootview, Gravity.LEFT, 0, 0);
 
-
+                //登陆图标的监听事件
                 logintv =contentView.findViewById(R.id.login);
                 if (username==null){ logintv.setText("登陆");}else {logintv.setText(username);}
-                yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
-                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
                 logintv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -78,7 +81,8 @@ public class HomeBannerActivity extends AppCompatActivity   {
                         startActivity(intent);
                     }
                 });
-
+                //关注的监听事件
+                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
                 guanzhutubiao.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -86,6 +90,17 @@ public class HomeBannerActivity extends AppCompatActivity   {
                         startActivity(intent);
                     }
                 });
+                //下载管理的监听事件
+                TextView downloadicon=contentView.findViewById(R.id.downloadicon);
+                downloadicon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                //预约游戏监听事件
+                yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
                 yuyuegame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -104,8 +119,6 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 });
             }
         });
-
-
         //搜索监听
         ImageView searchbutton =findViewById(R.id.searchbtu);
         searchbutton.setOnClickListener(new View.OnClickListener() {
@@ -115,17 +128,14 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 startActivity(intent);
             }
         });
-        RadioGroup group =findViewById(R.id.rg);
 
+        RadioGroup group =findViewById(R.id.rg);
         // 给group设置监听事件，在监听事件实现fragment之间的切换
         RadioGroup.OnCheckedChangeListener listener = new MyOnCheckedChangeListener();
         group.setOnCheckedChangeListener(listener);
-
         // 选中首页，否则开始启动的时候画面展示白板
         group.check(R.id.rb1);
     }
-
-
     //添加fragment布局
     private class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
         // 在构造方法中创造fragment

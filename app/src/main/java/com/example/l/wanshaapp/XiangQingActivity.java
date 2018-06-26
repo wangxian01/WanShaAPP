@@ -24,6 +24,7 @@ import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
 import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
 import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
+import com.example.l.wanshaapp.SpecialEffects.DownloadAsyncTask;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -41,7 +42,6 @@ public class XiangQingActivity extends AppCompatActivity {
     TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher,shouchang;
 
     @Override
-
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
@@ -49,22 +49,6 @@ public class XiangQingActivity extends AppCompatActivity {
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
         jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
-
-        //下载游戏
-//        Button download=(Button)findViewById(R.id.download);
-//        download.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
-//                //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
-//                Log.e("网络数据",getIntent().getStringExtra("download"));
-//                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
-//
-//                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-//                startActivity(intent);
-//                ////启动
-//            }
-//        });
 
 
 
@@ -133,37 +117,82 @@ public class XiangQingActivity extends AppCompatActivity {
         publisher=findViewById(R.id.publisher);
         shouchang=findViewById(R.id.shouchang);
 
-        Log.e("参数", "run: "+getIntent().getStringExtra("title1"));
-        //预约按钮的监听事件
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Thread thread = new Thread(new Runnable() {
+        Log.d("预约信息", getIntent().getStringExtra("download"));
+        if(getIntent().getStringExtra("download").equals("预约"))
+        {
+            //预约按钮的监听事件
+            download.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            OkHttpUtils
+                                    .get()
+                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
+                                    .addParams("yuyuename","部落冲突")
+                                    .build()
+                                    .execute(new StringCallback() {
+                                        @Override
+                                        public void onError(Request request, Exception e) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                        }
+                                        @Override
+                                        public void onResponse(String response) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+                                        }
+                                    });
+                        }
+                    });
+                    thread.start();
+                }
+            });
+        }
 
-                    @Override
-                    public void run() {
+        if(download.getText().toString().equals("下载"))
+        {
+            Log.d("下载信息", "onCreate: "+download.getText().toString());
+            //下载游戏
+            download.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    //Intent是一种运行时绑定（run-time binding）机制，它能在程序运行过程中连接两个不同的组件。
+                    //page1为先前已添加的类，并已在AndroidManifest.xml内添加活动事件(<activity android:name="page1"></activity>),在存放资源代码的文件夹下下，
+/*                Log.e("网络数据",getIntent().getStringExtra("download"));
+                Uri uri = Uri.parse(getIntent().getStringExtra("download"));//游戏网址
 
-                        OkHttpUtils
-                                .get()
-                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
-                                .addParams("yuyuename","部落冲突")
-                                .build()
-                                .execute(new StringCallback() {
-                                    @Override
-                                    public void onError(Request request, Exception e) {
-                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
-                                    }
-                                    @Override
-                                    public void onResponse(String response) {
-                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);*/
+                    ////启动
 
-                                    }
-                                });
-                    }
-                });
-                thread.start();
-            }
-        });
+                    Thread thread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            OkHttpUtils
+                                    .get()
+                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddDownloadGamesInfoServlet")
+                                    .addParams("gamename","部落冲突")
+                                    .build()
+                                    .execute(new StringCallback() {
+                                        @Override
+                                        public void onError(Request request, Exception e) {
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                        }
+                                        @Override
+                                        public void onResponse(String response) {
+                                            new DownloadAsyncTask(getApplicationContext());
+                                            new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+
+                                        }
+                                    });
+                        }
+                    });
+                    thread.start();
+
+                }
+            });
+        }
+
 //        webView= findViewById(R.id.webView1);
 
 
@@ -184,7 +213,6 @@ public class XiangQingActivity extends AppCompatActivity {
                     beanChoiceness2.setunfold(true);
                     Toast.makeText(getApplicationContext(), "您已经收藏成功＼（＠￣∇￣＠）／",   Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
