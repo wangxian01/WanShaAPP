@@ -16,7 +16,9 @@ import com.example.l.wanshaapp.DynamicHome.CircleImageView;
 import com.example.l.wanshaapp.R;
 import com.squareup.picasso.Picasso;
 import com.wx.goodview.GoodView;
+import com.zhy.http.okhttp.OkHttpUtils;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -172,6 +174,7 @@ public class AdapterChoiceness extends BaseAdapter {
         beanChoiceness.setstepnumber(Integer.parseInt((String) map.get("StepNumber")));//踩人数
         final GoodView goodView = new GoodView(view.getContext());//实例化+或-1动画
 
+
         // 取出bean中当记录状态是否为true，是的话则给img设置focus点赞图片
         if (beanChoiceness.getlike()) {
             finalUtil.mChoicenessUpLike.setImageResource(R.mipmap.rdz);
@@ -184,7 +187,37 @@ public class AdapterChoiceness extends BaseAdapter {
             finalUtil.mChoicenessUpStep.setImageResource(R.mipmap.cai);
         }
 
+        /*
+        * 定义线程，方便操作点赞
+        * */
+//        final Thread threads = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    OkHttpUtils
+//                            .get()
+//                            .url("http://"+context.getString(R.string.netip)+":8080/AndroidServers/UpdateChoicenessServlet")
+//                            .addParams("UpLike", typ[0])
+//                            .addParams("LikeNumber", (String) finalUtil.mTextLike.getText())
+//                            .addParams("UpStep", typ[1])
+//                            .addParams("StepNumber", (String) finalUtil.mTextStep.getText())
+//                            .addParams("UpId", (String) map.get("UpId"))
+//                            .build().execute();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        });
+//        threads.start();
+//        try {
+//            threads.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
         //点击点赞图标
+
         util.mChoicenessUpLike.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -199,6 +232,8 @@ public class AdapterChoiceness extends BaseAdapter {
                     beanChoiceness.setmumber(beanChoiceness.getmumber()-1);
                     beanChoiceness.setlike(false);
                     finalUtil.mChoicenessUpLike.setImageResource(R.mipmap.dz);
+
+
                 }else {
                     //设置动画文本
                     goodView.setText("+1");
@@ -210,10 +245,12 @@ public class AdapterChoiceness extends BaseAdapter {
                     beanChoiceness.setmumber(beanChoiceness.getmumber()+1);
                     beanChoiceness.setlike(true);
                     finalUtil.mChoicenessUpLike.setImageResource(R.mipmap.rdz);
+
                 }
 
             }
         });
+
 
         //点击踩图标
         util.mChoicenessUpStep.setOnClickListener(new View.OnClickListener() {
@@ -229,7 +266,7 @@ public class AdapterChoiceness extends BaseAdapter {
                     finalUtil.mTextStep.setText(beanChoiceness.getstepnumber()-1+"");
                     beanChoiceness.setstepnumber(beanChoiceness.getstepnumber()-1);
                     beanChoiceness.setstep(false);
-                        finalUtil.mChoicenessUpStep.setImageResource(R.mipmap.cai);
+                    finalUtil.mChoicenessUpStep.setImageResource(R.mipmap.cai);
                 }else {
                     //设置动画文本
                     goodView.setText("+1");
@@ -245,7 +282,6 @@ public class AdapterChoiceness extends BaseAdapter {
 
             }
         });
-
 
         return view;
 

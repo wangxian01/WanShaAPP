@@ -1,12 +1,22 @@
 package com.example.l.wanshaapp;
 
+
+
+/*
+created by 谭林
+time  2018.5.27
+function：主页
+*/
+
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -15,12 +25,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
+import com.example.l.wanshaapp.Activity.DownloadActivity;
+import com.example.l.wanshaapp.Activity.GuanzhuGameActivity;
 import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
@@ -67,12 +80,19 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 @SuppressLint("InflateParams") View rootview = LayoutInflater.from(HomeBannerActivity.this).inflate(R.layout.homebannerlayout, null);
                 mPopWindow.showAtLocation(rootview, Gravity.LEFT, 0, 0);
 
-
+                //登陆
+                //获取sharedPreferences对象
+                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+               // Boolean islogin=sharedPreferences.getBoolean("islogin",false);
+                Log.e("登陆的布尔值", "onClick: " +sharedPreferences.getBoolean("islogin",false));
+                Log.e("登陆的用户铭", "onClick: " +sharedPreferences.getString("username",null));
                 logintv =contentView.findViewById(R.id.login);
-                if (username==null){ logintv.setText("登陆");}else {logintv.setText(username);}
-                yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
-                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
-                Shoucang=contentView.findViewById(R.id.Shoucang);
+                ImageButton touxiang=contentView.findViewById(R.id.touxiang);
+                if (sharedPreferences.getBoolean("islogin",false))
+                {
+                    logintv.setText(sharedPreferences.getString("username",null));
+                    touxiang.setBackgroundResource(R.drawable.touxiang);
+                }else { logintv.setText("登陆");}
                 logintv.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -81,33 +101,93 @@ public class HomeBannerActivity extends AppCompatActivity   {
                     }
                 });
 
+                //收藏
+                Shoucang=contentView.findViewById(R.id.Shoucang);
                 Shoucang.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), MyShouCangActivity.class);
                         startActivity(intent);
-
                     }
                 });
-                guanzhutubiao.setOnClickListener(new View.OnClickListener() {
+                //下载管理
+                TextView downloadicon=contentView.findViewById(R.id.downloadicon);
+                downloadicon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), AttentionActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
                         startActivity(intent);
                     }
                 });
+                //关注
+                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao);
+                guanzhutubiao.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), GuanzhuGameActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                TextView exit=contentView.findViewById(R.id.exit);
+                exit.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        //    通过AlertDialog.Builder这个类来实例化我们的一个AlertDialog的对象
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HomeBannerActivity.this);
+                        //    设置Title的图标
+                        builder.setIcon(R.drawable.mianlogo);
+                        //    设置Title的内容
+                        builder.setTitle("小提示");
+                        //    设置Content来显示一个信息
+                        builder.setMessage("主人，您确定要离开我吗？？");
+                        //    设置一个PositiveButton
+                        builder.setPositiveButton("拜拜", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                System.exit(0);//正常退出App
+                                //Toast.makeText(MainActivity.this, "positive: " + which, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        //    设置一个NegativeButton
+                        builder.setNegativeButton("想想", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                //Toast.makeText(MainActivity.this, "negative: " + which, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        //    设置一个NeutralButton
+ /*                       builder.setNeutralButton("忽略", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                Toast.makeText(MainActivity.this, "neutral: " + which, Toast.LENGTH_SHORT).show();
+                            }
+                        });*/
+                        //    显示出该对话框
+                        builder.show();
+                    }
+                });
+
+                //预约
+                yuyuegame =contentView.findViewById(R.id.yuyuexiazaiid);
                 yuyuegame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         //获取sharedPreferences对象
                         SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
                         Boolean islogin=sharedPreferences.getBoolean("islogin",false);
-                        Log.e("天使", "onClick: "+islogin );
                         if(islogin){
                             Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
                             startActivity(intent);
                         }else {
-                            Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                             startActivity(intent);
                         }
                     }

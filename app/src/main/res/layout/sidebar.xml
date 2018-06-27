@@ -20,6 +20,7 @@
             android:background="@drawable/ewm_icon"/>
 
         <ImageButton
+            android:id="@+id/touxiang"
             android:layout_gravity="center"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -164,12 +165,13 @@
             android:layout_height="40dp"
             android:background="@drawable/sidebar_icon6"/>
         <TextView
+            android:id="@+id/exit"
             android:layout_marginTop="-35dp"
             android:layout_marginStart="60dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="退出"/>
+            android:text="设置"/>
 
     </LinearLayout>
 
