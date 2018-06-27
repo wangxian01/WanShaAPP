@@ -14,6 +14,7 @@ public class CommentBean {
      * comments_text : 这个游戏适合小学生耍，三岁以上就不要耍了
      * comments_time : 2018.5
      * comments_like : 0
+     * comments_number : null
      */
 
     private String comments_id;
@@ -22,10 +23,6 @@ public class CommentBean {
     private String comments_text;
     private String comments_time;
     private String comments_like;
-    /**
-     * comments_number : null
-     */
-
     private Object comments_number;
 
     public String getComments_id() {

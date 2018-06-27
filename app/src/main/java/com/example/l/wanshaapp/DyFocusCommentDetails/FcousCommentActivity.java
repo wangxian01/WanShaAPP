@@ -188,7 +188,6 @@ public class FcousCommentActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
-                    //Log.e("测试：", String.valueOf(commentBean.get(0).getComments_text()));
 
                     for (int i = 0; i < commentBean.size(); i++) {
                         Map<String, Object> map = new HashMap<String, Object>();
