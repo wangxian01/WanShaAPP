@@ -38,6 +38,7 @@ import com.example.l.wanshaapp.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
+import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -181,7 +182,6 @@ public class CommentDetailsActivity extends AppCompatActivity {
         Response response = client.newCall(request).execute();
         return response.body().string();
     }
-
     /**
      * 初始化适配器需要的数据格式
      */
@@ -192,11 +192,10 @@ public class CommentDetailsActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://"+getString(R.string.netip)+"/AndroidServers/CommentServlet","");
+                    String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
-                    //Log.e("测试：", String.valueOf(commentBean.get(0).getComments_text()));
 
                     for (int i = 0; i < commentBean.size(); i++) {
                         Map<String, Object> map = new HashMap<String, Object>();
@@ -223,6 +222,47 @@ public class CommentDetailsActivity extends AppCompatActivity {
     }
 
     /**
+     * 初始化适配器需要的数据格式
+     */
+//    private void initDataList() {
+//        dataList = new ArrayList<Map<String, Object>>();
+//        Thread thread = new Thread(){
+//            @Override
+//            public void run() {
+//                super.run();
+//                try {
+//
+//                    String restult = post("http://"+getString(R.string.netip)+"/AndroidServers/CommentServlet","");
+//                    Gson gson = new Gson();
+//                    ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
+//                    }.getType());
+//                    Log.e("测试：", restult);
+//
+//                    for (int i = 0; i < commentBean.size(); i++) {
+//                        Map<String, Object> map = new HashMap<String, Object>();
+//                        map.put("Comments_name", commentBean.get(i).getComments_name());
+//                        map.put("Comments_like", commentBean.get(i).getComments_like());
+//                        map.put("Comments_portrait", commentBean.get(i).getComments_portrait());
+//                        map.put("Comments_text", commentBean.get(i).getComments_text());
+//                        map.put("Comments_time", commentBean.get(i).getComments_time());
+//                        map.put("Comments_id", commentBean.get(i).getComments_id());
+//                        map.put("Comments_number", commentBean.get(i).getComments_number());
+//                        dataList.add(map);
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        };
+//        thread.start();
+//        try {
+//            thread.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    /**
      * by moos on 2018/06
      * func:弹出评论框
      */
@@ -246,11 +286,12 @@ public class CommentDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                String commentContent = commentText.getText().toString().trim();
+                final String commentContent = commentText.getText().toString().trim();
                 if(!TextUtils.isEmpty(commentContent)){
                     dialog.dismiss();
                     //dataList = new ArrayList<Map<String, Object>>();
                     Map<String, Object> map = new HashMap<String, Object>();
+
                     map.put("Comments_name", "张三");
                     map.put("Comments_like","0");
                     map.put("Comments_portrait", "http://uploads.sundxs.com/allimg/1705/1R3054M5-9.jpg");
@@ -258,12 +299,38 @@ public class CommentDetailsActivity extends AppCompatActivity {
                     map.put("Comments_time",simpleDateFormat.format(date));
                     map.put("Comments_id", "");
                     map.put("Comments_number","0");
-                    // dataList.add(map);
                     adapterCommentMain.addTheCommentData(map);
-                    //mFocusCommentsMainlist.smoothScrollToPosition(0);
                     mCommentsChoicenessMain.deferNotifyDataSetChanged();
                     adapterCommentMain.notifyDataSetChanged();
                     Toast.makeText(CommentDetailsActivity.this,"评论成功",Toast.LENGTH_SHORT).show();
+                    Thread threads = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                OkHttpUtils
+                                        .get()
+                                        .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/AddCommentServlet")
+                                        .addParams("comments_id", "2")
+                                        .addParams("Comments_name", "张三")
+                                        .addParams("Comments_like", "0")
+                                        .addParams("Comments_portrait", "http://uploads.sundxs.com/allimg/1705/1R3054M5-9.jpg")
+                                        .addParams("Comments_text", commentContent)
+                                        .addParams("Comments_time", simpleDateFormat.format(date))
+                                        .addParams("Comments_number", "0")
+                                        .build().execute();
+                                Log.e("测试：", commentContent);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+                    threads.start();
+                    try {
+                        threads.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
 
                 }else {
                     Toast.makeText(CommentDetailsActivity.this,"评论内容不能为空",Toast.LENGTH_SHORT).show();

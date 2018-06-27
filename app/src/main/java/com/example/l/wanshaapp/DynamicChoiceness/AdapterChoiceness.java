@@ -111,7 +111,7 @@ public class AdapterChoiceness extends BaseAdapter {
         util.mChoicenessUpTime.setText((String) map.get("ChoicenessUpTime"));
         //获取游戏介绍文字
         util.mChoicenessUpText.setText((String) map.get("ChoicenessUpText"));
-        Log.e("测试：", (String) map.get("ChoicenessUpName"));
+//        Log.e("测试：", (String) map.get("ChoicenessUpName"));
         //设置网络视频
         util.mChoicenessViodeoview.setUp(String.valueOf(map.get("ChoicenessViodeoview"))
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, String.valueOf(map.get("UpIntroduce")));
@@ -119,7 +119,6 @@ public class AdapterChoiceness extends BaseAdapter {
         Picasso.with(view.getContext())
                 .load(String.valueOf(map.get("VideoImg")))
                 .into(util.mChoicenessViodeoview.thumbImageView);
-
 
         final Util finalUtil = util;
         final BeanChoiceness beanChoiceness = new BeanChoiceness();
