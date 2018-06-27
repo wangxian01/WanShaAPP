@@ -49,14 +49,9 @@ public class XiangQingActivity extends AppCompatActivity {
     TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher,shouchang;
 
     @Override
-
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
-
-
-
-
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
         jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
@@ -76,8 +71,6 @@ public class XiangQingActivity extends AppCompatActivity {
 //                ////启动
 //            }
 //        });
-
-
 
         /*
          * 设置收起和展开状态
@@ -118,7 +111,6 @@ public class XiangQingActivity extends AppCompatActivity {
                     ranking_unfold2.setText("展开");
                     ranking_unfold2.setTextColor(Color.parseColor("#464646"));
                     beanChoiceness2.setunfold(false);
-
                 }else{
                     xiangqingtext4.setMaxLines(1000);
                     ranking_unfold2.setText("收起");
@@ -148,7 +140,7 @@ public class XiangQingActivity extends AppCompatActivity {
         //预约按钮的监听事件
         if (getIntent().getStringExtra("download").equals("预约"))
         {
-            Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
+            //Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -156,11 +148,10 @@ public class XiangQingActivity extends AppCompatActivity {
 
                         @Override
                         public void run() {
-
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddOrderGame")
-                                    .addParams("yuyuename","部落冲突")
+                                    .addParams("yuyuename",getIntent().getStringExtra("title1"))
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -181,19 +172,18 @@ public class XiangQingActivity extends AppCompatActivity {
 
         if(getIntent().getStringExtra("download").equals("下载"))
         {
-            Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
+           // Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Thread thread = new Thread(new Runnable() {
-
                         @Override
                         public void run() {
 
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddDownloadGamesInfoServlet")
-                                    .addParams("gamename","荒岛求生")
+                                    .addParams("gamename",getIntent().getStringExtra("title1"))
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -250,7 +240,6 @@ public class XiangQingActivity extends AppCompatActivity {
 //
 //            }
 //        });
-
         title1.setText(getIntent().getStringExtra("title1"));//传递详情项目名
         shouchang.setText(getIntent().getStringExtra("shouchang"));
         item_date.setText(getIntent().getStringExtra("date"));
@@ -268,10 +257,6 @@ public class XiangQingActivity extends AppCompatActivity {
         int image5  = getIntent().getExtras().getInt("image5");
         imageView5.setImageResource(image5);
         imageView.setImageResource(image);
-
-
     }
-
-
 
     };

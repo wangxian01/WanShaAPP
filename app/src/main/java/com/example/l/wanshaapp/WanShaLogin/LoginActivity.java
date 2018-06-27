@@ -61,10 +61,15 @@ public class LoginActivity extends AppCompatActivity {
                     //获取editor对象
                     @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
                     editor.putBoolean("islogin",true);
+                    editor.putString("username",msg.obj.toString() );
+                    editor.apply();
+
                     new AlertDialog.Builder(LoginActivity.this).setMessage( "欢迎  "+ msg.obj.toString() ).create().show();
+
                     Intent intent = new Intent(LoginActivity.this, HomeBannerActivity.class);
                     intent.putExtra("username",msg.obj.toString());
                     startActivity(intent);
+
                     break;
             }
         }

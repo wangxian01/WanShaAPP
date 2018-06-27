@@ -31,6 +31,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/*
+created by 谭林
+time  2018.6.27
+function：主页里面的布局
+*/
 
 public class HomeFragment extends Fragment  {
 
@@ -62,6 +67,14 @@ public class HomeFragment extends Fragment  {
 /*       HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity());
         listView.setAdapter(mBaseAdapter);*/
 
+/*        @SuppressLint("InflateParams") View contentView = LayoutInflater.from(getActivity()).inflate(R.layout.home_recommend_item, null);
+        TextView diyihang = contentView.findViewById(R.id.diyihang);
+        TextView dierhang = contentView.findViewById(R.id.dierhang);
+        ImageView imageView = contentView.findViewById(R.id.recommendpicture);
+        diyihang.setText("让世界惊叹的唯美世界解密手游");
+        dierhang.setText("寻求宽恕再度来袭");
+        imageView.setImageResource(R.drawable.h);*/
+
         //刷新布局的使用
         final RefreshLayout refreshLayout =view.findViewById(R.id.refreshLayout);
 /*        //设置 Footer 为 经典样式
@@ -75,12 +88,12 @@ public class HomeFragment extends Fragment  {
             }
         });
 
-
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
 
             @SuppressLint("StaticFieldLeak")
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshlayout) {
+
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -101,7 +114,6 @@ public class HomeFragment extends Fragment  {
 
                                         @Override
                                         public void onResponse(String response) {
-
                                             ArrayList<HomeLIstViewBean> homelist;
                                             Gson gson = new Gson();
                                             homelist = gson.fromJson(response, new TypeToken<List<HomeLIstViewBean>>() {
