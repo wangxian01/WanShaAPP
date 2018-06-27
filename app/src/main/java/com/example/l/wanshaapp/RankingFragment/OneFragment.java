@@ -26,6 +26,7 @@ import com.zhy.http.okhttp.callback.StringCallback;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import static android.content.ContentValues.TAG;
 
@@ -53,7 +54,10 @@ public class OneFragment extends Fragment {
                         .execute(new StringCallback() {
                             @Override//未响应加载网络信息，弹出对话框
                             public void onError(Request request, Exception e) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                AlertDialog.Builder builder = null;
+                                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+                                    builder = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
+                                }
                                 builder.setTitle("小问题");
                                 builder.setMessage("连接网络异常");
                                         /*     builder.setPositiveButton("是" ,  null );*/
@@ -64,8 +68,7 @@ public class OneFragment extends Fragment {
                             public void onResponse(String response) {
 
 //                                Log.e(TAG, "onResponse: "+response.toString() );
-
-                                ArrayList<RankingFragemntBean> homelist = new ArrayList<RankingFragemntBean>();
+                                ArrayList<RankingFragemntBean> homelist;
                                 Gson gson = new Gson();
                                 homelist = gson.fromJson(response, new TypeToken<List<RankingFragemntBean>>() {
                                 }.getType());
@@ -80,10 +83,6 @@ public class OneFragment extends Fragment {
 
         return view;
     }
-
-
-
-
 
     /**
      * 初始化适配器需要的数据格式

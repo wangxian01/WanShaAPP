@@ -4,15 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,8 +18,6 @@ import com.example.l.wanshaapp.XiangQingActivity;
 import com.example.l.wanshaapp.bean.HomeLIstViewBean;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 
