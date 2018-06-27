@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
 import com.example.l.wanshaapp.DynamicCommentDetails.ReplayBean;
 import com.example.l.wanshaapp.R;
 import com.google.gson.Gson;
@@ -66,6 +67,12 @@ public class RegisteredActivity extends AppCompatActivity {
         mRegisteredButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                final String username = mRegisteredUsername.getText().toString();
+                final String password = mRegisteredPassword.getText().toString();
+
+                final BeanChoiceness beanChoiceness = new BeanChoiceness();
+
                 Thread thread = new Thread(){
                     @Override
                     public void run() {
@@ -73,9 +80,16 @@ public class RegisteredActivity extends AppCompatActivity {
                         try {
                             String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/UserInfoServlet","");
                             Gson gson = new Gson();
-//                            ArrayList<UserBean> userBeans = gson.fromJson(restult,new TypeToken<ArrayList<UserBean>>() {
-//                            }.getType());
-                            Log.e("测试user：", String.valueOf(restult));
+                            ArrayList<UserBean> userBeans = gson.fromJson(restult,new TypeToken<ArrayList<UserBean>>() {
+                            }.getType());
+                            for(int i = 0;i < userBeans.size();i++){
+                                if (userBeans.get(i).getUsername().trim().equals(username)){
+                                    beanChoiceness.setunfold(false);
+                                    break;
+                                }else {
+                                    beanChoiceness.setunfold(true);
+                                }
+                            }
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -89,9 +103,6 @@ public class RegisteredActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
-                final String username = mRegisteredUsername.getText().toString();
-                final String password = mRegisteredPassword.getText().toString();
 //                Log.e("测试name：", String.valueOf(mRegisteredUsername.getText()));
 //                Log.e("测试id：",  String.valueOf(mRegisteredId.getText()));
 //                Log.e("测试password：",  String.valueOf(mRegisteredPassword.getText()));
@@ -111,31 +122,44 @@ public class RegisteredActivity extends AppCompatActivity {
                     }else {
 
                         if(String.valueOf(mRegisteredPassword.getText()).equals(String.valueOf(mRegisteredConfirm.getText()))){
-                            Thread threads = new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-                                        OkHttpUtils
-                                                .get()
-                                                .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/RegisterServlet")
-                                                .addParams("username", username)
-                                                .addParams("password", password)
-                                                .build().execute();
+                            if(beanChoiceness.getunfold()){
+                                Thread threads = new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            OkHttpUtils
+                                                    .get()
+                                                    .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/RegisterServlet")
+                                                    .addParams("username", username)
+                                                    .addParams("password", password)
+                                                    .build().execute();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
 
-                                        new AlertDialog.Builder(RegisteredActivity.this)
-                                                .setTitle("注册成功！")
-                                                .setPositiveButton("确定", null)
-                                                .show();
-                                        mRegisteredUsername.setText("");
-                                        mRegisteredConfirm.setText("");
-                                        mRegisteredPassword.setText("");
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
                                     }
-
+                                });
+                                threads.start();
+                                try {
+                                    threads.join();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
                                 }
-                            });
-                            thread.start();
+                                new AlertDialog.Builder(RegisteredActivity.this)
+                                        .setTitle("注册成功！")
+                                        .setPositiveButton("确定", null)
+                                        .show();
+                                mRegisteredUsername.setText("");
+                                mRegisteredConfirm.setText("");
+                                mRegisteredPassword.setText("");
+
+                            }else {
+                                new AlertDialog.Builder(RegisteredActivity.this)
+                                        .setTitle("用户名已经被注册啦！")
+                                        .setMessage("请重新输入用户名！")
+                                        .setPositiveButton("确定", null)
+                                        .show();
+                            }
 
                         }else{
                             new AlertDialog.Builder(RegisteredActivity.this)

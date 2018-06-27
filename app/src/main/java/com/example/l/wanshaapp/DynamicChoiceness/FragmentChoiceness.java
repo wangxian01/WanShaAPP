@@ -48,7 +48,6 @@ public class FragmentChoiceness extends Fragment {
 
         mChoicenessListview = (ListView)view.findViewById(R.id.choiceness_listview);
         initDataList();
-        Log.e("测试：", String.valueOf(dataList));
 
         //添加适配器
         AdapterChoiceness adapterChoiceness = new AdapterChoiceness(getActivity(),dataList , R.layout.item_choiceness);

@@ -23,6 +23,7 @@
         <activity android:name=".Activity.SearchApp"/>
         <activity android:name=".Activity.SearchDealActivity"/>
         <activity android:name=".WanShaLogin.LoginActivity">
+
         </activity>
         <activity android:name=".DynamicHome.DynamicMainActivity"></activity>
         <activity android:name=".DynamicCommentDetails.CommentDetailsActivity"
@@ -36,6 +37,7 @@
         <activity android:name=".DyFocusCommentDetails.FcousCommentActivity"></activity>
         <activity android:name=".Activity.MyShouCangActivity"/>
         <activity android:name=".Activity.DownloadActivity"/>
+        <activity android:name=".DyFocusCommentDetails.ReplayActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
