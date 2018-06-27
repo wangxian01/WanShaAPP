@@ -168,6 +168,37 @@ public class XiangQingActivity extends AppCompatActivity {
                 thread.start();
             }
         });
+
+
+        shouchang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        OkHttpUtils
+                                .get()
+                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
+                                .addParams("shoucangname","部落冲突")
+                                .build()
+                                .execute(new StringCallback() {
+                                    @Override
+                                    public void onError(Request request, Exception e) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                    }
+                                    @Override
+                                    public void onResponse(String response) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+
+                                    }
+                                });
+                    }
+                });
+                thread.start();
+            }
+        });
 //        webView= findViewById(R.id.webView1);
 
 

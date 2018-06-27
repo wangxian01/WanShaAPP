@@ -24,8 +24,6 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**
@@ -75,7 +73,7 @@ public class MyShouCangActivity  extends AppCompatActivity {
                                 } else {
                                     AlertDialog.Builder builder = new AlertDialog.Builder(MyShouCangActivity.this);
                                     builder.setTitle("小提示！！");
-                                    builder.setMessage("您还没有预约游戏哟！！赶紧去预约");
+                                    builder.setMessage("您还没有收藏游戏哟！！赶紧去收藏");
                                     builder.show();
                                 }
                             }
@@ -86,10 +84,10 @@ public class MyShouCangActivity  extends AppCompatActivity {
 
     }
     public class ShoucangAdapter extends RecyclerView.Adapter<MyShouCangActivity.ShoucangAdapter.ViewHolder> {
-        ArrayList<GamesInfo> hehe;
+        ArrayList<GamesInfo> heihei;
 
-        ShoucangAdapter(ArrayList<GamesInfo> haha) {
-            this.hehe = haha;
+        ShoucangAdapter(ArrayList<GamesInfo> haihai) {
+            this.heihei = haihai;
         }
 
         @NonNull
@@ -107,12 +105,12 @@ public class MyShouCangActivity  extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull MyShouCangActivity.ShoucangAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
             /*holder.mText.setText(list.get(position));*/
-            holder.ShoucangGamename.setText(hehe.get(position).getGame_name());
-            holder.ShoucangCompany.setText(hehe.get(position).getPublisher());
-            holder.ShoucangDongtai.setText(hehe.get(position).getDue_Date());
-            holder.ShoucangCompanyNumber.setText(hehe.get(position).getEstimated_time());
-            holder.ShoucangTupian.setImageResource(R.drawable.yiyuyuetubiao);
-            holder.ShoucangTupian.setOnClickListener(new View.OnClickListener() {
+            holder.ShoucangGamename.setText(heihei.get(position).getGame_name());
+            holder.ShoucangCompany.setText(heihei.get(position).getPublisher());
+            holder.ShoucangDongtai.setText(heihei.get(position).getDue_Date());
+            holder.ShoucangCompanyNumber.setText(heihei.get(position).getEstimated_time());
+            holder.ShoucangPicture.setImageResource(R.drawable.yishoucang);
+            holder.ShoucangPicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -121,8 +119,8 @@ public class MyShouCangActivity  extends AppCompatActivity {
                         public void run() {
                             OkHttpUtils
                                     .get()
-                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/DeleteOrderInfo")
-                                    .addParams("gamename", hehe.get(position).getGame_name())
+                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
+                                    .addParams("shoucangname", heihei.get(position).getGame_name())
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -151,13 +149,13 @@ public class MyShouCangActivity  extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return hehe.size();
+            return (heihei != null ? heihei.size() : 0);
         }
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView ShoucangGamename, ShoucangCompany, ShoucangDongtai, ShoucangCompanyNumber;
-            ImageView ShoucangTupian;
+            ImageView ShoucangPicture;
 
             public ViewHolder(View itemView) {
                 super(itemView);
@@ -166,7 +164,7 @@ public class MyShouCangActivity  extends AppCompatActivity {
 
                 ShoucangDongtai = itemView.findViewById(R.id.ShoucangDongtai);
                 ShoucangCompanyNumber = itemView.findViewById(R.id.ShoucangCompanyNumber);
-                ShoucangTupian = itemView.findViewById(R.id.ShoucangTupian);
+                ShoucangPicture = itemView.findViewById(R.id.ShoucangPicture);
             }
         }
 
