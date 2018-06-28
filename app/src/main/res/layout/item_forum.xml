@@ -15,6 +15,7 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
+        android:gravity="center"
         android:layout_marginLeft="5dp">
 
         <TextView
@@ -23,7 +24,7 @@
             android:id="@+id/item_forum_name"
             android:textColor="#303030"
             android:textStyle="bold"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:text="Wonterputt"/>
 
         <TextView
