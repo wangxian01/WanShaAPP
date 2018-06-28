@@ -27,6 +27,11 @@ import com.example.l.wanshaapp.fragment.dongtaifragment;
 
 import java.util.ArrayList;
 
+/*created by tanlin
+
+time 2018.6.28*/
+
+
 public class HomeBannerActivity extends AppCompatActivity   {
 
     private Toolbar toolbar;
