@@ -309,7 +309,7 @@ public class CommentDetailsActivity extends AppCompatActivity {
                             try {
                                 OkHttpUtils
                                         .get()
-                                        .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/AddCommentServlet")
+                                        .url("http://"+getApplicationContext().getString(R.string.netip2)+":8080/AndroidServers/AddCommentServlet")
                                         .addParams("Comments_id", "2")
                                         .addParams("Comments_name", "张三")
                                         .addParams("Comments_like", "0")
