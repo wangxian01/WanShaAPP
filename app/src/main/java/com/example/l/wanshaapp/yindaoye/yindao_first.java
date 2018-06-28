@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-
 import com.example.l.wanshaapp.R;
 
 public class yindao_first extends AppCompatActivity {
