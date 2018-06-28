@@ -56,6 +56,7 @@ public class FragmentChoiceness extends Fragment {
         /**
          * 点击listview传递参数（使用map）
          * */
+
         mChoicenessListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -88,6 +89,7 @@ public class FragmentChoiceness extends Fragment {
     /**
      * 初始化适配器需要的数据格式
      */
+
     private void initDataList() {
         dataList = new ArrayList<Map<String, Object>>();
         Thread thread = new Thread(){
@@ -95,7 +97,7 @@ public class FragmentChoiceness extends Fragment {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/ChoicenesServlet","");
+                    String restult = post("http://"+getString(R.string.netip2)+":8080/AndroidServers/ChoicenesServlet","");
                     Gson gson = new Gson();
                     ArrayList<BeanChoiceness> beanChoicenesses = gson.fromJson(restult,new TypeToken<ArrayList<BeanChoiceness>>() {
                     }.getType());
