@@ -13,7 +13,6 @@ import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
-import com.example.l.wanshaapp.fenleiresource.jiemiresource;
 import com.example.l.wanshaapp.fenleiresource.kongburesource;
 
 import java.util.ArrayList;
@@ -64,6 +63,7 @@ public class kongbu_fragment extends android.support.v4.app.Fragment {
             map.put("fenlei1dongzuo3",kongburesource.kongbu_dongzuo3[i]);
             map.put("youxishang",kongburesource.kongbu_youxishang[i]);
             map.put("faxinggongsi",kongburesource.kongbu_faxinggongsi[i]);
+            map.put("pingfen",kongburesource.kongbu_pingfen[i]);
             dataList.add(map);
         }
     }

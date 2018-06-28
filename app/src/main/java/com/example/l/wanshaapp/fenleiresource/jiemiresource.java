@@ -17,7 +17,7 @@ public class jiemiresource {
             R.drawable.maoxian_1,R.drawable.yizhijiemi_1,R.drawable.dongzuo,R.drawable.zhanzheng_1,R.drawable.dongzuo,};
 
 
-    public   static int[] jiemi_dongzuo2 = {R.drawable.whitebackg,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.zhanzheng_1,R.drawable.dongzuo,
+    public   static int[] jiemi_dongzuo2 = {R.drawable.dongzuo_1,R.drawable.dongzuo,R.drawable.dongzuo,R.drawable.zhanzheng_1,R.drawable.dongzuo,
             R.drawable.zhanzheng_1,R.drawable.dongzuo,R.drawable.zhanzheng_1,R.drawable.dongzuo,R.drawable.wuxia_1,};
 
 
@@ -28,6 +28,10 @@ public class jiemiresource {
             "Nint Corporation","Twit Corporation","Amazon Corporation","Landor Corporation","SONIX Corporation"};
 
     public static String jiemi_faxinggongsi[]={"第九城市","第七大道","谷得游戏","htc","莉莉丝游戏","蓝港互动","墨麟集团","tap4fun","游戏蜗牛","顽石游戏"};
+
+
+    public   static int[] jiemi_pingfen = {R.mipmap.pingfen5,R.mipmap.pingfen4,R.mipmap.pingfen4,R.mipmap.pingfen3,R.mipmap.pingfen5,
+            R.mipmap.pingfen4,R.mipmap.pingfen2,R.mipmap.pingfen3,R.mipmap.pingfen4,R.mipmap.pingfen5,};
 
 
 

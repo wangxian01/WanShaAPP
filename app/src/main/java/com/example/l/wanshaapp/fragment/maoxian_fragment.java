@@ -14,7 +14,6 @@ import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
-import com.example.l.wanshaapp.fenleiresource.kongburesource;
 import com.example.l.wanshaapp.fenleiresource.maoxianresource;
 
 import java.util.ArrayList;
@@ -65,6 +64,7 @@ public class maoxian_fragment extends Fragment {
             map.put("fenlei1dongzuo3",maoxianresource.maoxian_dongzuo3[i]);
             map.put("youxishang",maoxianresource.maoxian_youxishang[i]);
             map.put("faxinggongsi",maoxianresource.maoxian_faxinggongsi[i]);
+            map.put("pingfen", maoxianresource.maoxian_pingfen[i]);
             dataList.add(map);
         }
     }

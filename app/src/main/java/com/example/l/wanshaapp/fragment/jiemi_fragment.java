@@ -70,6 +70,7 @@ public class jiemi_fragment extends Fragment {
             map.put("youxishang",jiemiresource.jiemi_youxishang[i]);
             map.put("faxinggongsi",jiemiresource.jiemi_faxinggongsi[i]);
             map.put("youximing", jiemiresource.jiemi_youximing[i]);
+            map.put("pingfen",jiemiresource.jiemi_pingfen[i]);
             map.put("image",jiemiresource.jiemi_string[i]);
             map.put("jianjie",jiemiresource.jiemi_jianjie[i]);
             map.put("fenlei1dongzuo",jiemiresource.jiemi_dongzuo[i]);

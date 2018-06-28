@@ -10,14 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
-import com.example.l.wanshaapp.Rankingtools.Tools;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
 import com.example.l.wanshaapp.fenleiresource.jiaoseresource;
-import com.example.l.wanshaapp.fenleiresource.jiemiresource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,6 +66,7 @@ public class jiaose_fragment extends Fragment {
             map.put("fenlei1dongzuo",jiaoseresource.jiaose_dongzuo[i]);
             map.put("fenlei1dongzuo2",jiaoseresource.jiaose_dongzuo2[i]);
             map.put("fenlei1dongzuo3",jiaoseresource.jiaose_dongzuo3[i]);
+            map.put("pingfen",jiaoseresource.jiaose_pingfen[i]);
             dataList.add(map);
         }
     }

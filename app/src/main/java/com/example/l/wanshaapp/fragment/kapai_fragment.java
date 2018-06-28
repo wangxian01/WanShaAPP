@@ -10,13 +10,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.jiemiAdapter;
 import com.example.l.wanshaapp.fenleiresource.kapairesource;
-import com.example.l.wanshaapp.fenleiresource.kongburesource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +65,7 @@ public class kapai_fragment extends Fragment {
             map.put("fenlei1dongzuo3",kapairesource.kapai_dongzuo3[i]);
             map.put("youxishang",kapairesource.kapai_youxishang[i]);
             map.put("faxinggongsi",kapairesource.kapai_faxinggongsi[i]);
+            map.put("pingfen", kapairesource.kapai_pingfen[i]);
             dataList.add(map);
         }
     }

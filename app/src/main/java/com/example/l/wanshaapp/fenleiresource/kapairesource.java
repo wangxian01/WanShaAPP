@@ -30,6 +30,9 @@ public class kapairesource {
             "Nint Corporation","Twit Corporation","Amazon Corporation","Landor Corporation","SONIX Corporation"};
 
     public static String kapai_faxinggongsi[]={"第九城市","第七大道","谷得游戏","htc","莉莉丝游戏","蓝港互动","墨麟集团","tap4fun","游戏蜗牛","顽石游戏"};
+
+    public   static int[] kapai_pingfen = {R.mipmap.pingfen4,R.mipmap.pingfen4,R.mipmap.pingfen3,R.mipmap.pingfen3,R.mipmap.pingfen5,
+            R.mipmap.pingfen4,R.mipmap.pingfen5,R.mipmap.pingfen4,R.mipmap.pingfen4,R.mipmap.pingfen2,};
 }
 
 

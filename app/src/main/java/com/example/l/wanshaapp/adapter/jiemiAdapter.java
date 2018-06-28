@@ -1,8 +1,6 @@
 package com.example.l.wanshaapp.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.util.List;
 import java.util.Map;
@@ -115,6 +112,13 @@ public class jiemiAdapter extends BaseAdapter{
 
         try {
             util.fenlei1dongzuo3.setImageResource(Integer.parseInt(String.valueOf(map.get("fenlei1dongzuo3"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+       // Log.e("测试", String.valueOf(Integer.parseInt(String.valueOf(map.get("pingfen")))));
+        try {
+            util.pingfen.setImageResource(Integer.parseInt(String.valueOf(map.get("pingfen"))));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
