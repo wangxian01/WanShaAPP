@@ -2,35 +2,20 @@ package com.example.l.wanshaapp;
 
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.DynamicChoiceness.BeanChoiceness;
-import com.example.l.wanshaapp.RankingFragment.ThreeFragment;
-import com.example.l.wanshaapp.RankingFragmentadapter.ThreeFragmentAdapter;
-import com.example.l.wanshaapp.Rankingtools.ThreeFragmentTools;
+
 import com.example.l.wanshaapp.SpecialEffects.DownloadAsyncTask;
 import com.squareup.okhttp.Request;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -49,9 +34,14 @@ public class XiangQingActivity extends AppCompatActivity {
     TextView item_date,item_date3,item_date2,item_date4,item_date6,item_date5,xiangqingtext2,xiangqingtext4,publisher,shouchang;
 
     @Override
+
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_rankingxiangqing);//接受转到详情页面
+
+
+
+
         JCVideoPlayerStandard jcVideoPlayerStandard = (JCVideoPlayerStandard) findViewById(R.id.xiangqingvideo);
         jcVideoPlayerStandard.setUp(getIntent().getStringExtra("xiangqingvideo"), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, getIntent().getStringExtra("title1"));
         jcVideoPlayerStandard.thumbImageView.setImageResource(getIntent().getExtras().getInt("image"));
@@ -71,6 +61,8 @@ public class XiangQingActivity extends AppCompatActivity {
 //                ////启动
 //            }
 //        });
+
+
 
         /*
          * 设置收起和展开状态
@@ -111,6 +103,7 @@ public class XiangQingActivity extends AppCompatActivity {
                     ranking_unfold2.setText("展开");
                     ranking_unfold2.setTextColor(Color.parseColor("#464646"));
                     beanChoiceness2.setunfold(false);
+
                 }else{
                     xiangqingtext4.setMaxLines(1000);
                     ranking_unfold2.setText("收起");
@@ -138,9 +131,71 @@ public class XiangQingActivity extends AppCompatActivity {
 
 
         //预约按钮的监听事件
+
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        OkHttpUtils
+                                .get()
+                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
+                                .addParams("yuyuename","部落冲突")
+                                .build()
+                                .execute(new StringCallback() {
+                                    @Override
+                                    public void onError(Request request, Exception e) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                    }
+                                    @Override
+                                    public void onResponse(String response) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+
+                                    }
+                                });
+                    }
+                });
+                thread.start();
+            }
+        });
+
+
+        shouchang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Thread thread = new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        OkHttpUtils
+                                .get()
+                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
+                                .addParams("shoucangname","部落冲突")
+                                .build()
+                                .execute(new StringCallback() {
+                                    @Override
+                                    public void onError(Request request, Exception e) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage("网络错误！！").create().show();
+                                    }
+                                    @Override
+                                    public void onResponse(String response) {
+                                        new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
+
+                                    }
+                                });
+                    }
+                });
+                thread.start();
+            }
+        });
+
         if (getIntent().getStringExtra("download").equals("预约"))
         {
-            //Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
+            Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -148,10 +203,11 @@ public class XiangQingActivity extends AppCompatActivity {
 
                         @Override
                         public void run() {
+
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddOrderGame")
-                                    .addParams("yuyuename",getIntent().getStringExtra("title1"))
+                                    .addParams("yuyuename","部落冲突")
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -172,18 +228,19 @@ public class XiangQingActivity extends AppCompatActivity {
 
         if(getIntent().getStringExtra("download").equals("下载"))
         {
-           // Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
+            Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Thread thread = new Thread(new Runnable() {
+
                         @Override
                         public void run() {
 
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddDownloadGamesInfoServlet")
-                                    .addParams("gamename",getIntent().getStringExtra("title1"))
+                                    .addParams("gamename","荒岛求生")
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -217,6 +274,7 @@ public class XiangQingActivity extends AppCompatActivity {
                 }
             });
         }
+
 //        webView= findViewById(R.id.webView1);
 
 
@@ -240,6 +298,7 @@ public class XiangQingActivity extends AppCompatActivity {
 //
 //            }
 //        });
+
         title1.setText(getIntent().getStringExtra("title1"));//传递详情项目名
         shouchang.setText(getIntent().getStringExtra("shouchang"));
         item_date.setText(getIntent().getStringExtra("date"));
@@ -257,6 +316,11 @@ public class XiangQingActivity extends AppCompatActivity {
         int image5  = getIntent().getExtras().getInt("image5");
         imageView5.setImageResource(image5);
         imageView.setImageResource(image);
+
+
     }
 
-    };
+
+
+};
+

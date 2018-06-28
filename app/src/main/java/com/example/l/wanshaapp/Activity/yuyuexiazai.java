@@ -147,7 +147,7 @@ public class yuyuexiazai extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return hehe.size();
+            return (hehe != null ? hehe.size() : 0);
         }
 
 

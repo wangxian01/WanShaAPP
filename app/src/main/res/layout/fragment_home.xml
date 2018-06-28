@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainfragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mainfragment"
     tools:context=".fragment.HomeFragment"
     tools:ignore="InvalidId">
 
@@ -11,38 +11,41 @@
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:orientation="vertical"
-        >
-        <com.oragee.banners.BannerView
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="180dp" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/homelisttouch"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.example.l.wanshaapp.ListViewForScrollView
-            android:id="@+id/homelist"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:minHeight="?android:attr/listPreferredItemHeight">
-        </com.example.l.wanshaapp.ListViewForScrollView>
-    </LinearLayout>
+            android:layout_height="match_parent">
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    </ScrollView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:orientation="vertical">
+
+                    <com.oragee.banners.BannerView
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/homelisttouch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.example.l.wanshaapp.ListViewForScrollView
+                        android:id="@+id/homelist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="?android:attr/listPreferredItemHeight"></com.example.l.wanshaapp.ListViewForScrollView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </FrameLayout>
