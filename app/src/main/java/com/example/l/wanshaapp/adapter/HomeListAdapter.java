@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
+import com.example.l.wanshaapp.Rankingtools.FourFragmentTools;
 import com.example.l.wanshaapp.Rankingtools.Tools;
 import com.example.l.wanshaapp.XiangQingActivity;
 import com.example.l.wanshaapp.bean.HomeLIstViewBean;
@@ -57,23 +58,29 @@ public class HomeListAdapter extends BaseAdapter {
         TextView diyihang = view.findViewById(R.id.diyihang);
         TextView dierhang = view.findViewById(R.id.dierhang);
         ImageView imageView = view.findViewById(R.id.recommendpicture);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 Intent intent = new Intent(mContext, XiangQingActivity.class);
-                bundle.putString("title1", Tools.data4[position]);
-                bundle.putString("date4", Tools.data4[position]);
-                bundle.putString("date", Tools.data4[position]);
-                bundle.putString("date2", Tools.data4[position]);
-                bundle.putString("date3", Tools.data4[position]);
-                bundle.putString("date5", Tools.data4[position]);
-                bundle.putString("xiangqingtext1", Tools.data4[position]);
-                bundle.putInt("image", Tools.img[position]);
-                bundle.putInt("image5", Tools.img5[position]);
-                bundle.putString("xiangqingtext2", Tools.xiangqingtext2[position]);
-                bundle.putString("xiangqingtext4", Tools.xiangqingtext4[position]);
-//                Log.e("dayin",Tools.xiangqingtext2[position]);
+
+                bundle.putString("title1",FourFragmentTools.title[position]);
+                bundle.putString("date4",FourFragmentTools.data4[position]);
+                bundle.putString("date",FourFragmentTools.date[position]);
+                bundle.putString("date2",FourFragmentTools.date2[position]);
+                bundle.putString("date3",FourFragmentTools.date3[position]);
+                bundle.putString("xiangqingvideo", FourFragmentTools.xiangqingvideo[position]);
+                bundle.putString("date5",FourFragmentTools.date5[position]);
+                bundle.putString("xiangqingtext1",FourFragmentTools.data6[position]);
+                bundle.putInt("image",FourFragmentTools.img[position]);
+                bundle.putInt("image5",FourFragmentTools.img5[position]);
+                bundle.putString("xiangqingtext2",FourFragmentTools.xiangqingtext2[position]);
+                bundle.putString("xiangqingtext4",FourFragmentTools.xiangqingtext4[position]);
+                bundle.putString("download",FourFragmentTools.download[position]);
+                bundle.putString("publisher",FourFragmentTools.publisher[position]);
+                bundle.putString("shouchang", FourFragmentTools.shouchang[position]);
+
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
