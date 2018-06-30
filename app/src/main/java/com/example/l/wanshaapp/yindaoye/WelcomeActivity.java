@@ -60,8 +60,7 @@ public class WelcomeActivity extends AppCompatActivity {
         layouts = new int[]{
                 R.layout.yindao_1,
                 R.layout.yindao_2,
-                R.layout.yindao_3,
-                R.layout.yindao_4
+                R.layout.yindao_3
         };
         //添加点
         addBottomDots(0);
