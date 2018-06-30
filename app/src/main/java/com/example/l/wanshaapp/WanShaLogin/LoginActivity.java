@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                         if (response!= null) {
                                             try {
-                                                JSONObject jsonObject = new JSONObject(response.toString());
+                                                JSONObject jsonObject = new JSONObject(response);
                                                 String name = jsonObject.getString("username");
                                                 Message msg = new Message();
                                                 msg.what = 1;

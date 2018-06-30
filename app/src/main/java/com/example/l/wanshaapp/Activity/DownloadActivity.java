@@ -104,9 +104,10 @@ public class DownloadActivity extends AppCompatActivity {
             /*holder.mText.setText(list.get(position));*/
             holder.game_name.setText(hehe.get(position).getGame_name());
             holder.publisher.setText(hehe.get(position).getPublisher());
-            holder.yujifabu.setText(hehe.get(position).getDue_Date());
-            holder.yuyueshu.setText(hehe.get(position).getEstimated_time());
-            holder.yiyuyuetubiao.setImageResource(R.drawable.yixiazai);
+            holder.yujifabu.setText("");
+            holder.yuyueshu.setText("");
+
+            holder.yiyuyuetubiao.setImageResource(R.drawable.yuyuexiazai);
             holder.yiyuyuetubiao.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

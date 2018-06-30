@@ -64,6 +64,38 @@ public class HomeFragment extends Fragment  {
 
         //首页游戏推荐的list
         listView =view.findViewById(R.id.homelist);
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    OkHttpUtils
+                            .get()
+                            .url("http://"+ Objects.requireNonNull(getContext()).getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
+                            .build()
+                            .execute(new StringCallback() {
+                                @Override
+                                public void onError(Request request, Exception e) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                    builder.setTitle("小问题");
+                                    builder.setMessage("连接网络异常");
+                                    /*     builder.setPositiveButton("是" ,  null );*/
+                                    builder.show();
+                                }
+
+                                @Override
+                                public void onResponse(String response) {
+                                    ArrayList<HomeLIstViewBean> homelist;
+                                    Gson gson = new Gson();
+                                    homelist = gson.fromJson(response, new TypeToken<List<HomeLIstViewBean>>() {
+                                    }.getType());
+                                    HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity(), homelist);
+                                    listView.setAdapter(mBaseAdapter);
+                                }
+                            });
+                }
+            }
+        });
+        thread.start();
 /*       HomeListAdapter mBaseAdapter = new HomeListAdapter(getActivity());
         listView.setAdapter(mBaseAdapter);*/
 

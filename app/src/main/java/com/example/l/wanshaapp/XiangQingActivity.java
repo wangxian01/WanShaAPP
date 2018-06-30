@@ -131,7 +131,6 @@ public class XiangQingActivity extends AppCompatActivity {
 
 
         //预约按钮的监听事件
-
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,11 +138,10 @@ public class XiangQingActivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
-
                         OkHttpUtils
                                 .get()
                                 .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddOrderGame")
-                                .addParams("yuyuename","部落冲突")
+                                .addParams("yuyuename",getIntent().getStringExtra("title1"))
                                 .build()
                                 .execute(new StringCallback() {
                                     @Override
@@ -153,7 +151,6 @@ public class XiangQingActivity extends AppCompatActivity {
                                     @Override
                                     public void onResponse(String response) {
                                         new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
-
                                     }
                                 });
                     }
@@ -162,7 +159,7 @@ public class XiangQingActivity extends AppCompatActivity {
             }
         });
 
-
+        //收藏监听
         shouchang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,7 +171,7 @@ public class XiangQingActivity extends AppCompatActivity {
                         OkHttpUtils
                                 .get()
                                 .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
-                                .addParams("shoucangname","部落冲突")
+                                .addParams("shoucangname",getIntent().getStringExtra("title1"))
                                 .build()
                                 .execute(new StringCallback() {
                                     @Override
@@ -195,7 +192,7 @@ public class XiangQingActivity extends AppCompatActivity {
 
         if (getIntent().getStringExtra("download").equals("预约"))
         {
-            Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
+           // Log.e("预约参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -207,7 +204,7 @@ public class XiangQingActivity extends AppCompatActivity {
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddOrderGame")
-                                    .addParams("yuyuename","部落冲突")
+                                    .addParams("yuyuename",getIntent().getStringExtra("title1"))
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override
@@ -228,7 +225,7 @@ public class XiangQingActivity extends AppCompatActivity {
 
         if(getIntent().getStringExtra("download").equals("下载"))
         {
-            Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
+            //Log.e("下载参数", "run: "+getIntent().getStringExtra("download"));
             download.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -240,7 +237,7 @@ public class XiangQingActivity extends AppCompatActivity {
                             OkHttpUtils
                                     .get()
                                     .url("http://"+ getString(R.string.netip)+ ":8080/AndroidServers/servlet/AddDownloadGamesInfoServlet")
-                                    .addParams("gamename","荒岛求生")
+                                    .addParams("gamename",getIntent().getStringExtra("title1"))
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override

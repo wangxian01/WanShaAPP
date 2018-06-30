@@ -23,6 +23,7 @@ import com.example.l.wanshaapp.bean.GamesInfo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Request;
+import com.squareup.picasso.Picasso;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -45,21 +46,18 @@ public class yuyuexiazai extends AppCompatActivity {
         //设置RecyclerView管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-
         Thread thread = new Thread(new Runnable() {
-
             @Override
             public void run() {
                 OkHttpUtils
                         .get()
-                        .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/OrderGameDataServlet")
+                        .url("http://"+getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/OrderGameDataServlet")
                         .build()
                         .execute(new StringCallback() {
                             @Override
                             public void onError(Request request, Exception e) {
                                 new AlertDialog.Builder(yuyuexiazai.this).setMessage("网络错误！！").create().show();
                             }
-
                             @Override
                             public void onResponse(String response) {
                                 if (response != null) {
@@ -107,6 +105,7 @@ public class yuyuexiazai extends AppCompatActivity {
             holder.publisher.setText(hehe.get(position).getPublisher());
             holder.yujifabu.setText(hehe.get(position).getDue_Date());
             holder.yuyueshu.setText(hehe.get(position).getEstimated_time());
+            Picasso.with(getApplicationContext()).load("http://"+getString(R.string.netip) + ":8080/AndroidServers/images/rankingorder" + position + ".png").into(holder.tubiao);
             holder.yiyuyuetubiao.setImageResource(R.drawable.yiyuyuetubiao);
             holder.yiyuyuetubiao.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -117,7 +116,7 @@ public class yuyuexiazai extends AppCompatActivity {
                         public void run() {
                             OkHttpUtils
                                     .get()
-                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/DeleteOrderInfo")
+                                    .url("http://" + getApplicationContext().getString(R.string.netip)+ ":8080/AndroidServers/servlet/DeleteOrderInfo")
                                     .addParams("gamename", hehe.get(position).getGame_name())
                                     .build()
                                     .execute(new StringCallback() {
@@ -153,13 +152,13 @@ public class yuyuexiazai extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView yujifabu, yuyueshu, game_name, publisher;
-            ImageView yiyuyuetubiao;
+            ImageView yiyuyuetubiao,tubiao;
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 game_name = itemView.findViewById(R.id.gamename);
                 publisher = itemView.findViewById(R.id.gamecompanies);
-
+                tubiao=itemView.findViewById(R.id.lefticon);
                 yujifabu = itemView.findViewById(R.id.newdynamic);
                 yuyueshu = itemView.findViewById(R.id.numberofcomments);
                 yiyuyuetubiao = itemView.findViewById(R.id.righticon);

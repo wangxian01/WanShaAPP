@@ -47,7 +47,7 @@ public class OneFragment extends Fragment {
             public void run() {
                 OkHttpUtils
                         .get()
-                        .url("http://192.168.1.155:8080/AndroidServers/RankingDataServlet")
+                        .url("http://"+ getString(R.string.netip)+":8080/AndroidServers/RankingDataServlet")
                                 /*            .addParams("username",username)
                                              .addParams("password",password)*/
                         .build()

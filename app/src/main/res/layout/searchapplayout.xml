@@ -23,7 +23,7 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:theme="@style/MyEditText"
-            android:hint="游戏，厂商，帖子等"
+            android:hint="要搜索的游戏"
             tools:ignore="InvalidId" />
 
         <ImageView

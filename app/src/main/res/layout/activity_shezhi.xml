@@ -13,7 +13,6 @@
         >
         <!--自定义控件-->
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,18 +28,19 @@
         android:id="@+id/tuichuzhanghao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="退出账号                                                         >"
+        android:text="退出账号                                                >"
         android:textSize="20dp"
         android:background="@color/white"
         android:padding="10dp"/>
 <!--//啊啊啊啊//-->
+
     <TextView
         android:id="@+id/guanyuwomen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tuichuzhanghao"
         android:layout_marginTop="10dp"
-        android:text="关于我们                                                         >"
+        android:text="关于我们                                                >"
         android:textSize="20dp"
         android:background="@color/white"
         android:padding="10dp"/>
