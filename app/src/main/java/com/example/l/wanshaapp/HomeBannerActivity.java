@@ -22,6 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.Activity.DownloadActivity;
+import com.example.l.wanshaapp.Activity.MyShouCangActivity;
 import com.example.l.wanshaapp.Activity.SearchApp;
 import com.example.l.wanshaapp.Activity.yuyuexiazai;
 import com.example.l.wanshaapp.WanShaLogin.LoginActivity;
@@ -41,7 +42,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
     private ArrayList<Fragment> fragmentsList = new ArrayList<>();
     private  PopupWindow mPopWindow;
-    private TextView logintv, yuyuegame,guanzhutubiao,textView_shezhi,xiazaiguanli;
+    private TextView logintv, yuyuegame,guanzhutubiao,textView_shezhi,xiazaiguanli,wodeshoucang;
     private String username;
 
     @Override
@@ -76,10 +77,10 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
                 logintv =contentView.findViewById(R.id.login);
                 ImageButton touxiang=contentView.findViewById(R.id.touxiang);
-                if (username!=null)
+                //获取sharedPreferences对象
+                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                if (sharedPreferences.getBoolean("islogin",false))
                 {
-                    //获取sharedPreferences对象
-                    SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
                     logintv.setText(sharedPreferences.getString("username",null));
                     touxiang.setBackgroundResource(R.mipmap.touxiang);
                 }
@@ -88,6 +89,23 @@ public class HomeBannerActivity extends AppCompatActivity   {
                     logintv.setText("登陆");
                 }
 
+                wodeshoucang=contentView.findViewById(R.id.wodeshoucang);
+                wodeshoucang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //获取sharedPreferences对象
+                        SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                        if (sharedPreferences.getBoolean("islogin",false))
+                        {
+                            Intent intent = new Intent(getApplicationContext(), MyShouCangActivity.class);
+                            startActivity(intent);
+
+                        }else {
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                });
 
                 //设置监听
                 textView_shezhi=contentView.findViewById(R.id.shezhi);
@@ -121,6 +139,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
                     }
                 });
+
                 //下载管理
                 xiazaiguanli=contentView.findViewById(R.id.downloadmanage) ;
                 xiazaiguanli.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +157,7 @@ public class HomeBannerActivity extends AppCompatActivity   {
 
                         //获取sharedPreferences对象
                         SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
-                        Log.e("预约布尔",  "你说"+sharedPreferences.getBoolean("islogin",false));
+                        //Log.e("预约布尔",  "你说"+sharedPreferences.getBoolean("islogin",false));
                         if (sharedPreferences.getBoolean("islogin",false))
                         {
                             Intent intent = new Intent(getApplicationContext(), yuyuexiazai.class);
@@ -217,9 +236,5 @@ public class HomeBannerActivity extends AppCompatActivity   {
             // 最后事务一定要提交
             ft.commit();
         }
-
-
     }
-
-
 }

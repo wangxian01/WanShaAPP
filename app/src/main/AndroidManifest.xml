@@ -37,6 +37,7 @@
         <activity android:name=".DyFocusCommentDetails.FcousCommentActivity"></activity>
         <activity android:name=".DyFocusCommentDetails.ReplayActivity"></activity>
         <activity android:name=".shezhi_activity"></activity>
+        <activity android:name=".Activity.MyShouCangActivity"/>
     </application>
 
 </manifest>

@@ -50,7 +50,7 @@ public class MyShouCangActivity  extends AppCompatActivity {
             public void run() {
                 OkHttpUtils
                         .get()
-                        .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/OrderGameDataServlet")
+                        .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/servlet/CollectionGamesDataServlect")
                         .build()
                         .execute(new StringCallback() {
                             @Override
@@ -119,7 +119,7 @@ public class MyShouCangActivity  extends AppCompatActivity {
                         public void run() {
                             OkHttpUtils
                                     .get()
-                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
+                                    .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/servlet/DelectCollectionInfo")
                                     .addParams("shoucangname", heihei.get(position).getGame_name())
                                     .build()
                                     .execute(new StringCallback() {

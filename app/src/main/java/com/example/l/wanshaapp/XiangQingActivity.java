@@ -170,7 +170,7 @@ public class XiangQingActivity extends AppCompatActivity {
 
                         OkHttpUtils
                                 .get()
-                                .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/AddCollectionGame")
+                                .url("http://"+ getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/servlet/AddCollectionGame")
                                 .addParams("shoucangname",getIntent().getStringExtra("title1"))
                                 .build()
                                 .execute(new StringCallback() {
