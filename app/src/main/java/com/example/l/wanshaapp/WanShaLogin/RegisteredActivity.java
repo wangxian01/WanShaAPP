@@ -78,7 +78,7 @@ public class RegisteredActivity extends AppCompatActivity {
                     public void run() {
                         super.run();
                         try {
-                            String restult = post("http://"+getString(R.string.netip2)+":8080/AndroidServers/UserInfoServlet","");
+                            String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/UserInfoServlet","");
                             Gson gson = new Gson();
                             ArrayList<UserBean> userBeans = gson.fromJson(restult,new TypeToken<ArrayList<UserBean>>() {
                             }.getType());
@@ -129,7 +129,7 @@ public class RegisteredActivity extends AppCompatActivity {
                                         try {
                                             OkHttpUtils
                                                     .get()
-                                                    .url("http://"+getApplicationContext().getString(R.string.netip2)+":8080/AndroidServers/RegisterServlet")
+                                                    .url("http://"+getApplicationContext().getString(R.string.netip)+":8080/AndroidServers/RegisterServlet")
                                                     .addParams("username", username)
                                                     .addParams("password", password)
                                                     .build().execute();

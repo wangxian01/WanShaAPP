@@ -15,12 +15,12 @@
         <activity android:name=".yindaoye.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity android:name=".Activity.DownloadActivity"/>
+        <activity android:name=".guanyuwomen"/>
         <activity android:name=".HomeBannerActivity"/>
         <activity android:name=".Activity.SearchApp"></activity>
         <activity android:name=".Activity.SearchDealActivity"/>

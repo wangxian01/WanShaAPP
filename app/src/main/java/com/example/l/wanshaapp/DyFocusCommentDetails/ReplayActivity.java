@@ -144,7 +144,7 @@ public class ReplayActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://"+getString(R.string.netip2)+":8080/AndroidServers/ReplysServlet","");
+                    String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/ReplysServlet","");
                     Gson gson = new Gson();
                     ArrayList<ReplayBean> replayBeans = gson.fromJson(restult,new TypeToken<ArrayList<ReplayBean>>() {
                     }.getType());

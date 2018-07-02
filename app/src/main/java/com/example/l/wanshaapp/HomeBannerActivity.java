@@ -120,25 +120,6 @@ public class HomeBannerActivity extends AppCompatActivity   {
                     }
                 });
 
-                //关注
-                guanzhutubiao=contentView.findViewById(R.id.guanzhutubiao) ;
-                guanzhutubiao.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        //获取sharedPreferences对象
-                        SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
-                        if (sharedPreferences.getBoolean("islogin",false))
-                        {
-                            Intent intent = new Intent(getApplicationContext(), AttentionActivity.class);
-                            startActivity(intent);
-
-                        }else {
-                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                            startActivity(intent);
-                        }
-
-                    }
-                });
 
                 //下载管理
                 xiazaiguanli=contentView.findViewById(R.id.downloadmanage) ;

@@ -184,7 +184,7 @@ public class FcousCommentActivity extends AppCompatActivity {
             public void run() {
                 super.run();
                 try {
-                    String restult = post("http://"+getString(R.string.netip2)+":8080/AndroidServers/CommentServlet","");
+                    String restult = post("http://"+getString(R.string.netip)+":8080/AndroidServers/CommentServlet","");
                     Gson gson = new Gson();
                     ArrayList<CommentBean> commentBean = gson.fromJson(restult,new TypeToken<ArrayList<CommentBean>>() {
                     }.getType());
