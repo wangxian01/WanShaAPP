@@ -261,7 +261,7 @@ public class XiangQingActivity extends AppCompatActivity {
                                                         REQUEST_EXTERNAL_STORAGE
                                                 );
                                             }
-                                            new DownloadAsyncTask(getApplicationContext()).execute("http://shouji.360tpcdn.com/180123/3e2ca8de45d69f9d0ef4bd01e0f96357/h.h.r.s.sparklife.other_1.apk");
+                                            new DownloadAsyncTask(getApplicationContext()).execute("http://"+ getString(R.string.netip)+":8080/AndroidServers/video/huohuarensheng.apk");
                                             new AlertDialog.Builder(XiangQingActivity.this).setMessage(response).create().show();
                                         }
                                     });

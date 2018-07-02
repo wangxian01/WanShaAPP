@@ -109,6 +109,7 @@ public class MyShouCangActivity  extends AppCompatActivity {
             holder.ShoucangCompany.setText(heihei.get(position).getPublisher());
             holder.ShoucangDongtai.setText(heihei.get(position).getDue_Date());
             holder.ShoucangCompanyNumber.setText(heihei.get(position).getEstimated_time());
+
             holder.ShoucangPicture.setImageResource(R.drawable.yishoucang);
             holder.ShoucangPicture.setOnClickListener(new View.OnClickListener() {
                 @Override

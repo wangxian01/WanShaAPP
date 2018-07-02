@@ -58,7 +58,6 @@ public class HomeListAdapter extends BaseAdapter {
         TextView diyihang = view.findViewById(R.id.diyihang);
         TextView dierhang = view.findViewById(R.id.dierhang);
         ImageView imageView = view.findViewById(R.id.recommendpicture);
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

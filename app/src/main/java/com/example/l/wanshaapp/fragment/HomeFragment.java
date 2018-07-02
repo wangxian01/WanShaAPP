@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment  {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     OkHttpUtils
                             .get()
-                            .url("http://"+ Objects.requireNonNull(getContext()).getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
+                            .url("http://"+getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
                             .build()
                             .execute(new StringCallback() {
                                 @Override
@@ -132,7 +132,7 @@ public class HomeFragment extends Fragment  {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                             OkHttpUtils
                                     .get()
-                                    .url("http://"+ Objects.requireNonNull(getContext()).getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
+                                    .url("http://"+getString(R.string.netip)+":8080/AndroidServers/servlet/HomeListViewData")
                                     .build()
                                     .execute(new StringCallback() {
                                         @Override

@@ -145,8 +145,18 @@ public class HomeBannerActivity extends AppCompatActivity   {
                 xiazaiguanli.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
-                        startActivity(intent);
+
+                        //获取sharedPreferences对象
+                        SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                        //Log.e("预约布尔",  "你说"+sharedPreferences.getBoolean("islogin",false));
+                        if (sharedPreferences.getBoolean("islogin",false))
+                        {
+                            Intent intent = new Intent(getApplicationContext(), DownloadActivity.class);
+                            startActivity(intent);
+                        }else {
+                            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 });
                 //预约下载
