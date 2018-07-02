@@ -182,6 +182,9 @@ public class HomeBannerActivity extends AppCompatActivity   {
         });
 
 
+
+
+
         //搜索监听
         ImageView searchbutton =findViewById(R.id.searchbtu);
         searchbutton.setOnClickListener(new View.OnClickListener() {

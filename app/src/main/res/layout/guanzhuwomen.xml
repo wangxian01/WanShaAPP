@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_shezhi"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@drawable/toolbar_background"
+        android:layout_centerHorizontal="true"
+        >
+        <!--自定义控件-->
+        <TextView
+            android:id="@+id/guanyuwomen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:layout_marginRight="30dp"
+            android:text="关于我们"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+        <TextView
+            android:id="@+id/tuanduijieshao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="团队介绍"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/toolbar_shezhi"
+            android:layout_marginLeft="120dp"
+            android:layout_alignLeft="@+id/guanyuwomen"
+            android:textSize="25dp"
+            tools:ignore="NotSibling" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#66CCFF"
+        android:layout_below="@+id/tuanduijieshao"
+        android:layout_marginTop="15dp"/>
+
+    <ImageView
+        android:id="@+id/dengshangpeng_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/view"
+        android:background="@drawable/dengshaopeng"/>
+
+    <TextView
+        android:id="@+id/dengshangpeng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dengshangpeng_img"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="5dp"
+        android:text="邓尚鹏"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei_dengshangpeng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dengshangpeng"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP----UI工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_dengshangpeng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei_dengshangpeng"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="塌实肯学，积极诚恳，我为人诚实守信，待人热情，工作认真，积极肯干，勇于创新，服从领导安排，执行力强。拥有大量的系统化的实践经历和丰富的工作经验，全局把握能力强。我能熟练使用计算机。"
+        android:textSize="20dp" />
+
+
+
+
+
+    <ImageView
+        android:id="@+id/tanlin_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/miaoshu_dengshangpeng"
+        android:background="@drawable/tanlin"/>
+
+    <TextView
+        android:id="@+id/tanlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tanlin_img"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="5dp"
+        android:text="谭林"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tanlin"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP后端工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_tanlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="能吃苦耐劳，责任心强，能适应各种工作能力，善于与人沟通交流，比较成熟，为人正直，能够处理好各种人事关系。并且能迅速的融入团队工作，属学习实干型职员。工作以完成目的和达成目标为己任，敢于承担责任，富有工作激情，相信有激情就有一切。 "
+        android:textSize="20dp" />
+
+
+
+    <ImageView
+        android:id="@+id/libochao_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/miaoshu_tanlin"
+        android:background="@drawable/libochao"/>
+
+    <TextView
+        android:id="@+id/libochao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/libochao_img"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="5dp"
+        android:text="李博超"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei_libochao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/libochao"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP----UI工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_libochao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei_libochao"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="本人综合素质佳，能够吃苦耐劳，忠诚稳重坚守诚信正直原则，勇于挑战自我开发自身潜力; 做一个主动的人，工作积极热情，为了自己的目标为了完成自己想要的事情拼命投入力量;具备良好的人品，乐于与人沟通。"
+        android:textSize="20dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/wangxian_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/miaoshu_libochao"
+        android:background="@drawable/wangxian"/>
+
+    <TextView
+        android:id="@+id/wangxian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wangxian_img"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="5dp"
+        android:text="王贤"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei_wangxian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wangxian"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP后端工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_wangxian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei_wangxian"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="塌实肯学，积极诚恳，我为人诚实守信，待人热情，工作认真，积极肯干，勇于创新，服从领导安排，执行力强。拥有大量的系统化的实践经历和丰富的工作经验，全局把握能力强。我能熟练使用计算机、DVR相关的测试设备和测试软件，熟练使用AUTOCAD制图和办公软件。"
+        android:textSize="20dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/houshunfa_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/miaoshu_wangxian"
+        android:background="@drawable/houshunfa"/>
+
+    <TextView
+        android:id="@+id/houshunfa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/houshunfa_img"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="5dp"
+        android:text="侯顺发"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei_houshunfa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/houshunfa"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP后端工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_houshunfa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei_houshunfa"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="本人诚实正直，对工作认真负责，吃苦耐劳，善于创新，敢于迎接挑战及承担责任。富有工作热情，乐业敬业，善于与人沟通，营造和谐的工作氛围，注重人性化管理，能带动下属充分发挥团队合作精神，为公司创造效益！"
+        android:textSize="20dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/liuyangxu_img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5dp"
+        android:layout_alignLeft="@+id/tuanduijieshao"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/miaoshu_houshunfa"
+        android:background="@drawable/liuyangxu"/>
+
+    <TextView
+        android:id="@+id/liuyangxu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/liuyangxu_img"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="5dp"
+        android:text="刘洋序"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/zhiwei_liuyangxu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/liuyangxu"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:text="玩啥APP后端工程师"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:id="@+id/miaoshu_liuyangxu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/zhiwei_liuyangxu"
+        android:background="@drawable/textview_border"
+        android:layout_marginTop="15dp"
+        android:text="我喜欢一个有前途的单位，我喜欢学习使自己更强，不怕受苦受累，关键是我做喜欢的工作，只要是让我和学生在一起，我就有用不完的力气，看到学生跟着我学习有很大的进步，我非常的欣慰。 如果哪个单位能录用我，我会给你带来更多的生源，因为我的人格魅力。"
+        android:textSize="20dp" />
+
+
+
+
+
+
+
+</RelativeLayout>
+
+</ScrollView>

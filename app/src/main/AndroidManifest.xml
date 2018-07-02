@@ -12,15 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".HomeBannerActivity">
+        <activity android:name=".yindaoye.yindao_first">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Activity.DownloadActivity"/>
+        <activity android:name=".guanyuwomen"></activity>
         <activity android:name=".yindaoye.WelcomeActivity"></activity>
         <activity android:name=".Activity.SearchApp"></activity>
         <activity android:name=".Activity.SearchDealActivity"/>
@@ -36,8 +35,8 @@
         <activity android:name=".AttentionActivity"></activity>
         <activity android:name=".DyFocusCommentDetails.FcousCommentActivity"></activity>
         <activity android:name=".DyFocusCommentDetails.ReplayActivity"></activity>
+        <activity android:name=".HomeBannerActivity"></activity>
         <activity android:name=".shezhi_activity"></activity>
-        <activity android:name=".Activity.MyShouCangActivity"/>
     </application>
 
 </manifest>
