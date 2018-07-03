@@ -1,30 +1,20 @@
 package com.example.l.wanshaapp.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-
-import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
-import com.example.l.wanshaapp.JCVideoPlayerStandard.player;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.RecyAdapter;
 import com.example.l.wanshaapp.bean.Small;
-import com.example.l.wanshaapp.fenleiresource.jiemiresource;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -103,25 +93,25 @@ public class zhuda_fragment extends Fragment {
 
 
         for (int i = 0; i < 1; i++) {
-            Small apple = new Small("Apple", R.drawable.fenlei_jiaose_1);
+            Small apple = new Small("Groce", R.drawable.fenlei_jiaose_1);
             fruitList.add(apple);
-            Small banana = new Small("Banana", R.drawable.fenlei_kapai_2);
+            Small banana = new Small("INLKGNG", R.drawable.fenlei_kapai_2);
             fruitList.add(banana);
-            Small orange = new Small("Orange", R.drawable.fenlei_kongbu_7);
+            Small orange = new Small("INGNSNKF", R.drawable.fenlei_kongbu_7);
             fruitList.add(orange);
-            Small watermelon = new Small("Watermelon", R.drawable.fenlei_kapai_8);
+            Small watermelon = new Small("Mfrage", R.drawable.fenlei_kapai_8);
             fruitList.add(watermelon);
-            Small pear = new Small("Pear", R.drawable.fenlei_jiaose_6);
+            Small pear = new Small("Drnone", R.drawable.fenlei_jiaose_6);
             fruitList.add(pear);
-            Small grape = new Small("Grape", R.drawable.fenlei_jiaose_9);
+            Small grape = new Small("Bnintner", R.drawable.fenlei_jiaose_9);
             fruitList.add(grape);
-            Small pineapple = new Small("Pineapple", R.drawable.fenlei_kapai_9);
+            Small pineapple = new Small("Loveindesk", R.drawable.fenlei_kapai_9);
             fruitList.add(pineapple);
-            Small strawberry = new Small("Strawberry", R.drawable.fenlei_maoxian_8);
+            Small strawberry = new Small("Ntrckce", R.drawable.fenlei_maoxian_8);
             fruitList.add(strawberry);
-            Small cherry = new Small("Cherry", R.drawable.fenlei_maoxian_3);
+            Small cherry = new Small("Froerver", R.drawable.fenlei_maoxian_3);
             fruitList.add(cherry);
-            Small mango = new Small("Mango", R.drawable.fenlei_kongbu_6);
+            Small mango = new Small("Mangesin", R.drawable.fenlei_kongbu_6);
             fruitList.add(mango);
 
         }

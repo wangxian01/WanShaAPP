@@ -34,6 +34,10 @@ public class jiemiresource {
             R.mipmap.pingfen4,R.mipmap.pingfen2,R.mipmap.pingfen3,R.mipmap.pingfen4,R.mipmap.pingfen5,};
 
 
+    public static String jiemi_youxijianjie[]={"游戏包括了全世界几乎所有拥有足球职业联赛的国家的球队和球员，玩家可选择任意国家任意级别的联赛的任意一支球队，并作为球队的经理和主教练带领球队征战联赛。玩家在其中拥有买卖球员、控制比赛、设置训练、管理球队、与媒体和其他球队教练交流等能力。",
+            "第七大道","谷得游戏","htc","莉莉丝游戏","蓝港互动","墨麟集团","tap4fun","游戏蜗牛","顽石游戏"};
+
+
 
 };
 

@@ -6,7 +6,7 @@ public class Small {
 
     private int imageId;
 
-    public Small(String name, int imageId) {
+    public Small(String name, int imageId ) {
         this.name = name;
         this.imageId = imageId;
     }

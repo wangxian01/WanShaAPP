@@ -5,12 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.l.wanshaapp.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 import java.util.Map;
@@ -81,7 +79,20 @@ public class pinglunAdapter extends BaseAdapter{
         util.view=(View)convertView.findViewById(R.id.view);
         // 获取数据显示在各组件
         Map<String, Object> map = dataList.get(position);
-        util.pinglunID.setText((String) map.get("youximing"));
+
+
+        util.pinglunID.setText((String)map.get("youximing_1"));
+
+
+        try {
+            util.pinglunimage.setImageResource(Integer.parseInt(String.valueOf(map.get("image_1"))));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+
+        util.pinglunDate.setText((String) map.get("date"));
+
+        util.pinglunxinxi.setText((String) map.get("xinxi"));
 
 
         //util.riqi.setText((String)map.get("riqi"));

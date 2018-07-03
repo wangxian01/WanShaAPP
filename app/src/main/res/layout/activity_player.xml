@@ -171,7 +171,7 @@
                             android:layout_below="@+id/youxijianjie"
                             android:layout_marginTop="5dp"
                             android:layout_alignLeft="@+id/youxijianjie"
-                            android:text="创世战记是一个很好玩的游戏巴拉巴巴拉吧老夫就发你姐夫是你放开NSA开发你看三分可能是可能饭卡上撒发生。"/>
+                            android:text="游戏包括了全世界几乎所有拥有足球职业联赛的国家的球队和球员，玩家可选择任意国家任意级别的联赛的任意一支球队，并作为球队的经理和主教练带领球队征战联赛。玩家在其中拥有买卖球员、控制比赛、设置训练、管理球队、与媒体和其他球队教练交流等能力。"/>
 
                        <TextView
                            android:id="@+id/youxiwanfa"
@@ -188,7 +188,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:layout_below="@+id/youxiwanfa"
-                            android:text="游戏中，玩家将操作爆竹人来进行跑步啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"/>
+                            android:text="游戏目的即带领自己的球队在所属联赛中尽可能的获得胜利，赢得各项赛事的锦标，如联赛冠军、联盟杯、欧洲冠军杯、足总杯和各国联赛杯等。同时，玩家也可直接操纵某国的国家队征战各级国际赛事，如各类友谊赛、洲际杯、世界杯等。"/>
                     </RelativeLayout>
                     </ScrollView>
 
