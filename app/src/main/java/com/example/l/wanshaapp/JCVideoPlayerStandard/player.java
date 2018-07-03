@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.l.wanshaapp.DynamicChoiceness.SerializableMap;
 import com.example.l.wanshaapp.R;
 import com.example.l.wanshaapp.adapter.pinglunAdapter;
+import com.example.l.wanshaapp.fenleiresource.pinglunresource;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,6 +69,9 @@ type=getIntent().getStringExtra("type");
             int image  = getIntent().getExtras().getInt("img");
             fenlei2image.setImageResource(image);
             jcVideoPlayerStandard.thumbImageView.setImageResource(image);
+
+            youxijianjie.setText(getIntent().getStringExtra("id"));
+
     }
 
 //listview传递参数
@@ -133,10 +137,10 @@ type=getIntent().getStringExtra("type");
 
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("youximing", "创世战纪"+i);
-            map.put("riqi", "创世战纪"+i);
-            map.put("wuyu", "创世战纪");
-            map.put("pingfen", "创世战纪");
+            map.put("youximing_1", pinglunresource.pinglun_youxijianjie[i]);
+            map.put("image_1",pinglunresource.pinglun_string[i]);
+            map.put("date",pinglunresource.pinglun_date[i]);
+            map.put("xinxi",pinglunresource.pinglun_xinxi[i]);
             dataList.add(map);
         }
     }
