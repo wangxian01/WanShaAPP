@@ -1,6 +1,8 @@
 package com.example.l.wanshaapp.Activity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,30 @@ public class yuyuexiazai extends AppCompatActivity {
                             }
                             @Override
                             public void onResponse(String response) {
-                                if (response != null) {
+                          /*      if (response != null) {
+                                    Log.e("返回的信息", response );
+
+                                } */if(response.equals("[]")) {
+                                    final AlertDialog.Builder builder = new AlertDialog.Builder(yuyuexiazai.this);
+                                    builder.setTitle("小提示！！");
+                                    builder.setMessage("您还没有预约游戏哟！！赶紧去预约");
+                                    builder.setPositiveButton("去", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent(getApplicationContext(), HomeBannerActivity.class);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                    builder.setNegativeButton("不去", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                                    builder.show();
+
+                                }
+                                else {
                                     Gson gson = new Gson();
                                     list = gson.fromJson(response, new TypeToken<ArrayList<GamesInfo>>() {
                                     }.getType());
@@ -70,11 +94,6 @@ public class yuyuexiazai extends AppCompatActivity {
                                     mRecyclerView.setItemAnimator(new DefaultItemAnimator());
                                     //设置适配器
                                     mRecyclerView.setAdapter(mAdapter);
-                                } else {
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(yuyuexiazai.this);
-                                    builder.setTitle("小提示！！");
-                                    builder.setMessage("您还没有预约游戏哟！！赶紧去预约");
-                                    builder.show();
                                 }
                             }
                         });

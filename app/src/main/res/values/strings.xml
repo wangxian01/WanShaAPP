@@ -9,7 +9,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="netip">172.17.186.9</string>
+    <string name="netip">172.17.152.17</string>
 
     <string name="title_activity_welcome">Home Screen</string>
     <string name="next">下一步</string>

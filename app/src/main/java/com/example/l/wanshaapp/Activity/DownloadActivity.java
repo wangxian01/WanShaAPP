@@ -106,51 +106,13 @@ public class DownloadActivity extends AppCompatActivity {
             holder.publisher.setText(hehe.get(position).getPublisher());
             holder.yujifabu.setText("");
             holder.yuyueshu.setText("");
-
             holder.yiyuyuetubiao.setImageResource(R.drawable.yuyuexiazai);
-            holder.yiyuyuetubiao.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Thread thread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            OkHttpUtils
-                                    .get()
-                                    .url("http://" + getApplicationContext().getString(R.string.netip) + ":8080/AndroidServers/servlet/DeleteOrderInfo")
-                                    .addParams("gamename", hehe.get(position).getGame_name())
-                                    .build()
-                                    .execute(new StringCallback() {
-                                        @Override
-                                        public void onError(Request request, Exception e) {
-
-                                        }
-                                        @Override
-                                        public void onResponse(String response) {
-                                            new AlertDialog.Builder(DownloadActivity.this).setMessage(response).create().show();
-                                            list.clear();
-                                            mAdapter = new DownloadAdapter(list);
-                                            //设置添加或删除item时的动画，这里使用默认动画
-                                            mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-                                            //设置适配器
-                                            mRecyclerView.setAdapter(mAdapter);
-                                        }
-                                    });
-                        }
-                    });
-                    thread.start();
-                }
-
-            });
-
         }
 
         @Override
         public int getItemCount() {
             return hehe.size();
         }
-
-
          class ViewHolder extends RecyclerView.ViewHolder {
             TextView yujifabu, yuyueshu, game_name, publisher;
             ImageView yiyuyuetubiao;
@@ -159,7 +121,6 @@ public class DownloadActivity extends AppCompatActivity {
                 super(itemView);
                 game_name = itemView.findViewById(R.id.gamename);
                 publisher = itemView.findViewById(R.id.gamecompanies);
-
                 yujifabu = itemView.findViewById(R.id.newdynamic);
                 yuyueshu = itemView.findViewById(R.id.numberofcomments);
                 yiyuyuetubiao = itemView.findViewById(R.id.righticon);
